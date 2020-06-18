@@ -35,8 +35,8 @@ public class ConsumerDaoImpl implements ConsumerDao {
 			
 			//编写sql
 			String sql = "insert into Consumer (cnick,cname,pn,addr,"
-					+ "gender,email,bday,pswd)  "
-					+ "values (?,?,?,?,?,?,?,?)";
+					+ "gender,email,bday,pswd,province,city,district)  "
+					+ "values (?,?,?,?,?,?,?,?,?,?,?)";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -52,6 +52,9 @@ public class ConsumerDaoImpl implements ConsumerDao {
 			ps.setString(7,Consumer.getBDAY());
 //			ps.setDate(9, new Date(new java.util.Date().getTime()));
 			ps.setString(8, Consumer.getPSWD());
+			ps.setString(9,Consumer.getPROVINCE());
+			ps.setString(10, Consumer.getCITY());
+			ps.setString(11, Consumer.getDISTRICT());
 			//注册时间的设置
 			
 			//执行修改
@@ -107,7 +110,9 @@ public class ConsumerDaoImpl implements ConsumerDao {
 				Consumer.setEMAIL(rs.getString("EMAIL"));
 				Consumer.setBDAY(rs.getString("BDAY"));
 				Consumer.setPSWD(rs.getString("PSWD"));
-				
+				Consumer.setPROVINCE(rs.getString("PROVINCE"));
+				Consumer.setCITY(rs.getString("CITY"));
+				Consumer.setDISTRICT(rs.getString("DISTRICT"));
 				//把对象添加到集合中去
 				list.add(Consumer);
 			}

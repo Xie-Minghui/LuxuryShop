@@ -13,8 +13,30 @@ public class Consumer {
 	private String   BDAY;	// 生日
 	private String PSWD;	// 密码
 	
+	private String PROVINCE;//省份
+	private String CITY;//城市
+	private String DISTRICT;//区县
+	
 	public Integer getCID() {
 		return CID;
+	}
+	public String getPROVINCE() {
+		return PROVINCE;
+	}
+	public void setPROVINCE(String pROVINCE) {
+		PROVINCE = pROVINCE;
+	}
+	public String getCITY() {
+		return CITY;
+	}
+	public void setCITY(String cITY) {
+		CITY = cITY;
+	}
+	public String getDISTRICT() {
+		return DISTRICT;
+	}
+	public void setDISTRICT(String dISTRICT) {
+		DISTRICT = dISTRICT;
 	}
 	public void setCID(Integer cID) {
 		CID = cID;
