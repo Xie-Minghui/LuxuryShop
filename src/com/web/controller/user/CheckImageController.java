@@ -24,16 +24,12 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 验证码的生成
- * @author ASUS
+ * @author xmh
  *
  */
 @WebServlet(urlPatterns="/imageCode")
 public class CheckImageController extends HttpServlet {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	// 集合中保存所有成语
 	private List<String> words = new ArrayList<String>();
 	
@@ -42,6 +38,7 @@ public class CheckImageController extends HttpServlet {
 	 */
 	@Override
 	public void init() throws ServletException {
+		
 		// 初始化阶段，读取new_words.txt
 		// web工程中读取文件，必须使用绝对磁盘路径
 		String path = getServletContext().getRealPath("/WEB-INF/new_words.txt");
@@ -71,7 +68,8 @@ public class CheckImageController extends HttpServlet {
 		// response.setHeader("Cache-Control", "no-cache");
 		// response.setHeader("Pragma", "no-cache");
 		// response.setDateHeader("Expires", -1);
-		int width = 180;
+		System.out.println("get方法调用");
+		int width = 120;
 		int height = 30;
 		// 步骤一 绘制一张内存中图片
 		BufferedImage bufferedImage = new BufferedImage(width, height,
@@ -91,6 +89,7 @@ public class CheckImageController extends HttpServlet {
 		Random random = new Random();// 生成随机数
 		int index = random.nextInt(words.size());
 		String word = words.get(index-1);// 获得成语
+		System.out.println(word);
 		// 定义x坐标
 		int x = 10;
 		for (int i = 0; i < word.length(); i++) {
@@ -131,7 +130,7 @@ public class CheckImageController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		System.out.println("猪八戒");
 		doGet(req, resp);
 	}
 	
