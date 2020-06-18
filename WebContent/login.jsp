@@ -8,11 +8,11 @@
 </head>
 <body>
 		<form action="${pageContext.request.contextPath}/login" method="post">
-			First name:<br>
-			<input type="text" name="firstname" value="Mickey">
+			邮箱:<br>
+			<input type="text" name="firstname" value="">
 			<br>
-			Last name:<br>
-			<input type="text" name="lastname" value="Mouse">
+			密码:<br>
+			<input type="text" name="lastname" value="">
 			<br><br>
 			<input type="submit" value="Submit">
 		</form>
