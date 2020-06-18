@@ -16,24 +16,18 @@ import com.web.entity.Consumer;
 /**
  * Servlet implementation class RegisterController
  */
-@WebServlet("/RegisterController")
+@WebServlet(urlPatterns="/RegisterController")
 public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public RegisterController() {
+	public RegisterController() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -41,6 +35,8 @@ public class RegisterController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//调用业务逻辑层的注册方法
+		
+		System.out.println("hello");
 		
 		//实例化业务逻辑层
 		ConsumerBiz consumerBiz = new ConsumerBizImpl();
