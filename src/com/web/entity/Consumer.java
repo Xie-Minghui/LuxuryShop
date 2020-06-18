@@ -1,16 +1,16 @@
 package com.web.entity;
 
-import java.util.Date;
+//import java.util.Date;
 
 public class Consumer {
 	private Integer CID;	// 消费者ID
-	private String CNIKE;	// 昵称
+	private String CNICK;	// 昵称
 	private String CNAME;	// 消费者名字
 	private String PN;		// 电话
 	private String ADDR;	// 地址
-	private char   GENDER;	// 性别
+	private String   GENDER;	// 性别
 	private String EMAIL;	// 邮箱
-	private Date   BDAY;	// 生日
+	private String   BDAY;	// 生日
 	private String PSWD;	// 密码
 	
 	public Integer getCID() {
@@ -19,11 +19,11 @@ public class Consumer {
 	public void setCID(Integer cID) {
 		CID = cID;
 	}
-	public String getCNIKE() {
-		return CNIKE;
+	public String getCNICK() {
+		return CNICK;
 	}
-	public void setCNIKE(String cNIKE) {
-		CNIKE = cNIKE;
+	public void setCNICK(String cNICK) {
+		CNICK = cNICK;
 	}
 	public String getCNAME() {
 		return CNAME;
@@ -43,10 +43,10 @@ public class Consumer {
 	public void setADDR(String aDDR) {
 		ADDR = aDDR;
 	}
-	public char getGENDER() {
+	public String getGENDER() {
 		return GENDER;
 	}
-	public void setGENDER(char gENDER) {
+	public void setGENDER(String gENDER) {
 		GENDER = gENDER;
 	}
 	public String getEMAIL() {
@@ -55,10 +55,10 @@ public class Consumer {
 	public void setEMAIL(String eMAIL) {
 		EMAIL = eMAIL;
 	}
-	public Date getBDAY() {
+	public String getBDAY() {
 		return BDAY;
 	}
-	public void setBDAY(Date bDAY) {
+	public void setBDAY(String bDAY) {
 		BDAY = bDAY;
 	}
 	public String getPSWD() {
