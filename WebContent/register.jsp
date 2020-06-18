@@ -7,7 +7,7 @@
 <title>注册</title>
 </head>
 <body>
-		<form action="${pageContext.request.contextPath}/login" method="post">
+		<form action="${pageContext.request.contextPath}/RegisterController" method="post">
 			邮箱:<br>
 			<input type="text" name="email" value="">
 			<br>

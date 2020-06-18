@@ -9,10 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import com.web.biz.UserBiz;
-import com.web.biz.impl.UserBizImpl;
-import com.web.entity.User;
-import com.web.util.ActiveCodeUtil;
+import com.web.biz.ConsumerBiz;
+import com.web.biz.impl.ConsumerBizImpl;
+import com.web.entity.Consumer;
 
 /**
  * Servlet implementation class RegisterController
@@ -44,31 +43,31 @@ public class RegisterController extends HttpServlet {
 		//调用业务逻辑层的注册方法
 		
 		//实例化业务逻辑层
-		UserBiz userBiz = new UserBizImpl();
+		ConsumerBiz consumerBiz = new ConsumerBizImpl();
 		
 		//实例化用户对象
-		Consumer user = new Consumer();
+		Consumer consumer = new Consumer();
 		
 	    try {
 	    	//把表单中的参数赋值给用户对象
-			BeanUtils.populate(Consumer, req.getParameterMap());
+			BeanUtils.populate(consumer, request.getParameterMap());
 			
-			//给用户设置激活码
-			user.setActiveCode(ActiveCodeUtil.createActiveCode());
-			
-			//设置角色
-			user.setRole("普通用户");
+//			//给用户设置激活码
+//			user.setActiveCode(ActiveCodeUtil.createActiveCode());
+//			
+//			//设置角色
+//			user.setRole("普通用户");
 			
 			//调用业务逻辑层的注册方法
-			boolean flag = userBiz.register(user);
+			boolean flag = consumerBiz.register(consumer);
 			
 			if(flag){//如果注册成功
 				
 				//req.getContextPath():获取绝对路径
-				resp.sendRedirect(req.getContextPath()+"/client/registerSuccess.jsp");
+				response.sendRedirect(request.getContextPath()+"/index.jsp");
 			}else{
 				//req.getContextPath():获取绝对路径
-				resp.sendRedirect(req.getContextPath()+"/client/register.jsp");
+				response.sendRedirect(request.getContextPath()+"/register.jsp");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
