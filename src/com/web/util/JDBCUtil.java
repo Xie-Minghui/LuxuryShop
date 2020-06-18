@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class JDBCUtil {
 	//static：静态     final：最终
-		static final String url = "jdbc:mysql://localhost:3306/LuxuryShop";//连接数据库的url
+		static final String url = "jdbc:mysql://localhost:3306/luxuryshop";//连接数据库的url
 		static final String user = "root";//连接数据库的用户名
 		static final String password = "123456";//连接数据库的密码
 		
