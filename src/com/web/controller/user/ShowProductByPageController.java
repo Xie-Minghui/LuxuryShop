@@ -46,6 +46,7 @@ public class ShowProductByPageController extends HttpServlet {
 			
 			//把字符串转换为整形
 			currentPage = Integer.parseInt(_currentPage);
+			
 		}
 		
 		//定义每页显示的条数默认为4
