@@ -131,6 +131,7 @@ public class CheckImageController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("猪八戒");
+		System.out.println(req.getParameter("checkcode"));
 		doGet(req, resp);
 	}
 	
