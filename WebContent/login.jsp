@@ -7,14 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<form action="${pageContext.request.contextPath}/login" method="post">
+		<form action="${pageContext.request.contextPath}/LoginController" method="post">
 			邮箱:<br>
-			<input type="text" name="firstname" value="">
+			<input type="text" name="EMAIL" value="">
 			<br>
 			密码:<br>
-			<input type="text" name="lastname" value="">
+			<input type="text" name="PSWD" value="">
 			<br><br>
-			<input type="submit" value="Submit">
+			<input type="submit" value="登录">
 		</form>
 </body>
 </html>

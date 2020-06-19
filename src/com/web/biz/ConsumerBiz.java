@@ -15,4 +15,5 @@ public interface ConsumerBiz {
 	 * @return
 	 */
 	public boolean register(Consumer consumer);
+	public Consumer login(String email,String pswd);
 }

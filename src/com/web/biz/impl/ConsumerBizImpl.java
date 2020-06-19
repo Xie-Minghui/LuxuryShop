@@ -19,5 +19,11 @@ public class ConsumerBizImpl implements ConsumerBiz {
 		// 调用数据访问添加
 		return cd.add(consumer);
 	}
+	@Override
+	public Consumer login(String email, String pswd) {
+		
+		//调用数据访问层的登录方法
+		return cd.login(email, pswd);
+	}
 
 }

@@ -75,7 +75,7 @@ public class ConsumerDaoImpl implements ConsumerDao {
 	 * 登录
 	 */
 	@Override
-	public Consumer login(String cname, String pswd) {
+	public Consumer login(String email, String pswd) {
 		
 		//实例化集合对象
 		List<Consumer> list = new ArrayList<Consumer>();
@@ -85,14 +85,14 @@ public class ConsumerDaoImpl implements ConsumerDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql ="select * from consumer  where cname=? and pswd=?";
+			String sql ="select * from consumer  where email=? and pswd=?";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			//设置参数
-			ps.setString(2, cname);
-			ps.setString(8, pswd);
+			ps.setString(1, email);
+			ps.setString(2, pswd);
 			
 			//执行查询
 			ResultSet rs = ps.executeQuery();
@@ -102,6 +102,7 @@ public class ConsumerDaoImpl implements ConsumerDao {
 				//实例化对象
 				Consumer Consumer = new Consumer();
 				
+				Consumer.setCID(rs.getInt("CID"));
 				Consumer.setCNICK(rs.getString("CNICK"));
 				Consumer.setCNAME(rs.getString("CNAME"));
 				Consumer.setPN(rs.getString("PN"));
@@ -110,6 +111,7 @@ public class ConsumerDaoImpl implements ConsumerDao {
 				Consumer.setEMAIL(rs.getString("EMAIL"));
 				Consumer.setBDAY(rs.getString("BDAY"));
 				Consumer.setPSWD(rs.getString("PSWD"));
+				
 				Consumer.setPROVINCE(rs.getString("PROVINCE"));
 				Consumer.setCITY(rs.getString("CITY"));
 				Consumer.setDISTRICT(rs.getString("DISTRICT"));

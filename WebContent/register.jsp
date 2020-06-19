@@ -27,8 +27,8 @@
 			<input type="text" name="ADDR" value="">
 			<br>
 			性别:<br>
-        		<input type="radio" name="GENDER" value="boy">男
-        		<input type="radio" name="GENDER" value="girl">女
+        		<input type="radio" name="GENDER" value="M">男
+        		<input type="radio" name="GENDER" value="F">女
 			<br>
 			<label for="meeting">生日：</label><input id="meeting" type="date" name="BDAY" value="2014-01-13"/>
 			<br>

@@ -17,10 +17,10 @@ public interface ConsumerDao {
 	
 	/**
 	 * 登录
-	 * @param Consumername
+	 * @param email
 	 * @param password
 	 * @return
 	 */
-	public Consumer login(String Consumername,String password);
+	public Consumer login(String email,String pswd);
 		
 }
