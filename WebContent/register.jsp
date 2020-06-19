@@ -35,18 +35,11 @@
 			</tr>
 
 			<tr>
-				<td style="text-align: right; width: 20%">昵称：</td>
-				<td>
-				<input type="text" class="textinput" id = "username" name="CNICK" onkeyup="checkUsername()"/>
-				</td>
-				<td colspan="2"><span id="usernameMsg"></span></td>
-			</tr>
-
-			<tr>
 				<td style="text-align: right; width: 20%">姓名：</td>
 				<td>
-				<input type="text" class="textinput" name="CNAME"/>
+				<input type="text" class="textinput" id = "username" name="CNAME" onkeyup="checkUsername()"/>
 				</td>
+				<td colspan="2"><span id="usernameMsg"></span></td>
 			</tr>
 
 			<tr>

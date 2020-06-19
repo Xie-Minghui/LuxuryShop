@@ -34,27 +34,26 @@ public class ConsumerDaoImpl implements ConsumerDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "insert into Consumer (cnick,cname,pn,addr,"
+			String sql = "insert into Consumer (cname,pn,addr,"
 					+ "gender,email,bday,pswd,province,city,district)  "
-					+ "values (?,?,?,?,?,?,?,?,?,?,?)";
+					+ "values (?,?,?,?,?,?,?,?,?,?)";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			//设置参数
-			ps.setString(1, Consumer.getCNICK());
-			ps.setString(2, Consumer.getCNAME());
-			ps.setString(3, Consumer.getPN());
-			ps.setString(4, Consumer.getADDR());
-			ps.setString(5, Consumer.getGENDER());
-			ps.setString(6, Consumer.getEMAIL());
+			ps.setString(1, Consumer.getCNAME());
+			ps.setString(2, Consumer.getPN());
+			ps.setString(3, Consumer.getADDR());
+			ps.setString(4, Consumer.getGENDER());
+			ps.setString(5, Consumer.getEMAIL());
 			
-			ps.setString(7,Consumer.getBDAY());
+			ps.setString(6,Consumer.getBDAY());
 //			ps.setDate(9, new Date(new java.util.Date().getTime()));
-			ps.setString(8, Consumer.getPSWD());
-			ps.setString(9,Consumer.getPROVINCE());
-			ps.setString(10, Consumer.getCITY());
-			ps.setString(11, Consumer.getDISTRICT());
+			ps.setString(7, Consumer.getPSWD());
+			ps.setString(8,Consumer.getPROVINCE());
+			ps.setString(9, Consumer.getCITY());
+			ps.setString(10, Consumer.getDISTRICT());
 			//注册时间的设置
 			
 			//执行修改
