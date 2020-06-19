@@ -9,7 +9,7 @@ public class JDBCUtil {
 	//static：静态     final：最终
 		static final String url = "jdbc:mysql://localhost:3306/luxuryshop";//连接数据库的url
 		static final String user = "root";//连接数据库的用户名
-		static final String password = "112803";//连接数据库的密码
+		static final String password = "123456";//连接数据库的密码
 		
 		static Connection conn = null;//数据库连接对象
 		static PreparedStatement  ps = null;//预编译对象
