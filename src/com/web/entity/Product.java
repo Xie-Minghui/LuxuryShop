@@ -1,7 +1,7 @@
 package com.web.entity;
 import java.math.*;
 
-public class Luxury {
+public class Product {
 	private Integer LID;
 	private Integer AID;
 	private String LNAME;

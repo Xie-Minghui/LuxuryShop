@@ -69,7 +69,7 @@ public class CheckImageController extends HttpServlet {
 		// response.setHeader("Pragma", "no-cache");
 		// response.setDateHeader("Expires", -1);
 		System.out.println("get方法调用");
-		int width = 120;
+		int width = 180;
 		int height = 30;
 		// 步骤一 绘制一张内存中图片
 		BufferedImage bufferedImage = new BufferedImage(width, height,
