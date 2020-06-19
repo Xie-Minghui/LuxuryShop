@@ -26,6 +26,8 @@ public class PageBean {
 		this.currentPage = currentPage;
 	}
 	public Integer getTotalPage() {
+		totalPage = (int)Math.ceil((totalCount * 1.0) / currentCount);
+		
 		return totalPage;
 	}
 	public void setTotalPage(Integer totalPage) {
