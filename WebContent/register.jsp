@@ -106,11 +106,9 @@
 			<tr>
 				<td style="text-align: right; width: 20%;">&nbsp;</td>
 				<td rowspan="2" style="width: 50%">
-				<%System.out.println("尼玛"); %>
 				<img src="${pageContext.request.contextPath}/imageCode" width="120"
 					height="30" class="textinput" style="height: 30px;" id="imgCode" />&nbsp;&nbsp;
 					<a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
-					<%System.out.println("哈哈"); %>
 				</td>
 			</tr>
 		</table>
@@ -124,13 +122,7 @@
 			
 
 		<table width="60%" border="0" cellspacing="0">
-			<tr>
-				<td style="padding-top: 20px; text-align: center">
-					<input type="image" src="client/images/signup.gif" name="submit" border="0" width="140" height="35"/>
-				</td>
-			</tr>
-		
-		<input type="submit" name = "submit"  value="注册">
+			<input type="submit" name = "submit"  value="注册">
 		</table>
 
 	</form>
