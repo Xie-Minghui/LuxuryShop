@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/index/form.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/form.js"></script>
 <title>注册</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
 			</tr>
 
 			<tr>
-				<td style="text-align: right; width: 20%">密码：</td>
+				<td style="text-align: right; width: 20%">确认密码：</td>
 				<td>
 				<input type="password" class="textinput"  id="repassword" name="rePSWD" onkeyup="checkConfirm();"/>
 				</td>
