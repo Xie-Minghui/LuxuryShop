@@ -46,6 +46,7 @@ public class FindProductByIdController extends HttpServlet {
 		//调用业务逻辑层根据id查询商品详情信息
 		Product product = productBiz.findProductById(id);
 		
+		System.out.println(product.getLNAME());
 		//把数据传递到前台页面
 		request.setAttribute("p", product);
 		
