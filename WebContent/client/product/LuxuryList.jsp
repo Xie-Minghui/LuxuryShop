@@ -55,10 +55,10 @@
 								<%--页码数 --%>
 								<c:forEach begin="1" end="${bean.totalPage }" var="pageNum">
 									<c:if test="${pageNum == bean.currentPage }">
-										<li class="currentpage">${pageNum}0</li>
+										<li class="currentpage">${pageNum}</li>
 									</c:if>
 									<c:if test="${pageNum != bean.currentPage }">
-										<li><a href="${pageContext.request.contextPath}/showProductByPage?currentPage=${pageNum}&category=${bean.category}">${pageNum}0</a></li>
+										<li><a href="${pageContext.request.contextPath}/showProductByPage?currentPage=${pageNum}&category=${bean.category}">${pageNum}</a></li>
 									</c:if>
 								</c:forEach>
 								<%--页码数 --%>

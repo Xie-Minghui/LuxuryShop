@@ -64,14 +64,14 @@ public class MenuSearchController extends HttpServlet {
 			//把数据传到前台jsp页面
 			req.setAttribute("bean", bean);
 			
+			System.out.println(bean.getCategory());
+
+			System.out.println(bean.getTotalCount());
+			
 			//转发跳转页面
-			req.getRequestDispatcher("/client/product/product_search_list.jsp").forward(req, resp);
+			req.getRequestDispatcher("/client/product/LuxuryList.jsp").forward(req, resp);
 			
 		}
-		
-		
-		
-		
 	}
 	
 }

@@ -34,7 +34,7 @@ public class ProductBizImpl implements ProductBiz {
 		pageBean.setCategory(category);
 		pageBean.setCurrentCount(currentCount);
 		pageBean.setCurrentPage(currentPage);
-		pageBean.setLuxuryList(list);
+		pageBean.setluxuryList(list);
 		pageBean.setSearchfild(null);
 		pageBean.setTotalCount(totalCount);
 		
@@ -59,9 +59,12 @@ public class ProductBizImpl implements ProductBiz {
 		//设置当前页码
 		bean.setCurrentPage(currentPage);
 		
+		//设置搜索标记
+		bean.setCategory(searchfield+"搜索结果");
+
 		//设置数据信息
 		List<Product> list = productDao.findLuxuryByName(currentPage, currentCount, searchfield);
-		bean.setLuxuryList(list);
+		bean.setluxuryList(list);
 		
 		//设置搜索的字段
 		bean.setSearchfild(searchfield);
