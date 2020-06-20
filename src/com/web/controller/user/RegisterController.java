@@ -60,7 +60,7 @@ public class RegisterController extends HttpServlet {
 			if(flag){//如果注册成功
 				
 				//req.getContextPath():获取绝对路径
-				response.sendRedirect(request.getContextPath()+"/index.jsp");
+				response.sendRedirect(request.getContextPath()+"/login.jsp");
 			}else{
 				//req.getContextPath():获取绝对路径
 				response.sendRedirect(request.getContextPath()+"/register.jsp");
