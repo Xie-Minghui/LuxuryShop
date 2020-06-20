@@ -1079,7 +1079,7 @@ h2.resp-accordion:first-child {
 	vertical-align: top;
 	margin-left: 0.2em;
 }
-.register-top-grid input[type="text"],.register-bottom-grid input[type="text"]{
+.register-top-grid input[type="text"],.register-bottom-grid input[type="text"],.register-bottom-grid select,.register-bottom-grid input[type="date"]{
 	border: 1px solid #EEE;
 	outline-color: #E45D5D;
 	width: 96%;
@@ -1087,6 +1087,7 @@ h2.resp-accordion:first-child {
 	padding: 0.5em;
 	font-family: 'Open Sans', sans-serif;
 }
+
 .news-letter{
 	color: #08080B;
 	font-weight: 700;
