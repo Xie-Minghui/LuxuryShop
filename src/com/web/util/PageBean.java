@@ -15,7 +15,7 @@ public class PageBean {
 	private Integer currentCount;// 每页条数
 	private Integer totalCount;	 // 总条数
 	
-	private List<Product> LuxuryList; // 商品数据信息
+	private List<Product> luxuryList; // 商品数据信息
 	
 	private String category;		// 类别
 	private String searchfild;		// 模糊搜索字段
@@ -45,11 +45,11 @@ public class PageBean {
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
-	public List<Product> getLuxuryList() {
-		return LuxuryList;
+	public List<Product> getluxuryList() {
+		return luxuryList;
 	}
-	public void setLuxuryList(List<Product> luxuryList) {
-		LuxuryList = luxuryList;
+	public void setluxuryList(List<Product> LuxuryList) {
+		luxuryList = LuxuryList;
 	}
 	public String getCategory() {
 		return category;

@@ -102,7 +102,6 @@ public class ConsumerDaoImpl implements ConsumerDao {
 				Consumer Consumer = new Consumer();
 				
 				Consumer.setCID(rs.getInt("CID"));
-				Consumer.setCNICK(rs.getString("CNICK"));
 				Consumer.setCNAME(rs.getString("CNAME"));
 				Consumer.setPN(rs.getString("PN"));
 				Consumer.setADDR(rs.getString("ADDR"));

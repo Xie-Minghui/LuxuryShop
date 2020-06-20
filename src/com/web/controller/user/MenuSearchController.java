@@ -59,7 +59,7 @@ public class MenuSearchController extends HttpServlet {
 		}else{
 			
 			//调用业务逻辑层根据搜索字段分页查询数据方法
-			PageBean bean = productBiz.findBookByName(currentPage, currentCount, searchfield);
+			PageBean bean = productBiz.findProductByName(currentPage, currentCount, searchfield);
 			
 			//把数据传到前台jsp页面
 			req.setAttribute("bean", bean);

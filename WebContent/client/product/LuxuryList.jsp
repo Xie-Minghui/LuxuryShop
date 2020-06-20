@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,67 +18,64 @@
         		<td>
         			<h1>Luxury List</h1>
         			<hr/>
-        			<h1>	${bean.category }</h1> 共${bean.totalCount }种商品
-        			
-        			<table cellspacing="0" class="booklist">
-						<tr>
-						    <c:forEach items="${bean.LuxuryList }" var="p">
-								<td>
-									<div class="divbookpic">
-										<p>
-											<a href="${pageContext.request.contextPath}/findProductById?id=${p.LID}">
-												<img src="${pageContext.request.contextPath}/${p.IMAGE}" width="115" height="129" border="0" /> 
-											</a>
-										</p>
-									</div>
-									<div class="divlisttitle">
-										<a href="${pageContext.request.contextPath}/findProductById?id=${p.LID}">书名： ${p.LNAME }<br />售价：￥${p.PRICE } </a>
-									</div>
-								</td>
-							</c:forEach>
-						</tr>
-					</table>
-					
-					<div class="pagination">
-						<ul>
-						    <%--上一页 --%>
-							<c:if test="${bean.currentPage !=1 }">
-								<li class="disablepage_p">
-								   <a class="disablepage_a" href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage-1 }&category=${bean.category}"></a>
-								</li>
-							</c:if>
-							<c:if test="${bean.currentPage == 1 }">
-							   <li class="disablepage_p2"></li>
-							</c:if>
-							<%--上一页 --%>
-							
-							<%--页码数 --%>
-							<c:forEach begin="1" end="${bean.totalPage }" var="pageNum">
-							     <c:if test="${pageNum == bean.currentPage }">
-							         <li class="currentpage">${pageNum}</li>
-							     </c:if>
-							     <c:if test="${pageNum != bean.currentPage }">
-		  					         <li><a href="${pageContext.request.contextPath}/showProductByPage?currentPage=${pageNum}&category=${bean.category}">${pageNum}</a></li>
-							     </c:if>
-							</c:forEach>
-							<%--页码数 --%>
-									
-						   <%--下一页 --%>
-							<c:if test="${bean.currentPage != bean.totalPage && bean.totalPage!=0}">
-								<li class="disablepage_n">
-								   <a class="disablepage_a" href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage+1 }&category=${bean.category}"></a>
-								</li>
-							</c:if>
-							<c:if test="${bean.currentPage == bean.totalPage || bean.totalPage==0}">
-				                <li class="disablepage_n2"></li>
-							</c:if>
-							<%--下一页 --%>
+						<h1>${bean.category }</h1> 共${bean.totalCount }种商品
+						
+						<table cellspacing="0">
+							<tr>
+								<c:forEach items="${bean.luxuryList }" var="p">
+									<td>
+										<div>
+											<p>
+												<a href="${pageContext.request.contextPath}/findProductById?id=${p.LID}">
+													<img src="${pageContext.request.contextPath}/${p.IMAGE}" width="115" height="129" border="0" /> 
+												</a>
+											</p>
+										</div>
+										<div>
+											<a href="${pageContext.request.contextPath}/findProductById?id=${p.LID}">书名： ${p.LNAME }<br/>售价：￥${p.PRICE }</a>
+										</div>
+									</td>
+								</c:forEach>
+							</tr>
+						</table>
+						
+						<div>
+							<ul>
+								<%--上一页 --%>
+								<c:if test="${bean.currentPage !=1 }">
+									<li >
+									<a href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage-1 }&category=${bean.category}">上一页</a>
+									</li>
+								</c:if>
+								<c:if test="${bean.currentPage == 1 }">
+								<li >上一页</li>
+								</c:if>
+								<%--上一页 --%>
 								
-							
-							
-						</ul>
-					</div>
-        			
+								<%--页码数 --%>
+								<c:forEach begin="1" end="${bean.totalPage }" var="pageNum">
+									<c:if test="${pageNum == bean.currentPage }">
+										<li class="currentpage">${pageNum}0</li>
+									</c:if>
+									<c:if test="${pageNum != bean.currentPage }">
+										<li><a href="${pageContext.request.contextPath}/showProductByPage?currentPage=${pageNum}&category=${bean.category}">${pageNum}0</a></li>
+									</c:if>
+								</c:forEach>
+								<%--页码数 --%>
+										
+								<%--下一页 --%>
+								<c:if test="${bean.currentPage != bean.totalPage && bean.totalPage!=0}">
+									<li>
+									<a href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage+1 }&category=${bean.category}">下一页</a>
+									</li>
+								</c:if>
+								<c:if test="${bean.currentPage == bean.totalPage || bean.totalPage==0}">
+									<li >下一页</li>
+								</c:if>
+								<%--下一页 --%>
+									
+							</ul>
+						</div>
         			<hr/>
         		</td>
         	</tr>
