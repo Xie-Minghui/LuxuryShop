@@ -37,7 +37,6 @@
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header -->
-		<jsp:include page="head.jsp"></jsp:include>
 
         <!-- Main Content Wrapper Start -->
         <main class="main-content-wrapper">

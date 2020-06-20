@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>创建新客户帐户</title>
+		<title>客户登录</title>
 		<link href="${pageContext.request.contextPath}/client/css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -43,88 +42,40 @@
 	</head>
 	<body>
 		<!---start-wrap---->
-
+			<!--- header ---->
+			
+			
 		<!--- start-content---->
 		<div class="content login-box">
 			<div class="login-main">
 				<div class="wrap">
-					<h1>注册</h1>
-					<div class="register-grids">
-						<form> 
-								<div class="register-top-grid">
-										<h3>登录信息</h3>
-										<div>
-											<span>电子邮箱<label>*</label></span>
-											<input type="text">
-										</div>
-										<div>
-											<span>密码<label>*</label></span>
-											<input type="text">
-										</div>
-										<div>
-											<span>验证码<label>*</label></span>
-											<input type="text">
-										</div>
-										<div class="clear"> </div>
-								</div>
-								<div class="clear"> </div>
-								<div class="register-bottom-grid">
-										<h3>用户信息</h3>
-										<div>
-											<span>姓名<label>*</label></span>
-											<input type="text"> 
-										</div>
-										<div>
-											<span>生日<label>*</label></span>
-											<input id="meeting" type="date" name="BDAY" value="2000-01-01"/>
-										</div>
-										<div>
-											<span>称谓<label>*</label></span>
-											<select>
-												<option value="" disabled="" selected="selected">- 请选择 -</option>
-												<option value="先生">先生</option>
-												<option value="女士">女士</option>
-											</select>
-										</div>
-										<div>
-											<span>电话<label>*</label></span>
-											<input type="text"> 
-										</div>
-								</div>
-								<div class="clear"> </div>
-								<div class="register-bottom-grid">
-										<h3>配送信息</h3>
-										<div>
-											<span>省份<label>*</label></span>
-											<input type="text"> 
-										</div>
-										<div>
-											<span>城市<label>*</label></span>
-											<input type="text"> 
-										</div>
-										<div>
-											<span>区县<label>*</label></span>
-											<input type="text"> 
-										</div>
-										<div>
-											<span>详细地址<label>*</label></span>
-											<input type="text"> 
-										</div>
-								</div>
-								<div class="clear"> </div>
-								<input type="submit" value="注册" />
+					<h1>登录或创建帐户</h1>
+					<div class="login-left">
+						<h3>注册Excellent账户</h3>
+						<p>注册Excellent账号以便追踪您的订单，管理收货地址，获取更多个性化信息。</p>
+						<a class="acount-btn" href="register.html">创建帐户</a>
+					</div>
+					<div class="login-right">
+						<h3>已有帐户</h3>
+						<p>如果您已拥有一个Excellent帐户，请登录。</p>
+						<form>
+							<div>
+								<span>电子邮箱<label>*</label></span>
+								<input type="text"> 
+							</div>
+							<div>
+								<span>密码<label>*</label></span>
+								<input type="password"> 
+							</div>
+							<a class="forgot" href="#">忘记密码？</a>
+							<input type="submit" value="登录" />
 						</form>
 					</div>
+					<div class="clear"> </div>
 				</div>
 			</div>
 		</div>
-
-		<!--- //End-content---->
-		<!---footer---->
-		
-		
 		<!---//End-wrap---->
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>
-

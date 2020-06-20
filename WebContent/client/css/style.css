@@ -1005,7 +1005,7 @@ h2.resp-accordion:first-child {
 	vertical-align: top;
 	margin-left: 0.2em;
 }
-.login-right input[type="text"]{
+.login-right input{
 	border: 1px solid #EEE;
 	outline-color: #E45D5D;
 	width: 96%;
