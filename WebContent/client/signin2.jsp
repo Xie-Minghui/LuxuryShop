@@ -58,18 +58,20 @@
 					<div class="login-right">
 						<h3>已有帐户</h3>
 						<p>如果您已拥有一个Excellent帐户，请登录。</p>
-						<form>
+						
+						<form action="${pageContext.request.contextPath}/LoginController" method="post">
 							<div>
 								<span>电子邮箱<label>*</label></span>
-								<input type="text"> 
+								<input input type="text" name="EMAIL">
 							</div>
 							<div>
 								<span>密码<label>*</label></span>
-								<input type="text"> 
+								<input type="password" name="PSWD"> 
 							</div>
 							<a class="forgot" href="#">忘记密码？</a>
 							<input type="submit" value="登录" />
 						</form>
+					
 					</div>
 					<div class="clear"> </div>
 				</div>

@@ -31,6 +31,7 @@
 		<!---move-top-top---->
 		<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/move-top.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/easing.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/form.js"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -50,20 +51,31 @@
 				<div class="wrap">
 					<h1>注册</h1>
 					<div class="register-grids">
-						<form> 
+						<form action="${pageContext.request.contextPath}/RegisterController" method="post" onsubmit="return checkForm();"> 
 								<div class="register-top-grid">
 										<h3>登录信息</h3>
 										<div>
 											<span>电子邮箱<label>*</label></span>
-											<input type="text">
+											<input type="text" class="textinput"  id="email" name="EMAIL" onkeyup="checkEmail();"/>
+											<td colspan="2"><span id="emailMsg"></span></td>
 										</div>
 										<div>
 											<span>密码<label>*</label></span>
-											<input type="text">
+											<input type="password" class="textinput"  id="password" name="PSWD" onkeyup="checkPassword();"/>
+											<td colspan="2"><span id="passwordMsg"></span></td>
 										</div>
+
+										<div>
+											<span>确认密码<label>*</label></span>
+											<input type="password" class="textinput"  id="repassword" name="rePSWD" onkeyup="checkConfirm();"/>
+											<td colspan="2"><span id="confirmMsg"></span></td>
+										</div>
+										
 										<div>
 											<span>验证码<label>*</label></span>
 											<input type="text">
+											<img src="${pageContext.request.contextPath}/imageCode" width="120" height="30" class="textinput" style="height: 30px;" id="imgCode" />&nbsp;&nbsp;
+											<a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
 										</div>
 										<div class="clear"> </div>
 								</div>
@@ -72,23 +84,24 @@
 										<h3>用户信息</h3>
 										<div>
 											<span>姓名<label>*</label></span>
-											<input type="text"> 
+											<input type="text" class="textinput" id = "username" name="CNAME" onkeyup="checkUsername()"/>
+											<td colspan="2"><span id="usernameMsg"></span></td>
 										</div>
 										<div>
 											<span>生日<label>*</label></span>
-											<input id="meeting" type="date" name="BDAY" value="2000-01-01"/>
+											<input id="meeting" type="date" name="BDAY" value="2014-01-13"/>
 										</div>
 										<div>
 											<span>称谓<label>*</label></span>
 											<select>
-												<option value="" disabled="" selected="selected">- 请选择 -</option>
-												<option value="先生">先生</option>
-												<option value="女士">女士</option>
+												<option   disabled="" selected="selected">- 请选择 -</option>
+												<option name = "GENDER" value="M">先生</option>
+												<option name = "GENDER" value="F">女士</option>
 											</select>
 										</div>
 										<div>
 											<span>电话<label>*</label></span>
-											<input type="text"> 
+											<input type="text" class="textinput" name="PN"/>
 										</div>
 								</div>
 								<div class="clear"> </div>
@@ -96,19 +109,19 @@
 										<h3>配送信息</h3>
 										<div>
 											<span>省份<label>*</label></span>
-											<input type="text"> 
+											<input type="text" name="PROVINCE"  />
 										</div>
 										<div>
 											<span>城市<label>*</label></span>
-											<input type="text"> 
+											<input type="text" name="CITY"  />
 										</div>
 										<div>
 											<span>区县<label>*</label></span>
-											<input type="text"> 
+											<input type="text" name="DISTRICT" />
 										</div>
 										<div>
 											<span>详细地址<label>*</label></span>
-											<input type="text"> 
+											<input type="text" class="textinput" name="ADDR"/>
 										</div>
 								</div>
 								<div class="clear"> </div>
@@ -120,6 +133,12 @@
 		</div>
 
 		<!--- //End-content---->
+		<script type="text/javascript">
+			function changeImage(){
+				//改变验证码图片中的文字
+				document.getElementById("imgCode").src = "${pageContext.request.contextPath}/imageCode?time=" + new Date().getTime();
+			}
+		</script>
 		<!---footer---->
 		
 		

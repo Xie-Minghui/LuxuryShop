@@ -4,7 +4,6 @@ package com.web.entity;
 
 public class Consumer {
 	private Integer CID;	// 消费者ID
-	private String CNICK;	// 昵称
 	private String CNAME;	// 消费者名字
 	private String PN;		// 电话
 	private String ADDR;	// 地址
@@ -40,12 +39,6 @@ public class Consumer {
 	}
 	public void setCID(Integer cID) {
 		CID = cID;
-	}
-	public String getCNICK() {
-		return CNICK;
-	}
-	public void setCNICK(String cNICK) {
-		CNICK = cNICK;
 	}
 	public String getCNAME() {
 		return CNAME;
