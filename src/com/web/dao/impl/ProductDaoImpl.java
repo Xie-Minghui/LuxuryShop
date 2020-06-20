@@ -101,12 +101,13 @@ public class ProductDaoImpl implements ProductDao {
 			//循环结果集对象
 			while(rs.next()){
 				Product p = new Product();
-				p.setTYPE(rs.getString("type"));
-				p.setINFOR(rs.getString("infor"));
 				p.setLID(rs.getInt("lid"));
-				p.setIMAGE(rs.getString("image"));
+				p.setAID(rs.getInt("aid"));
 				p.setLNAME(rs.getString("lname"));
 				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
 				p.setSALENUM(rs.getInt("salenum"));
 				p.setVIEWCOUNT(rs.getInt("viewcount"));
 				
@@ -192,12 +193,13 @@ public class ProductDaoImpl implements ProductDao {
 			//循环结果集对象
 			while(rs.next()){
 				Product p = new Product();
-				p.setTYPE(rs.getString("type"));
-				p.setINFOR(rs.getString("infor"));
 				p.setLID(rs.getInt("lid"));
-				p.setIMAGE(rs.getString("image"));
+				p.setAID(rs.getInt("aid"));
 				p.setLNAME(rs.getString("lname"));
 				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
 				p.setSALENUM(rs.getInt("salenum"));
 				p.setVIEWCOUNT(rs.getInt("viewcount"));
 				
@@ -212,8 +214,50 @@ public class ProductDaoImpl implements ProductDao {
 		return list;
 	}
 
-	
-	
+	@Override
+	public Product findLuxuryById(int lid) {
+		
+		//实例化集合
+		List<Product> list = new ArrayList<>();
+		
+		try {
+			//获取数据库的连接对象
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select * from luxury  where lid=?";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setInt(1, lid);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环
+			while(rs.next()){
+				Product p = new Product();
+				p.setLID(rs.getInt("lid"));
+				p.setAID(rs.getInt("aid"));
+				p.setLNAME(rs.getString("lname"));
+				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
+				p.setSALENUM(rs.getInt("salenum"));
+				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				
+				//把商品对象添加到集合中
+				list.add(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list.size()>0 ? list.get(0) : null;
+	}
+
 
 
 }

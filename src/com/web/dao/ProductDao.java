@@ -45,13 +45,12 @@ public interface ProductDao {
 	public List<Product> findLuxuryByName(int currentPage,int currentCount,String searchfield);
 	
 
-	
-	
-	
-	
-	
-	
-	
+	/**
+	 * 根据id查询商品的详情信息
+	 * @param id
+	 * @return
+	 */
+	public Product findLuxuryById(int id);
 	
 	
 	
