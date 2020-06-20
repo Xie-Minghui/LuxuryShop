@@ -35,5 +35,4 @@ public class MyAccountController extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/client/myAccount.jsp");
 		}
 	}
-
 }
