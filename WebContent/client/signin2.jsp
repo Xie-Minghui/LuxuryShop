@@ -53,7 +53,7 @@
 					<div class="login-left">
 						<h3>注册Excellent账户</h3>
 						<p>注册Excellent账号以便追踪您的订单，管理收货地址，获取更多个性化信息。</p>
-						<a class="acount-btn" href="register.html">创建帐户</a>
+						<a class="acount-btn" href="${pageContext.request.contextPath}/client/signup2.jsp">创建帐户</a>
 					</div>
 					<div class="login-right">
 						<h3>已有帐户</h3>
