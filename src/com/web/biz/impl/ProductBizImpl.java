@@ -49,7 +49,7 @@ public class ProductBizImpl implements ProductBiz {
 	 * @return
 	 */
 	@Override
-	public PageBean findBookByName(int currentPage, int currentCount, String searchfield) {
+	public PageBean findProductByName(int currentPage, int currentCount, String searchfield) {
 		
 		PageBean bean = new PageBean();
 		
@@ -71,6 +71,12 @@ public class ProductBizImpl implements ProductBiz {
 		bean.setTotalCount(totalCount);
 		
 		return bean;
+	}
+
+	@Override
+	public Product findProductById(int id) {
+		
+		return productDao.findLuxuryById(id);
 	}
 
 	

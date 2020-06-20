@@ -1,5 +1,6 @@
 package com.web.biz;
 
+import com.web.entity.Product;
 import com.web.util.PageBean;
 
 /**
@@ -26,7 +27,13 @@ public interface ProductBiz {
 	 * @param searchfield
 	 * @return
 	 */
-    public PageBean findBookByName(int currentPage,int currentCount,String searchfield);
-
+    public PageBean findProductByName(int currentPage,int currentCount,String searchfield);
+    
+    /**
+     * 通过id找到产品
+     * @param id
+     * @return
+     */
+    public Product findProductById(int id);
     
 }
