@@ -23,7 +23,9 @@
 </head>
 
 <body>
-
+	<!---头部---->
+	<jsp:include page = "head.jsp"></jsp:include>
+	
     <!-- Preloader Start -->
     <div class="ft-preloader active">
         <div class="ft-preloader-inner h-100 d-flex align-items-center justify-content-center">

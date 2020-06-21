@@ -36,8 +36,6 @@ public class RegisterController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//调用业务逻辑层的注册方法
 		
-		System.out.println("hello");
-		
 		//实例化业务逻辑层
 		ConsumerBiz consumerBiz = new ConsumerBizImpl();
 		
@@ -60,10 +58,10 @@ public class RegisterController extends HttpServlet {
 			if(flag){//如果注册成功
 				
 				//req.getContextPath():获取绝对路径
-				response.sendRedirect(request.getContextPath()+"/login.jsp");
+				response.sendRedirect(request.getContextPath()+"/client/login.jsp");
 			}else{
 				//req.getContextPath():获取绝对路径
-				response.sendRedirect(request.getContextPath()+"/register.jsp");
+				response.sendRedirect(request.getContextPath()+"/client/register.jsp");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -45,7 +45,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="index.html" class="navbar-brand">Max <span>shop</span></a>
+					<a href="index.jsp" class="navbar-brand">Max <span>shop</span></a>
 				</div>
 				<!-- Menu Icon -->
 				<div class="menu-icon">
@@ -77,23 +77,25 @@
 							</ul>
 						</li>
 						<li><a href="#" title="Like"><i class="icon icon-Heart"></i></a></li>
-						<li><a href="#" title="User"><i class="icon icon-User"></i></a></li>
+						<li><a href="${pageContext.request.contextPath}/MyAccountController" title="User"><i class="icon icon-User"></i></a></li>
 					</ul>
 				</div><!-- Menu Icon /- -->
 				<div class="navbar-collapse collapse navbar-right" id="navbar">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="cart.html">Cart</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact-us.html">Contact Us</a></li>
+						<li><a href="${pageContext.request.contextPath}/client/index.jsp">Home</a></li>
+						<li><a href="${pageContext.request.contextPath}/client/cart.jsp">Cart</a></li>
+						<li><a href="${pageContext.request.contextPath}/client/checkout.jsp">Checkout</a></li>
+						<li><a href="${pageContext.request.contextPath}/client/about.jsp">About Us</a></li>
+						<li><a href="${pageContext.request.contextPath}/client/contact-us.jsp">Contact Us</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</nav><!-- nav /- -->
 			<!-- Search Box -->
 			<div class="search-box">
 				<span><i class="icon_close"></i></span>
-				<form><input type="text" class="form-control" placeholder="Enter a keyword and press enter..." /></form>
+				<form action="${pageContext.request.contextPath}/MenuSearchController">
+					<input type="text" class="form-control" placeholder="Enter a keyword and press enter..." name="textfield"/>
+				</form>
 			</div><!-- Search Box /- -->
 		</div><!-- Container /- -->
 	</div><!-- Menu Block /- -->

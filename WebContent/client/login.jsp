@@ -41,8 +41,8 @@
 		<!---//move-top-top---->
 	</head>
 	<body>
-		<!---start-wrap---->
-			<!--- header ---->
+		<!---头部---->
+		<jsp:include page = "head.jsp"></jsp:include>
 			
 			
 		<!--- start-content---->
@@ -53,19 +53,19 @@
 					<div class="login-left">
 						<h3>注册Excellent账户</h3>
 						<p>注册Excellent账号以便追踪您的订单，管理收货地址，获取更多个性化信息。</p>
-						<a class="acount-btn" href="register.html">创建帐户</a>
+						<a class="acount-btn" href="${pageContext.request.contextPath}/client/register.jsp">创建帐户</a>
 					</div>
 					<div class="login-right">
 						<h3>已有帐户</h3>
 						<p>如果您已拥有一个Excellent帐户，请登录。</p>
-						<form>
+						<form action="${pageContext.request.contextPath}/LoginController" method="post">
 							<div>
 								<span>电子邮箱<label>*</label></span>
-								<input type="text"> 
+								<input type="text" name="EMAIL"> 
 							</div>
 							<div>
 								<span>密码<label>*</label></span>
-								<input type="password"> 
+								<input type="text" name="PSWD">
 							</div>
 							<a class="forgot" href="#">忘记密码？</a>
 							<input type="submit" value="登录" />

@@ -27,12 +27,12 @@ public class MyAccountController extends HttpServlet {
 		// 获取session中的用户信息
 		HttpSession session = request.getSession();
 		
-		Consumer consumer = (Consumer)session.getAttribute("user");
+		Consumer consumer = (Consumer)session.getAttribute("consumer");
 		
 		if(consumer == null) {
-			response.sendRedirect(request.getContextPath()+"/client/signin2.jsp");
+			response.sendRedirect(request.getContextPath()+"/client/login.jsp");
 		}else{
-			response.sendRedirect(request.getContextPath()+"/client/myAccount.jsp");
+			response.sendRedirect(request.getContextPath()+"/client/account.jsp");
 		}
 	}
 }
