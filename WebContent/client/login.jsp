@@ -65,7 +65,13 @@
 							</div>
 							<div>
 								<span>密码<label>*</label></span>
-								<input type="text" name="PSWD">
+								<input type="password" name="PSWD">
+							</div>
+							<div>
+								<span>验证码<label>*</label></span>
+								<input type="text">
+								<img src="${pageContext.request.contextPath}/imageCode" width="120" height="30" class="textinput" style="height: 30px;" id="imgCode" />&nbsp;&nbsp;
+                                <a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
 							</div>
 							<a class="forgot" href="#">忘记密码？</a>
 							<input type="submit" value="登录" />

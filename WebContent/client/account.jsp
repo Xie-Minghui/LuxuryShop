@@ -23,8 +23,8 @@
 </head>
 
 <body>
-	<!---头部---->
-	<jsp:include page = "head.jsp"></jsp:include>
+	<!-- Header -->
+	
 	
     <!-- Preloader Start -->
     <div class="ft-preloader active">
