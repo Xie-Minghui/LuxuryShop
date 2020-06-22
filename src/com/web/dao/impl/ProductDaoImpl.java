@@ -289,4 +289,45 @@ public class ProductDaoImpl implements ProductDao {
 		return count > 0 ? true : false;
 	}
 
+	@Override
+	public List<Object[]> getWeekHotLuxury() {
+		/**
+		 * 得到每周热卖商品
+		 * @param orderItem
+		 * @return
+		 */
+		List<Object[]> list = new ArrayList<>();
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			//编写sql
+			String sql = "select LID,AID,LNAME,TYPE,IMAGE,sum(NUM) totalSaleNum\r\n" + 
+					"from luxury natrual join orders using(LID)\r\n" + 
+					"where order.date > DATE_SUB(NOW(),INTERVAL 7 DAY)\r\n" + 
+					"group by LID\r\n" + 
+					"order by totalSaleNum\r\n" + 
+					"limit 0,3";
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环
+			while(rs.next()) {
+				Object[] obj = new Object[]{};
+				obj[0] = rs.getString(1);
+				obj[1] = rs.getString(2);
+				obj[2] = rs.getString(3);
+				list.add(obj);	
+			}
+			//关闭数据库
+			JDBCUtil.close();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
 }

@@ -45,4 +45,11 @@ public interface ProductBiz {
 	 * @return
 	 */
 	public boolean changeLuxuryNum(Order order);
+	
+	/**
+	 * 得到每周热卖商品
+	 * @param orderItem
+	 * @return
+	 */
+	public List<Object[]> getWeekHotLuxury();
 }
