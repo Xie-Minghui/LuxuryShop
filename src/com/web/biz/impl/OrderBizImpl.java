@@ -41,4 +41,10 @@ public class OrderBizImpl implements OrderBiz {
 		return orderDao.findOrderByConsumer(consumer);
 	}
 
+
+	@Override
+	public List<Order> findOrderById(String id) {
+		return orderDao.findOrderById(id);
+	}
+
 }

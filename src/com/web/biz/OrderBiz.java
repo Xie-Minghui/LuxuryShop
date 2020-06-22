@@ -11,4 +11,7 @@ public interface OrderBiz {
 	
 	//通过消费者查询订单
 	public List<Order> findOrderByConsumer(Consumer consumer);
+	
+	//通过订单id查询订单
+	public List<Order> findOrderById(String id);
 }
