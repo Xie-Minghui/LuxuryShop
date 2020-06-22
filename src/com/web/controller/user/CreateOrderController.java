@@ -17,7 +17,6 @@ import com.web.biz.OrderBiz;
 import com.web.biz.impl.OrderBizImpl;
 import com.web.entity.Consumer;
 import com.web.entity.Order;
-import com.web.entity.OrderItem;
 import com.web.entity.Product;
 import com.web.util.IdUtils;
 

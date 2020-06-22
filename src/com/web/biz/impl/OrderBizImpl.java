@@ -1,9 +1,12 @@
 package com.web.biz.impl;
 
+import java.util.List;
+
 import com.web.biz.OrderBiz;
 import com.web.biz.ProductBiz;
 import com.web.dao.OrderDao;
 import com.web.dao.impl.OrderDaoImpl;
+import com.web.entity.Consumer;
 import com.web.entity.Order;
 
 public class OrderBizImpl implements OrderBiz {
@@ -30,6 +33,12 @@ public class OrderBizImpl implements OrderBiz {
 		}
 		
 		return flag;
+	}
+
+
+	@Override
+	public List<Order> findOrderByConsumer(Consumer consumer) {
+		return orderDao.findOrderByConsumer(consumer);
 	}
 
 }
