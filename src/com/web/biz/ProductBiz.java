@@ -1,5 +1,8 @@
 package com.web.biz;
 
+import java.util.List;
+
+import com.web.entity.Order;
 import com.web.entity.Product;
 import com.web.util.PageBean;
 
@@ -36,4 +39,10 @@ public interface ProductBiz {
      */
     public Product findProductById(int id);
     
+    /**
+	 * 生成订单时，将商品库存数量减少
+	 * @param orderItem
+	 * @return
+	 */
+	public boolean changeLuxuryNum(Order order);
 }

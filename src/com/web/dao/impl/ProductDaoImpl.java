@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.web.dao.ProductDao;
+import com.web.entity.Order;
 import com.web.entity.Product;
 import com.web.util.JDBCUtil;
 
@@ -258,6 +259,34 @@ public class ProductDaoImpl implements ProductDao {
 		return list.size()>0 ? list.get(0) : null;
 	}
 
-
+	@Override
+	public boolean changeLuxuryNum(Order order) {
+		/**
+		 * 生成订单时，将商品库存数量减少
+		 * @param orderItem
+		 * @return
+		 */
+		int count = 1;
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			//编写sql
+			String sql = "update luxury set restnum = restnum - ? where lid = ?";
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setInt(1,order.getNUM());
+			ps.setInt(2,order.getLID());
+			//执行修改
+			count  = ps.executeUpdate();
+			
+			//关闭
+			JDBCUtil.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return count > 0 ? true : false;
+	}
 
 }

@@ -1,6 +1,7 @@
 package com.web.dao;
 
 import java.util.List;
+import com.web.entity.*;
 
 import com.web.entity.Product;
 
@@ -52,6 +53,11 @@ public interface ProductDao {
 	 */
 	public Product findLuxuryById(int id);
 	
-	
+	/**
+	 * 生成订单时，将商品库存数量减少
+	 * @param orderItem
+	 * @return
+	 */
+	public boolean changeLuxuryNum(Order order);
 	
 }
