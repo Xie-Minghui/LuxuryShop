@@ -99,7 +99,7 @@
 										</div>
 										<div>
 											<span>电话<label>*</label></span>
-											<input type="text" class="textinput" name="PN"/>
+											<input type="text" name="PN"/>
 										</div>
 								</div>
 								<div class="clear"> </div>

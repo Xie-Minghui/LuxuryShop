@@ -43,7 +43,7 @@ function checkEmail() {			// 验证邮箱
 
 function checkUsername() {		// 验证用户名
 	var regex = /^[a-zA-Z_]\w{0,9}$/;	// 字母数字下划线1到10位, 不能是数字开头
-	var value = usernameObj.value;// 获取usernameObj中的文本
+	var value = usernameObj.value;		// 获取usernameObj中的文本
 	var msg = "";						// 最后的提示消息, 默认为空
 	if (!value)							// 如果用户名没填, 填了就是一个字符串可以当作true, 没填的话不论null或者""都是false
 		msg = "用户名必须填写：";			// 改变提示消息

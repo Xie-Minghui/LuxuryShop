@@ -60,8 +60,7 @@ public class LoginController extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/client/index.jsp");
 		}else{
 			//登录失败
-			System.out.println("s");
-			response.sendRedirect(request.getContextPath()+"/client/signin2.jsp");
+			response.sendRedirect(request.getContextPath()+"/client/login.jsp");
 		}
 	}
 

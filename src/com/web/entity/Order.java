@@ -1,5 +1,6 @@
 package com.web.entity;
 import java.math.*;
+import java.util.Date;
 
 public class Order {
 	private Integer CID;
@@ -20,7 +21,7 @@ public class Order {
 	}
 	private String  OID;
 	private Integer NUM;
-	private String  DATE;
+	private Date  DATE;
 	private String  PAY;
 	private BigDecimal SUMPRICE;
 	private Integer STATE;
@@ -50,10 +51,10 @@ public class Order {
 	public void setNUM(Integer nUM) {
 		NUM = nUM;
 	}
-	public String getDATE() {
+	public Date getDATE() {
 		return DATE;
 	}
-	public void setDATE(String dATE) {
+	public void setDATE(Date dATE) {
 		DATE = dATE;
 	}
 	public String getPAY() {

@@ -44,7 +44,7 @@ function cart_del(){
 			<tr>
 				<td>
 					<div style="text-align:right; margin:5px 10px 5px 0px">
-						<a href="${pageContext.request.contextPath }/index.jsp">首页</a>
+						<a href="${pageContext.request.contextPath }/client/index.jsp">首页</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;购物车
 					</div>
 					<table cellspacing="0" class="infocontent">
@@ -91,7 +91,7 @@ function cart_del(){
 														</td>
 													</tr>
 												</table>
-												<c:set value="${total+entry.key.price*entry.value}" var="total" />
+													<c:set value="${total+entry.key.price*entry.value}" var="total" />
 											</c:forEach>
 
 											<table cellspacing="1" class="carttable">

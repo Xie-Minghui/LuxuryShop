@@ -45,6 +45,7 @@ public class addCartController extends HttpServlet {
 		// 1.得到商品id
 		int id = Integer.parseInt(request.getParameter("id"));
 		System.out.println("id1="+id);
+		
 		// 2.调用service层方法，根据id查找商品
 		ProductBiz pb = new ProductBizImpl();
 		try {
