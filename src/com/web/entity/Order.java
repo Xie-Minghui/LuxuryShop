@@ -3,7 +3,21 @@ import java.math.*;
 
 public class Order {
 	private Integer CID;
+	private Consumer consumer;
 	private Integer LID;
+	private Product product;
+	public Consumer getConsumer() {
+		return consumer;
+	}
+	public void setConsumer(Consumer consumer) {
+		this.consumer = consumer;
+	}
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 	private String  OID;
 	private Integer NUM;
 	private String  DATE;
