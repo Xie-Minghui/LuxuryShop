@@ -93,6 +93,17 @@ public class ProductBizImpl implements ProductBiz {
 		return productDao.changeLuxuryNum(order);
 	}
 
+	@Override
+	public List<Object[]> getWeekHotLuxury() {
+		/**
+		 * 得到每周热卖商品
+		 * @param order
+		 * @return
+		 */
+		return productDao.getWeekHotLuxury();
+		
+	}
+	
 	
 	
 	
