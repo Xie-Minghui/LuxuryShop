@@ -170,7 +170,7 @@
                                     <%--上一页 --%>
                                     <c:if test="${bean.currentPage !=1 }">
                                         <li >
-                                        <a class="page-number" href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage-1 }&category=${bean.category}">《《</a>
+                                        <a class="page-number" href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${bean.currentPage-1 }&textfield=${bean.searchfild}">《《</a>
                                         </li>
                                     </c:if>
                                     <c:if test="${bean.currentPage == 1 }">
@@ -184,7 +184,7 @@
                                             <li><span class="page-number current">${pageNum}</span></li>
                                         </c:if>
                                         <c:if test="${pageNum != bean.currentPage }">
-                                            <li><a class="page-number" href="${pageContext.request.contextPath}/showProductByPage?currentPage=${pageNum}&category=${bean.category}">${pageNum}</a></li>
+                                            <li><a class="page-number" href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${pageNum}&textfield=${bean.searchfild}">${pageNum}</a></li>
                                         </c:if>
                                     </c:forEach>
                                     <%--页码数 --%>
@@ -192,7 +192,7 @@
                                     <%--下一页 --%>
                                     <c:if test="${bean.currentPage != bean.totalPage && bean.totalPage!=0}">
                                         <li>
-                                        <a class="page-number"   href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage+1 }&category=${bean.category}">》》</a>
+                                        <a class="page-number"   href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${bean.currentPage+1 }&textfield=${bean.searchfild}">》》</a>
                                         </li>
                                     </c:if>
                                     <c:if test="${bean.currentPage == bean.totalPage || bean.totalPage==0}">

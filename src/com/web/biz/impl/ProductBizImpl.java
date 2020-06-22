@@ -61,7 +61,7 @@ public class ProductBizImpl implements ProductBiz {
 		bean.setCurrentPage(currentPage);
 		
 		//设置搜索标记
-		bean.setCategory(searchfield+"搜索结果");
+		bean.setCategory(searchfield);
 
 		//设置数据信息
 		List<Product> list = productDao.findLuxuryByName(currentPage, currentCount, searchfield);

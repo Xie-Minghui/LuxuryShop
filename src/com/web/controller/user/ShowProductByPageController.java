@@ -76,7 +76,7 @@ public class ShowProductByPageController extends HttpServlet {
 		req.setAttribute("bean", bean);
 		
 		//转发跳转页面
-		req.getRequestDispatcher("/client/product/LuxuryList.jsp").forward(req, resp);
+		req.getRequestDispatcher("/client/shop.jsp").forward(req, resp);
 		
 	}
 	
