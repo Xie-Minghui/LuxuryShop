@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!DOCTYPE HTML>
+<!DOCTYPE>
 <html>
 	<head>
 		<title>创建新客户帐户</title>
@@ -41,15 +41,42 @@
 			});
 		</script>
 		<!---//move-top-top---->
+		
+		<!-- ************************* CSS Files ************************* -->
+	    <!-- Vendor CSS -->
+	    <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/vendor.css">
+	    <!-- style css -->
+	    <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
 	</head>
 	<body>
-		<!---头部---->
+		<!-- Header -->
 		<jsp:include page = "head.jsp"></jsp:include>
+		
+		
+		<!-- Breadcrumb area Start -->
+        <section class="page-title-area bg-color" data-bg-color="#f4f4f4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="page-title">注册</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Excellent</a></li>
+                            <li class="current"><span>注册</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Breadcrumb area End -->
+        
 		<!--- start-content---->
+		<div class="main-content-wrapper">
+            <div class="page-content-inner ptb--80 ptb-md--60 pb-sm--55">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
 		<div class="content login-box">
-			<div class="login-main">
 				<div class="wrap">
-					<h1>注册</h1>
 					<div class="register-grids">
 						<form action="${pageContext.request.contextPath}/RegisterController" method="post" onsubmit="return checkForm();"> 
 								<div class="register-top-grid">
@@ -71,7 +98,7 @@
 										</div>
 										<div>
 											<span>验证码<label>*</label></span>
-											<input type="text">
+											<input type="text"/>
 											<img src="${pageContext.request.contextPath}/imageCode" width="120" height="30" class="textinput" style="height: 30px;" id="imgCode" />&nbsp;&nbsp;
                                             <a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
 										</div>
@@ -82,12 +109,8 @@
 										<h3>用户信息</h3>
 										<div>
 											<span>姓名<label>*</label></span>
-											<input type="text" class="textinput" id = "username" name="CNAME" onkeyup="checkUsername()"/>
+											<input type="text" id="username" name="CNAME" onkeyup="checkUsername();"/>
 											<td colspan="2"><span id="usernameMsg"></span></td>
-										</div>
-										<div>
-											<span>生日<label>*</label></span>
-											<input id="meeting" type="date" name="BDAY" value="2014-01-13"/>
 										</div>
 										<div>
 											<span>称谓<label>*</label></span>
@@ -96,6 +119,10 @@
 												<option name="GENDER" value="M">先生</option>
 												<option name="GENDER" value="F">女士</option>
 											</select>
+										</div>
+										<div>
+											<span>生日<label>*</label></span>
+											<input id="bday" type="date" name="BDAY"/>
 										</div>
 										<div>
 											<span>电话<label>*</label></span>
@@ -119,7 +146,7 @@
 										</div>
 										<div>
 											<span>详细地址<label>*</label></span>
-											<input type="text" class="textinput" name="ADDR"/>
+											<input type="text" name="ADDR"/>
 										</div>
 								</div>
 								<div class="clear"> </div>
@@ -127,22 +154,35 @@
 						</form>
 					</div>
 				</div>
-			</div>
 		</div>
-
+		        		
+		        		</div>
+		        	</div>
+                </div>
+            </div>
+        </div>
 		<!--- //End-content----
-		<!---footer---->
 		
+		<!-- Footer -->
+		<jsp:include page = "foot.jsp"></jsp:include>
 		
 		<!---//End-wrap---->
-<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+		<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 
-	<script type="text/javascript">
-		function changeImage(){
-			//改变验证码图片中的文字
-			document.getElementById("imgCode").src = "${pageContext.request.contextPath}/imageCode?time=" + new Date().getTime();
-		}
-	</script>
+		<script type="text/javascript">
+			function changeImage(){
+				//改变验证码图片中的文字
+				document.getElementById("imgCode").src = "${pageContext.request.contextPath}/imageCode?time=" + new Date().getTime();
+			}
+		</script>
+    
+<!-- ************************* JS Files ************************* -->
+
+<!-- jQuery JS -->
+ <script src="${pageContext.request.contextPath}/client/shop/js/vendor.js"></script>
+
+<!-- Main JS -->
+<script src="${pageContext.request.contextPath}/client/shop/js/main.js"></script>
 
 </body>
 </html>

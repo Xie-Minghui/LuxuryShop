@@ -758,7 +758,11 @@
     	state.window_width = $(window).width();
     });
 
-
+    /*---search account slideToggle---*/
+    $(".search_list > a").on("click", function() {
+        $(this).toggleClass('active');
+        $('.dropdown_search').slideToggle('medium');
+    }); 
 
 
 })(jQuery);

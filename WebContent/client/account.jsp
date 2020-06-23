@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!doctype html>
+<!doctype>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -23,8 +23,6 @@
 </head>
 
 <body>
-	<!-- Header -->
-	
 	
     <!-- Preloader Start -->
     <div class="ft-preloader active">
@@ -39,7 +37,7 @@
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header Start -->
-        
+ 		<jsp:include page = "head.jsp"></jsp:include>
         <!-- Header End -->
 
         <!-- Breadcrumb area Start -->
@@ -49,7 +47,7 @@
                     <div class="col-12 text-center">
                         <h1 class="page-title">我的账号</h1>
                         <ul class="breadcrumb">
-                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">主页</a></li>
+                            <li><a href="index.html">主页</a></li>
                             <li class="current"><span>我的账号</span></li>
                         </ul>
                     </div>
@@ -70,12 +68,12 @@
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#orders" aria-controls="orders" aria-selected="true">订单</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#addresses" aria-controls="addresses" aria-selected="true">地址</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#accountdetails" aria-controls="accountdetails" aria-selected="true">账户信息</a>
-                                    <a class="nav-link" href="${pageContext.request.contextPath}/LogOutController">退出登录</a>
+                                    <a class="nav-link" href="login-register.html">退出登录</a>
                                 </div>
                                 <div class="user-dashboard-tab__content tab-content">
                                     <div class="tab-pane fade show active" id="dashboard">
-                                        <p><strong>${consumer.CNAME}</strong>, 您好</p>
-                                        <p>欢迎您的到来。 你可以查看 <a href="#">最近的订单</a>，管理你的 <a href="#">地址</a> 或 <a href="#">编辑你的账户信息</a>.</p>
+                                        <p>您好 <strong>xxx先生/女生</strong> (不是 <strong>xxx</strong>? <a href="login-register.html">退出登录</a>)</p>
+                                        <p>欢迎您的到来。 你可以查看 <a href="">最近的订单</a>，管理你的 <a href="">地址</a> 或 <a href="">编辑你的账户信息</a>.</p>
                                     </div>
                                     <div class="tab-pane fade" id="orders">
                                         <div class="message-box mb--30 d-none">
@@ -119,7 +117,7 @@
                                                 <div class="text-block">
                                                     <h4 class="mb--20">地址</h4>
                                                     <a href="">编辑</a>
-                                                    <p>地址:${consumer.ADDR}</p>
+                                                    <p>地址xxx</p>
                                                 </div>
                                             </div>                                        
                                         </div>
@@ -203,7 +201,7 @@
         <!-- Main Content Wrapper Start -->
 
         <!-- Footer Start-->
-        
+        <jsp:include page = "foot.jsp"></jsp:include>
         <!-- Footer End-->
 
         <!-- OffCanvas Menu Start -->

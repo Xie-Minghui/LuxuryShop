@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!doctype html>
+<!doctype>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -37,7 +37,7 @@
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header Start -->
-        
+        <jsp:include page = "head.jsp"></jsp:include>
         <!-- Header End -->
 
         <!-- Breadcrumb area Start -->
@@ -182,14 +182,14 @@
         <!-- Main Content Wrapper Start -->
 
         <!-- Footer Start-->
-        
+        <jsp:include page = "foot.jsp"></jsp:include>
         <!-- Footer End-->
 
         <!-- OffCanvas Menu Start -->
         
         <!-- OffCanvas Menu End -->
 
-        <!-- Mini Cart Start购物车滑动小窗口 -->
+        <!-- Mini Cart Start -->
         
         <!-- Mini Cart End -->
 

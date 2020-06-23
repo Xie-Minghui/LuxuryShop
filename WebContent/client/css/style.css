@@ -931,7 +931,8 @@ h2.resp-accordion:first-child {
 	padding: 1em 0;
 }
 .login-main{
-	border-top: 1px solid #EEE;
+	border: 1px solid #EEE;
+	padding: 1em 1.5em;
 }
 .login-left{
 	float: left;

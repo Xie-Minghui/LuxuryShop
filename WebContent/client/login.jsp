@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 	<head>
 		<title>客户登录</title>
@@ -39,17 +39,43 @@
 			});
 		</script>
 		<!---//move-top-top---->
+	
+		<!-- ************************* CSS Files ************************* -->
+	
+	    <!-- Vendor CSS -->
+	    <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/vendor.css">
+	
+	    <!-- style css -->
+	    <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
 	</head>
 	<body>
-		<!---头部---->
+		<!-- Header -->
 		<jsp:include page = "head.jsp"></jsp:include>
-			
-			
+		
+		<!-- Breadcrumb area Start -->
+        <section class="page-title-area bg-color" data-bg-color="#f4f4f4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="page-title">登录</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Excellent</a></li>
+                            <li class="current"><span>登录</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Breadcrumb area End -->
+		
 		<!--- start-content---->
+		<div class="main-content-wrapper">
+            <div class="page-content-inner ptb--80 ptb-md--60 pb-sm--55">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
 		<div class="content login-box">
-			<div class="login-main">
 				<div class="wrap">
-					<h1>登录或创建帐户</h1>
 					<div class="login-left">
 						<h3>注册Excellent账户</h3>
 						<p>注册Excellent账号以便追踪您的订单，管理收货地址，获取更多个性化信息。</p>
@@ -79,9 +105,25 @@
 					</div>
 					<div class="clear"> </div>
 				</div>
-			</div>
 		</div>
+				    	</div>
+		        	</div>
+                </div>
+            </div>
+        </div>
 		<!---//End-wrap---->
-<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+		
+		<!-- Footer -->
+		<jsp:include page = "foot.jsp"></jsp:include>
+		
+		<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+
+    
+<!-- ************************* JS Files ************************* -->
+<!-- jQuery JS -->
+<script src="${pageContext.request.contextPath}/client/shop/js/vendor.js"></script>
+<!-- Main JS -->
+<script src="${pageContext.request.contextPath}/client/shop/js/main.js"></script>
+
 </body>
 </html>
