@@ -100,9 +100,9 @@
                                                 <div class="product__inner">
                                                     <div class="product__image">
                                                         <figure class="product__image--holder">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-08-270x300.jpg" alt="Product">
+                                                            <img src="${pageContext.request.contextPath}/${p.IMAGE}" alt="Product">
                                                         </figure>
-                                                        <a href="product_details.jsp" class="product-overlay"></a>
+                                                        <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}" class="product-overlay"></a>
                                                         <div class="product__action">
                                                             <a data-toggle="modal" data-target="#productModal" class="action-btn">
                                                                 <i class="fa fa-eye"></i>
@@ -121,10 +121,10 @@
                                                     <div class="product__info">
                                                         <div class="product__info--left">
                                                             <h3 class="product__title">
-                                                                <a href="product-details.html">Lexbaro Begadi</a>
+                                                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}">${p.LNAME }</a>
                                                             </h3>
                                                             <div class="product__price">
-                                                                <span class="money">132.00</span>
+                                                                <span class="money">${p.PRICE }</span>
                                                                 <span class="sign">$</span>
                                                             </div>
                                                         </div>
@@ -134,8 +134,8 @@
                                             <div class="payne-product-list">
                                                 <div class="product__inner">
                                                     <figure class="product__image">
-                                                        <a href="product-details.html" class="d-block">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-08-270x300.jpg" alt="Products">
+                                                        <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}" class="d-block">
+                                                            <img src="${pageContext.request.contextPath}/${p.IMAGE}" alt="Products">
                                                         </a>
                                                         <div class="product__thumbnail-action">
                                                             <a data-toggle="modal" data-target="#productModal" class="action-btn quick-view">
@@ -146,7 +146,7 @@
                                                     </figure>
                                                     <div class="product__info">
                                                         <h3 class="product__title">
-                                                            <a href="product-details.html">Lexbaro Begadi</a>
+                                                            <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}">Lexbaro Begadi</a>
                                                         </h3>
                                                         <div class="product__price">
                                                             <span class="money">132.00</span>

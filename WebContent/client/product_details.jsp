@@ -20,6 +20,21 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+
+    <script>
+        function addcart(pnum, id){
+            pnum = parseInt(pnum);
+            var element = document.getElementById("pro-qty");
+            var count = parseInt(element.value);
+            if (count > pnum){
+                alert("已达到商品最大购买量");
+                count = pnum;
+            }
+            location.href = "${pageContext.request.contextPath}/addCartController?id="
+                    + id + "&count=" + count;
+        }
+    </script>
+
 </head>
 
 <body>
@@ -110,12 +125,11 @@
                                     <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
                                 </div>
                                 
-                                <h3 class="product-title mb--20">商品AAA</h3>
-                                <p class="product-short-description mb--20">商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX</p>
+                                <h3 class="product-title mb--20">${p.LNAME}</h3>
                                 <div class="product-price-wrapper mb--25">
-                                    <span class="money">￥400.00</span>
+                                    <span class="money">￥${p.PRICE}</span>
                                     <span class="price-separator">-</span>
-                                    <span class="money">￥600.00</span>
+                                    <span class="money">￥${p.PRICE+50}</span>
                                 </div>
                                 <div
                                     class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">
@@ -123,15 +137,15 @@
                                         <label class="quantity-label" for="pro-qty">数量:</label>
                                         <div class="quantity">
                                             <input type="number" class="quantity-input" name="pro-qty" id="pro-qty"
-                                                value="1" min="1">
+                                                value="1" min="1" >
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-shape-square btn-size-sm"
-                                        onclick="window.location.href='cart.html'">加入购物车</button>
+                                        onclick="addcart('${p.RESTNUM}','${p.LID}')">加入购物车</button>
                                 </div>
                                 <div class="product-footer-meta">
                                     <p><span>分类:</span>
-                                        <a href="shop.html">类型A</a>
+                                        <a href="shop.html">${p.TYPE}</a>
                                     </p>
                                 </div>
                             </div>
@@ -158,17 +172,9 @@
                                     <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
                                         aria-labelledby="nav-description-tab">
                                         <div class="product-description">
-                                            <p>商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX
-                                            商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX商品描述XXX</p>
-
-                                            <p>商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY
-                                            商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY商品描述YYY</p>
-
-                                            <h5 class="product-description__heading">特点:</h5>
+                                            <h5 class="product-description__heading">商品信息:</h5>
                                             <ul>
-                                                <li><i class="fa fa-circle"></i><span>贵贵贵贵贵贵贵贵贵贵贵贵贵贵贵贵贵贵</span></li>
-                                                <li><i class="fa fa-circle"></i><span>特点2特点2特点2</span></li>
-                                                <li><i class="fa fa-circle"></i><span>特点3特点3特点3特点3</span></li>
+                                                <li><i class="fa fa-circle"></i><span>${p.INFOR}</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -179,18 +185,16 @@
                                                 <tbody>
                                                     <tr>
                                                         <th>重量</th>
-                                                        <td>57 g</td>
+                                                        <td>${p.WEIGHT} Kg</td>
                                                     </tr>
                                                     <tr>
                                                         <th>尺寸</th>
-                                                        <td>160 × 152 × 110 cm</td>
+                                                        <td>${p.SIZE} cm</td>
                                                     </tr>
                                                     <tr>
                                                         <th>颜色</th>
                                                         <td>
-                                                            <a href="shop.html">黑</a>,
-                                                            <a href="shop.html">棕</a>,
-                                                            <a href="shop.html">红</a>
+                                                            <a href="shop.html">${p.COLOR}</a>
                                                         </td>
                                                     </tr>
                                                 </tbody>

@@ -47,7 +47,7 @@
                     <div class="col-12 text-center">
                         <h1 class="page-title">我的账号</h1>
                         <ul class="breadcrumb">
-                            <li><a href="index.html">主页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">主页</a></li>
                             <li class="current"><span>我的账号</span></li>
                         </ul>
                     </div>
@@ -68,11 +68,11 @@
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#orders" aria-controls="orders" aria-selected="true">订单</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#addresses" aria-controls="addresses" aria-selected="true">地址</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#accountdetails" aria-controls="accountdetails" aria-selected="true">账户信息</a>
-                                    <a class="nav-link" href="login-register.html">退出登录</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/LogOutController">退出登录</a>
                                 </div>
                                 <div class="user-dashboard-tab__content tab-content">
                                     <div class="tab-pane fade show active" id="dashboard">
-                                        <p>您好 <strong>xxx先生/女生</strong> (不是 <strong>xxx</strong>? <a href="login-register.html">退出登录</a>)</p>
+                                        <p>您好 <strong>${consumer.CNAME}先生/女生</strong> (不是 <strong>本人</strong>? <a href="login-register.html">退出登录</a>)</p>
                                         <p>欢迎您的到来。 你可以查看 <a href="">最近的订单</a>，管理你的 <a href="">地址</a> 或 <a href="">编辑你的账户信息</a>.</p>
                                     </div>
                                     <div class="tab-pane fade" id="orders">
@@ -117,7 +117,7 @@
                                                 <div class="text-block">
                                                     <h4 class="mb--20">地址</h4>
                                                     <a href="">编辑</a>
-                                                    <p>地址xxx</p>
+                                                    <p>地址${consumer.ADDR}</p>
                                                 </div>
                                             </div>                                        
                                         </div>
@@ -128,7 +128,7 @@
                                                 <div class="col-md-6 mb-sm--20">
                                                     <div class="form__group">
                                                         <label class="form__label" for="f_name">名 <span class="required">*</span></label>
-                                                        <input type="text" name="f_name" id="f_name" class="form__input">
+                                                        <input type="text" name="f_name" id="f_name" class="form__input" placeholder = "${consumer.CNAME}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -141,9 +141,9 @@
                                             <div class="row mb--20">
                                                 <div class="col-12">
                                                     <div class="form__group">
-                                                        <label class="form__label" for="d_name">称谓 <span class="required">*</span></label>
-                                                        <input type="text" name="d_name" id="d_name" class="form__input">
-                                                        <span class="form__notes"><em>选择我们对您的称谓</em></span>
+                                                        <label class="form__label" for="d_name">电话 <span class="required">*</span></label>
+                                                        <input type="text" name="d_name" id="d_name" class="form__input" placeholder="${consumer.PN}">
+                                                        <span class="form__notes"><em>更改手机号，意味着收货联系方式也会改变</em></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -151,7 +151,7 @@
                                                 <div class="col-12">
                                                     <div class="form__group">
                                                         <label class="form__label" for="email">电子邮件 <span class="required">*</span></label>
-                                                        <input type="email" name="email" id="email" class="form__input">
+                                                        <input type="email" name="email" id="email" class="form__input" placeholder="${consumer.EMAIL}">
                                                     </div>
                                                 </div>
                                             </div>
