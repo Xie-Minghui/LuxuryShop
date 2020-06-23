@@ -60,7 +60,7 @@ function checkUsername() {		// 验证用户名
 	return msg == "";					// 如果提示消息为空则代表没出错, 返回true
 }
 function checkPhone(){  //验证电话号码
-	var regex = /^[1][3,4,5,7,8][0-9]{9}$/;
+	var regex = /^[1][0-9]{10}$/;
 	var value = phoneObj.value;
 //	printf("电话验证\n"); //添加输出语句会直接不运行
 	var msg = "";
