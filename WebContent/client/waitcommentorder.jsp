@@ -100,7 +100,7 @@
                     </div>
                     <div class="cart-calculator__item--value">
                         <span class="product-price-wrapper">
-                            <span class="money">未发货</span>
+                            <span class="money">待评价</span>
                         </span>
                     </div>
                 </div>
@@ -243,9 +243,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="waitcommentorder.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">
-                                    确认收货
-                                </a>
+                                <div class="form-row">
+		                            <div class="form__group col-12">
+		                                <label for="orderNotes" class="form__label">评价</label>
+		                                <textarea class="form__input form__input--textarea" id="orderNotes" name="orderNotes" placeholder="评价信息"></textarea>
+		                            </div>
+		                        </div>
+                                <a href="finishedorder.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                    确认评价
+                                </a>                               
+                        </div>
                             </div>
                         </div>
                     </div>

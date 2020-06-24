@@ -100,7 +100,7 @@
                     </div>
                     <div class="cart-calculator__item--value">
                         <span class="product-price-wrapper">
-                            <span class="money">未发货</span>
+                            <span class="money">已完成</span>
                         </span>
                     </div>
                 </div>
@@ -208,8 +208,14 @@
                                         </div>  
                                     </div>
                                 </div>
+                                <div class="row no-gutters border-top pt--20 mt--20">
+                                    <div class="col-sm-6 text-sm-right">
+                                        <button type="submit" class="cart-form__btn">删除订单</button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
+                        
                         <div class="col-lg-4">
                             <div class="cart-collaterals">
                                 <div class="cart-totals">
@@ -243,8 +249,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="waitcommentorder.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">
-                                    确认收货
+                                <a href="index.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                    返回主页
                                 </a>
                             </div>
                         </div>

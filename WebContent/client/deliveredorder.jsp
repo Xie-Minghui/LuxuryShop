@@ -100,7 +100,7 @@
                     </div>
                     <div class="cart-calculator__item--value">
                         <span class="product-price-wrapper">
-                            <span class="money">未发货</span>
+                            <span class="money">已发货</span>
                         </span>
                     </div>
                 </div>
