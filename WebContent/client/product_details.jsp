@@ -23,6 +23,7 @@
 
     <script>
         function addcart(pnum, id){
+            alert("已加入购物车");
             pnum = parseInt(pnum);
             var element = document.getElementById("pro-qty");
             var count = parseInt(element.value);

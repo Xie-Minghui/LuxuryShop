@@ -69,7 +69,7 @@ public class addCartController extends HttpServlet {
 				cart.put(p, count + pnum);
 			}
 			session.setAttribute("cart", cart);
-			response.sendRedirect(request.getContextPath() + "/client/cart.jsp");
+			response.sendRedirect(request.getContextPath()+"/FindProductByIdController?id="+id);
 			return;
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -23,26 +23,28 @@
 
     <script>
         //当商品数量发生变化时触发该方法
-        function addcart(pnum, id){
+        function addcart(pnum, id, inputid){
             pnum = parseInt(pnum);
-            var element = document.getElementById("qty-1");
+            var element = document.getElementById(inputid);
             var count = parseInt(element.value);
             if (count > pnum){
                 alert("已达到商品最大购买量");
                 count = pnum;
             }
-            location.href = "${pageContext.request.contextPath}/addCartController?id="
+            location.href = "${pageContext.request.contextPath}/ChangeCartController?id="
                     + id + "&count=" + count;
         }
         
+        function cart_delitem(id){
+            alert("您确定要删除该商品吗");
+            location.href = "${pageContext.request.contextPath}/ChangeCartController?id="
+                    + id + "&count=" + 0;
+        }
+
         function cart_del(){
-            var msg = "您确定要删除该商品吗？";
-            if(confirm(msg) == true){
-                return true;
-            }else{
-                return false;
-            }
-            
+            alert("您确定要清空购物车吗");
+            location.href = "${pageContext.request.contextPath}/ChangeCartController?id="
+                    + 1000 + "&count=" + -1;
         }
         </script>
 
@@ -107,7 +109,7 @@
                                                 <c:set var="total" value="0" /> 
                                                 <c:forEach items="${cart}" var="entry" varStatus="vs">
                                                     <tr>
-                                                        <td class="product-remove text-left"><a href=""><i class="flaticon-cross"></i></a></td>
+                                                        <td class="product-remove text-left"><a onclick="cart_delitem('${entry.key.LID}')" href=""><i class="flaticon-cross"></i></a></td>
                                                         <td class="product-thumbnail text-left">
                                                             <img src="${pageContext.request.contextPath}/${entry.key.IMAGE}" alt="Product Thumnail">
                                                         </td>
@@ -123,8 +125,10 @@
                                                         </td>
                                                         <td class="product-quantity">
                                                             <div class="quantity">
-                                                                <input type="number" class="quantity-input" name="qty" id="qty-1" value="${entry.value}" min="1" 
-                                                                    onclick="addcart('${entry.key.RESTNUM}','${entry.key.LID}')"/>
+                                                                <input type="number" class="quantity-input" name="qty" id="qty-1${entry.key.LID}" value="${entry.value}" min="1" 
+                                                                    ondblclick="addcart('${entry.key.RESTNUM}','${entry.key.LID}','qty-1${entry.key.LID}')" max="30"/>
+                                                                <div class="dec qtybutton">-</div>
+                                                                <div class="inc qtybutton">+</div>
                                                             </div>
                                                         </td>
                                                         <td class="product-total-price">
@@ -143,7 +147,7 @@
                                 <div class="row no-gutters border-top pt--20 mt--20">
                                 
                                     <div class="col-sm-6 text-sm-right">
-                                        <button type="submit" class="cart-form__btn">清空购物车</button>
+                                        <button type="submit" class="cart-form__btn" onclick="cart_del()">清空购物车</button>
                                     </div>
                                 </div>
                             </form>
@@ -166,7 +170,7 @@
                                                 <span>运费</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥20.00</span>
+                                                <span>￥${cart.size()*5}</span>
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item order-total">
@@ -175,7 +179,7 @@
                                             </div>
                                             <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥${total+20}</span>
+                                                    <span class="money">￥${total+cart.size()*5}</span>
                                                 </span>
                                             </div>
                                         </div>

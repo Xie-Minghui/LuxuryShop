@@ -1,6 +1,7 @@
 package com.web.controller.user;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -40,9 +41,6 @@ public class ChangeCartController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//获取商品的id
-		int id = Integer.parseInt(request.getParameter("id"));
-		
 		//获取商品的数量
 		Integer count = 0;
 		String _count = request.getParameter("count");
@@ -52,12 +50,23 @@ public class ChangeCartController extends HttpServlet {
 			//把字符串转换为整形
 			count = Integer.parseInt(_count);
 		}
-		
+
 		//获得session对象
 		HttpSession session = request.getSession();
 		
 		//获取购物车信息
 		Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart");
+
+		// 判断是否为清空购物车
+		if(count < 0) {
+			cart.clear();
+			//跳转到购物车页面
+			response.sendRedirect(request.getContextPath()+"/client/cart.jsp");
+			return;
+		}
+
+		//获取商品的id
+		int id = Integer.parseInt(request.getParameter("id"));
 		
 		//根据id查询商品对象
 		ProductBiz productBiz = new ProductBizImpl();
@@ -79,8 +88,10 @@ public class ChangeCartController extends HttpServlet {
 	    	cart.remove(product);
 		}
 		
+		
+
 		//跳转到购物车页面
-		response.sendRedirect(request.getContextPath()+"/client/product/cart.jsp");
+		response.sendRedirect(request.getContextPath()+"/client/cart.jsp");
 	}
 
 }

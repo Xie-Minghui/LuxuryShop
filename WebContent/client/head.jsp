@@ -241,12 +241,12 @@
                             </a>
                         </div>
                         <div class="toolbar-item mini-cart-btn">
-                            <a href="#miniCart" class="toolbar-btn js-toolbar">
+                            <a href="${pageContext.request.contextPath}/client/cart.jsp" class="toolbar-btn">
                                 <span class="mini-cart-btn__icon">
                                     <i class="flaticon-bag"></i>
                                 </span>
                                 <sup class="mini-cart-btn__count">
-                                    02
+                                    ${cart.size()}
                                 </sup>
                             </a>
                         </div>
