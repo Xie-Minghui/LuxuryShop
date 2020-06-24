@@ -11,7 +11,7 @@ public class Order {
 	private Timestamp  DATE;		//下单日期
 	private String  PAY;			//支付方式
 	private BigDecimal SUMPRICE;	//订单总价
-	private Integer STATE;			//订单状态，0未支付，1已支付
+	private Integer STATE;			//订单状态，0未支付，1已支付，2以发货
 	private String NAME;			//收件人姓名
 	private String PHONE;			//收件人手机号
 	private String PROVINCE;		//收件省份

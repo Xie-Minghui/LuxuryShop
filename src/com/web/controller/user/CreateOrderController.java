@@ -70,6 +70,9 @@ public class CreateOrderController extends HttpServlet {
 		//设置订单的用户信息
 		order.setConsumer(consumer);
 		order.setCID(consumer.getCID());
+
+		// 设置订单状态
+		order.setSTATE(0);
 		
 		//设置订单条目信息
 		for (Product p : cart.keySet()) {
@@ -93,11 +96,14 @@ public class CreateOrderController extends HttpServlet {
 		OrderBiz orderBiz = new OrderBizImpl();
 		boolean flag = orderBiz.addOrder(order);
 		
+
 		//如果添加成功，则跳转到添加订单成功页面
 		if(flag){
-			resp.sendRedirect(req.getContextPath()+"/client/order/createOrderSuccess.jsp");
+			// seesion中添加订单
+			session.setAttribute("order", order);
+			resp.sendRedirect(req.getContextPath()+"/client/checkout.jsp");
 		}else{
-			resp.sendRedirect(req.getContextPath()+"/client/order/order.jsp");
+			resp.sendRedirect(req.getContextPath()+"/client/cart.jsp");
 		}
 	}
 

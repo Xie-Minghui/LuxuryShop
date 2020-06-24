@@ -114,10 +114,10 @@
 										</div>
 										<div>
 											<span>称谓<label>*</label></span>
-											<select>
-												<option name="GENDER" value="" disabled="" selected="selected">- 请选择 -</option>
-												<option name="GENDER" value="M">先生</option>
-												<option name="GENDER" value="F">女士</option>
+											<select name="GENDER">
+												<option  value="" disabled="" selected="selected">- 请选择 -</option>
+												<option  value="M">先生</option>
+												<option  value="F">女士</option>
 											</select>
 										</div>
 										<div>

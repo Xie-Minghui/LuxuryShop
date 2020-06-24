@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype>
 <html class="no-js" lang="zxx">
 
@@ -71,7 +72,7 @@
                                     <div class="form-row mb--20">
                                         <div class="form__group col-md-6 mb-sm--30">
                                             <label for="billing_fname" class="form__label">姓氏  <span class="required">*</span></label>
-                                            <input type="text" name="billing_fname" id="billing_fname" class="form__input">
+                                            <input type="text" name="billing_fname" id="billing_fname" class="form__input" placeholder="${order.consumer.CNAME}">
                                         </div>
                                         <div class="form__group col-md-6">
                                             <label for="billing_lname" class="form__label">名字  <span class="required">*</span></label>
@@ -81,29 +82,29 @@
                                     <div class="form-row mb--20">
                                         <div class="form__group col-12">
                                             <label for="billing_phone" class="form__label">手机号码 <span class="required">*</span></label>
-                                            <input type="text" name="billing_phone" id="billing_phone" class="form__input">
+                                            <input type="text" name="billing_phone" id="billing_phone" class="form__input" placeholder="${order.consumer.PN}">
                                         </div>
                                     </div>
                                     <div class="form-row mb--20">
                                         <div class="form__group col-md-6 mb-sm--30">
                                             <label class="form__label">省份  <span class="required">*</span></label>
-                                            <input type="text" name="province" id="province" class="form__input">
+                                            <input type="text" name="province" id="province" class="form__input" placeholder="${order.consumer.PROVINCE}">
                                         </div>
                                         <div class="form__group col-md-6">
                                             <label for="billing_city" class="form__label">城市  <span class="required">*</span></label>
-                                            <input type="text" name="billing_city" id="billing_city" class="form__input">
+                                            <input type="text" name="billing_city" id="billing_city" class="form__input" placeholder="${order.consumer.CITY}">
                                         </div>
                                     </div>
                                     <div class="form-row mb--20">
                                         <div class="form__group col-12">
                                             <label for="billing_district" class="form__label">区县 <span class="required">*</span></label>
-                                            <input type="text" name="billing_district" id="billing_district" class="form__input">
+                                            <input type="text" name="billing_district" id="billing_district" class="form__input" placeholder="${order.consumer.DISTRICT}">
                                         </div>
                                     </div>
                                     <div class="form-row mb--20">
                                         <div class="form__group col-12">
                                             <label for="billing_streetAddress" class="form__label">详细地址<span class="required">*</span></label>
-                                            <input type="text" name="billing_streetAddress" id="billing_streetAddress" class="form__input mb--30" placeholder="街道名、门牌号">
+                                            <input type="text" name="billing_streetAddress" id="billing_streetAddress" class="form__input mb--30" placeholder="${order.consumer.ADDR}">
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -129,33 +130,31 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>这是一个商品
-                                                    <strong><span>&#10005;</span>1</strong>
-                                                </th>
-                                                <td class="text-right">￥49.00</td>
-                                            </tr>
-                                            <tr>
-                                                <th>这又是一个商品
-                                                    <strong><span>&#10005;</span>1</strong>
-                                                </th>
-                                                <td class="text-right">￥50.00</td>
-                                            </tr>
+                                            <c:set var="total" value="0" /> 
+                                            <c:forEach items="${order.orderItems}" var="entry" varStatus="vs">
+                                                <tr>
+                                                    <th>${entry.luxury.LNAME}
+                                                        <strong><span>&#10005;</span>${entry.NUM}</strong>
+                                                    </th>
+                                                <td class="text-right">￥${entry.luxury.PRICE}</td>
+                                                </tr>
+                                            <c:set value="${total+entry.luxury.PRICE*entry.NUM}" var="total" />
+                                            </c:forEach>
                                         </tbody>
                                         <tfoot>
                                             <tr class="cart-subtotal">
                                                 <th>小计</th>
-                                                <td class="text-right">￥99.00</td>
+                                                <td class="text-right">￥${total}</td>
                                             </tr>
                                             <tr class="shipping">
                                                 <th>运费</th>
                                                 <td class="text-right">
-                                                    <span>￥20.00</span>
+                                                    <span>￥${order.orderItems.size()*5}</span>
                                                 </td>
                                             </tr>
                                             <tr class="order-total">
                                                 <th>总计</th>
-                                                <td class="text-right"><span class="order-total-ammount">￥119.00</span></td>
+                                                <td class="text-right"><span class="order-total-ammount">￥${total+order.orderItems.size()*5}</span></td>
                                             </tr>
                                         </tfoot>
                                     </table>

@@ -20,6 +20,14 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+
+    <script>
+        function logoutsure(name){
+            alert(name+"已经正常退出账户！");
+            location.href = "${pageContext.request.contextPath}/LogOutController";
+        }
+    </script>
+
 </head>
 
 <body>
@@ -68,7 +76,7 @@
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#orders" aria-controls="orders" aria-selected="true">订单</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#addresses" aria-controls="addresses" aria-selected="true">地址</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#accountdetails" aria-controls="accountdetails" aria-selected="true">账户信息</a>
-                                    <a class="nav-link" href="${pageContext.request.contextPath}/LogOutController">退出登录</a>
+                                    <a class="nav-link" onclick="logoutsure('${consumer.CNAME}')" >退出登录</a>
                                 </div>
                                 <div class="user-dashboard-tab__content tab-content">
                                     <div class="tab-pane fade show active" id="dashboard">

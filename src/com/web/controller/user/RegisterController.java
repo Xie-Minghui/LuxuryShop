@@ -45,7 +45,8 @@ public class RegisterController extends HttpServlet {
 	    try {
 	    	//把表单中的参数赋值给用户对象
 			BeanUtils.populate(consumer, request.getParameterMap());
-			
+			System.out.println(consumer.getGENDER());
+			System.out.println(consumer.getCNAME());
 //			//给用户设置激活码
 //			user.setActiveCode(ActiveCodeUtil.createActiveCode());
 //			

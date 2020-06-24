@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!doctype html>
+<!doctype>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -38,7 +38,7 @@
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header -->
-
+        <jsp:include page = "head.jsp"></jsp:include>
         <!-- Breadcrumb area Start -->
         <section class="page-title-area bg-color" data-bg-color="#f4f4f4">
             <div class="container">
@@ -46,7 +46,7 @@
                     <div class="col-12 text-center">
                         <h1 class="page-title">分类/搜索结果</h1>
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Excellent</a></li>
+                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">Excellent</a></li>
                             <li class="current"><span>分类</span></li>
                         </ul>
                     </div>

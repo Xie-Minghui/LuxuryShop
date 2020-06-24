@@ -186,7 +186,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="checkout.html" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                <a href="${pageContext.request.contextPath}/CreateOrderController" class="btn btn-size-md btn-shape-square btn-fullwidth">
                                     结算
                                 </a>
                             </div>

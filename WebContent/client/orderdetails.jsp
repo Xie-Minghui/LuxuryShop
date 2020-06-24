@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype>
 <html class="no-js" lang="zxx">
 
@@ -51,7 +52,7 @@
                     <div class="col-12 text-center">
                         <h1 class="page-title">Track Order</h1>
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">Home</a></li>
                             <li class="current"><span>Track Order</span></li>
                         </ul>
                     </div>
@@ -67,7 +68,7 @@
                         <span>收货地址</span>
                     </div>
                     <div class="cart-calculator__item--value">
-                        <span>xxxxxxx</span>
+                        <span>${order.ADDR}</span>
                     </div>
                 </div>
                 <div class="cart-calculator__item">
@@ -75,7 +76,7 @@
                         <span>订单编号</span>
                     </div>
                     <div class="cart-calculator__item--value">
-                        <span>xxxxxxx</span>                
+                        <span>${order.OID}</span>                
                     </div>
                 </div>
                 <div class="cart-calculator__item">
@@ -83,7 +84,7 @@
                         <span>商家</span>
                     </div>
                     <div class="cart-calculator__item--value">
-                        <span>xxxxxxx</span>                
+                        <span>Excellent:023-65106523</span>
                     </div>
                 </div>
                 <div class="cart-calculator__item">

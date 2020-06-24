@@ -1,3 +1,5 @@
+
+INSERT INTO `luxuryshop`.`admin` (`AID`, `ANAME`, `PSWD`) VALUES ('1', 'a', '123456');
 INSERT INTO `luxuryshop`.`luxury`(`LID`, `AID`, `LNAME`, `PRICE`, `RESTNUM`, `TYPE`, `INFOR`, `IMAGE`, `SALENUM`, `VIEWCOUNT`, `SIZE`, `WEIGHT`, `COLOR`) VALUES (2, 1, 'a', 10.00, 20, '首饰', 'ok', NULL, 10, 133, '100×150×200', 13.00, '红，蓝，棕');
 INSERT INTO `luxuryshop`.`luxury`(`LID`, `AID`, `LNAME`, `PRICE`, `RESTNUM`, `TYPE`, `INFOR`, `IMAGE`, `SALENUM`, `VIEWCOUNT`, `SIZE`, `WEIGHT`, `COLOR`) VALUES (3, 1, 'b', 10.00, 20, '首饰', 'ok', NULL, 10, 133, '100×150×200', 13.00, '蓝红，蓝，棕');
 INSERT INTO `luxuryshop`.`luxury`(`LID`, `AID`, `LNAME`, `PRICE`, `RESTNUM`, `TYPE`, `INFOR`, `IMAGE`, `SALENUM`, `VIEWCOUNT`, `SIZE`, `WEIGHT`, `COLOR`) VALUES (4, 1, 'ca', 10.00, 20, '首饰', 'ok', NULL, 10, 133, '100×150×200', 13.00, '红，蓝，棕');
