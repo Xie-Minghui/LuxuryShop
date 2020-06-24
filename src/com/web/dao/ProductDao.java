@@ -58,7 +58,7 @@ public interface ProductDao {
 	 * @param orderItem
 	 * @return
 	 */
-	public boolean changeLuxuryNum(Order order);
+	public boolean changeLuxuryNum(OrderItem orderItem);
 	
 	/**
 	 * 得到每周热卖商品

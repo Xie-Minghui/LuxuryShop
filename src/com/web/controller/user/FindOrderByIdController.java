@@ -1,7 +1,6 @@
 package com.web.controller.user;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,10 +44,10 @@ public class FindOrderByIdController extends HttpServlet {
 		//调用业务逻辑层的查询方法
 		OrderBiz orderBiz = new OrderBizImpl();
 		
-		List<Order> orderlist = orderBiz.findOrderById(id);
+		Order order = orderBiz.findOrderById(id);
 		
 		//把数据传到界面中
-		req.setAttribute("orderList", orderlist);
+		req.setAttribute("order", order);
 		
 		//转发
 		req.getRequestDispatcher("/client/order/orderInfo.jsp").forward(req, resp);

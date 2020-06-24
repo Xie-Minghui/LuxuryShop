@@ -2,7 +2,7 @@ package com.web.biz;
 
 import java.util.List;
 
-import com.web.entity.Order;
+import com.web.entity.OrderItem;
 import com.web.entity.Product;
 import com.web.util.PageBean;
 
@@ -44,7 +44,7 @@ public interface ProductBiz {
 	 * @param orderItem
 	 * @return
 	 */
-	public boolean changeLuxuryNum(Order order);
+	public boolean changeLuxuryNum(OrderItem orderItem);
 	
 	/**
 	 * 得到每周热卖商品

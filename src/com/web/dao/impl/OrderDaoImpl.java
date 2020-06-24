@@ -1,9 +1,9 @@
 package com.web.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,23 +25,26 @@ public class OrderDaoImpl implements OrderDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "insert into orders (cid, lid, oid, num, "
-                    + "date, pay, sumprice, state) "
-					+ "values (?,?,?,?,?,?,?,?)";
+			String sql = "insert into orders (oid, cid, date, pay, sumprice,"
+                    + "state, name, phone, province, city, district, addr, remark) "
+					+ "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		    //编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			//设置参数
-			ps.setInt(1, order.getCID());
-			ps.setInt(2, order.getLID());
-			ps.setString(3, order.getOID());
-			ps.setInt(4, order.getNUM());
-			ps.setDate(5,  new Date(new java.util.Date().getTime()));
-			ps.setString(6, order.getPAY());
-			ps.setBigDecimal(7, order.getSUMPRICE());
-			// 0  待支付，1已支付
-			ps.setInt(8, 0);
-			
+			ps.setString(1, order.getOID());
+			ps.setInt(2, order.getCID());
+			ps.setTimestamp(3, new Timestamp(new java.util.Date().getTime()));
+			ps.setString(4, order.getPAY());
+			ps.setBigDecimal(5, order.getSUMPRICE());
+			ps.setInt(6, 0);// 0  待支付，1已支付
+			ps.setString(7, order.getPHONE());
+			ps.setString(8, order.getPROVINCE());
+			ps.setString(9, order.getCITY());
+			ps.setString(10, order.getDISTRICT());
+			ps.setString(11, order.getADDR());
+			ps.setString(12, order.getADDR());
+			ps.setString(13, order.getREMARK());
 			//执行添加
 			count = ps.executeUpdate();
 			
@@ -75,24 +78,27 @@ public class OrderDaoImpl implements OrderDao {
 				//实例化订单对象
 				Order order = new Order();
 				
-				order.setCID(rs.getInt("CID"));
-				order.setLID(rs.getInt("LID"));
 				order.setOID(rs.getString("OID"));
-				order.setNUM(rs.getInt("NUM"));
-				order.setDATE(rs.getDate("DATE"));
+				order.setCID(rs.getInt("CID"));
+				order.setConsumer(consumer);
+				order.setDATE(rs.getTimestamp("DATE"));
 				order.setPAY(rs.getString("PAY"));
 				order.setSUMPRICE(rs.getBigDecimal("SUMPRICE"));
 				order.setSTATE(rs.getInt("STATE"));
-				order.setCOMMENT(rs.getString("COMMENT"));
-				
-				order.setConsumer(consumer);
-				//根据订单id查询订单条目信息
-//						List<OrderItem> orderItems = 
-//						order.setOrderItems(orderItems);
+				order.setNAME(rs.getString("NAME"));
+				order.setPHONE(rs.getString("PHONE"));
+				order.setPROVINCE(rs.getString("PROVINCE"));
+				order.setCITY(rs.getString("CITY"));
+				order.setDISTRICT("DISTRICT");
+				order.setADDR("ADDR");
+				order.setREMARK("REMARK");
 				
 				//把对象添加到集合中
 				list.add(order);
 			}
+			
+			//关闭
+			JDBCUtil.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -100,7 +106,7 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public List<Order> findOrderById(String id) {
+	public Order findOrderById(String id) {
 		//实例化集合对象
 		List<Order> list = new ArrayList<Order>();
 		
@@ -109,7 +115,7 @@ public class OrderDaoImpl implements OrderDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "select * from orders where Oid="+id;
+			String sql = "select * from orders where OID="+id;
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -121,22 +127,29 @@ public class OrderDaoImpl implements OrderDao {
 				//实例化订单对象
 				Order order = new Order();
 				
-				order.setCID(rs.getInt("CID"));
-				order.setLID(rs.getInt("LID"));
 				order.setOID(rs.getString("OID"));
-				order.setNUM(rs.getInt("NUM"));
-				order.setDATE(rs.getDate("DATE"));
+				order.setCID(rs.getInt("CID"));
+				order.setDATE(rs.getTimestamp("DATE"));
 				order.setPAY(rs.getString("PAY"));
 				order.setSUMPRICE(rs.getBigDecimal("SUMPRICE"));
 				order.setSTATE(rs.getInt("STATE"));
-				order.setCOMMENT(rs.getString("COMMENT"));
-
+				order.setNAME(rs.getString("NAME"));
+				order.setPHONE(rs.getString("PHONE"));
+				order.setPROVINCE(rs.getString("PROVINCE"));
+				order.setCITY(rs.getString("CITY"));
+				order.setDISTRICT("DISTRICT");
+				order.setADDR("ADDR");
+				order.setREMARK("REMARK");
+				
+				//把对象添加到集合中
 				list.add(order);
 			}
+			//关闭
+			JDBCUtil.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;
+		return list.size()> 0 ? list.get(0) : null;
 	}
     
 }
