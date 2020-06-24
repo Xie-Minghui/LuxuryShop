@@ -13,5 +13,5 @@ public interface OrderBiz {
 	public List<Order> findOrderByConsumer(Consumer consumer);
 	
 	//通过订单id查询订单
-	public List<Order> findOrderById(String id);
+	public Order findOrderById(String id);
 }

@@ -17,6 +17,7 @@ import com.web.biz.OrderBiz;
 import com.web.biz.impl.OrderBizImpl;
 import com.web.entity.Consumer;
 import com.web.entity.Order;
+import com.web.entity.OrderItem;
 import com.web.entity.Product;
 import com.web.util.IdUtils;
 
@@ -46,9 +47,6 @@ public class CreateOrderController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//实例化订单的业务逻辑层
-		OrderBiz orderBiz = new OrderBizImpl();
-		
 		//获取session对象
 		HttpSession session = req.getSession();
 		
@@ -57,8 +55,6 @@ public class CreateOrderController extends HttpServlet {
 	
 	    //获取用户的信息
 		Consumer consumer = (Consumer) session.getAttribute("consumer");
-		
-		
 		
 		//获取表单的信息，封装到订单对象中
 		Order order = new Order();
@@ -74,25 +70,31 @@ public class CreateOrderController extends HttpServlet {
 		//设置订单的用户信息
 		order.setConsumer(consumer);
 		order.setCID(consumer.getCID());
-
-		//设置订单的商品信息并添加订单
-		boolean success = true;
-		try {
-			for (Product p : cart.keySet()) {
-				order.setProduct(p);
-				order.setLID(p.getLID());
-				success = orderBiz.addOrder(order);
-				if (!success) {
-					break;
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			success = false;
+		
+		//设置订单条目信息
+		for (Product p : cart.keySet()) {
+			//实例化订单条目
+			OrderItem orderItem = new OrderItem();
+			
+			//设置属性
+			orderItem.setNUM(cart.get(p));
+			orderItem.setOrder(order);
+			orderItem.setOID(order.getOID());
+			orderItem.setLuxury(p);
+			orderItem.setLID(p.getLID());
+	
+			//向订单中添加订单条目信息
+			order.getOrderItems().add(orderItem);
 		}
 		
+		//调用订单的业务逻辑层  添加订单、添加订单条目、商品库存数量的减少
+		
+		//实例化订单的业务逻辑层
+		OrderBiz orderBiz = new OrderBizImpl();
+		boolean flag = orderBiz.addOrder(order);
+		
 		//如果添加成功，则跳转到添加订单成功页面
-		if(success){
+		if(flag){
 			resp.sendRedirect(req.getContextPath()+"/client/order/createOrderSuccess.jsp");
 		}else{
 			resp.sendRedirect(req.getContextPath()+"/client/order/order.jsp");
