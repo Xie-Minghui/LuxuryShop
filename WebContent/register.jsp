@@ -37,7 +37,7 @@
 			<tr>
 				<td style="text-align: right; width: 20%">姓名：</td>
 				<td>
-				<input type="text" class="textinput" id = "username" name="CNAME" onkeyup="checkUsername()"/>
+				<input type="text" class="textinput" id = "username" name="CNAME" onkeyup="checkUsername();"/>
 				</td>
 				<td colspan="2"><span id="usernameMsg"></span></td>
 			</tr>
@@ -45,7 +45,8 @@
 			<tr>
 				<td style="text-align: right; width: 20%">电话：</td>
 				<td>
-				<input type="text" class="textinput" name="PN"/>
+				<input type="text" class="textinput" id = "phone" name="PN" onkeyup = "checkPhone();"/>
+				<td colspan="2"><span id="phoneMsg"></span></td>
 				</td>
 			</tr>
 			

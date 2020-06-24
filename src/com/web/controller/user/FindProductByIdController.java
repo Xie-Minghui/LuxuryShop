@@ -43,6 +43,8 @@ public class FindProductByIdController extends HttpServlet {
 		//获取从前台页面传过来的参数
 		int id = Integer.parseInt(request.getParameter("id"));
 		
+		
+
 		//调用业务逻辑层根据id查询商品详情信息
 		Product product = productBiz.findProductById(id);
 		
@@ -50,7 +52,7 @@ public class FindProductByIdController extends HttpServlet {
 		//把数据传递到前台页面
 		request.setAttribute("p", product);
 		
-		request.getRequestDispatcher("/client/product/info.jsp").forward(request, response);
+		request.getRequestDispatcher("/client/product_details.jsp").forward(request, response);
 	}
 
 }

@@ -211,8 +211,8 @@
 	                            	<img src="${pageContext.request.contextPath}/client/shop/img/icons/search.png" alt="搜索" width="30px" height="30px">
 								</a>
 	                            <div class="dropdown_search">
-	                                <form action="#">
-	                                    <input placeholder="在Excellent上搜索..." type="text">
+	                                <form action="${pageContext.request.contextPath}/MenuSearchController">
+	                                    <input placeholder="在Excellent上搜索..." type="text" name="textfield">
 	                                     <button type="submit">
 	                                     	<img src="${pageContext.request.contextPath}/client/shop/img/icons/search.png" alt="搜索" width="25px" height="25px">
 	                                     </button>
@@ -221,7 +221,7 @@
 	                        </div>
                         </div>
                         <div class="toolbar-item d-none d-lg-block">
-                            <a href="login.jsp" class="toolbar-btn">
+                            <a href="${pageContext.request.contextPath}/MyAccountController" class="toolbar-btn">
                            		<img src="${pageContext.request.contextPath}/client/shop/img/icons/user.png" alt="用户" width="24px" height="24px">
                             </a>
                         </div>

@@ -49,8 +49,8 @@ public class ShowProductByPageController extends HttpServlet {
 			
 		}
 		
-		//定义每页显示的条数默认为4
-		Integer currentCount = 4;
+		//定义每页显示的条数默认为9
+		Integer currentCount = 9;
 		String _currentCount = req.getParameter("currentCount");
 		
 		//判断传过来的每页显示的条数是否为空

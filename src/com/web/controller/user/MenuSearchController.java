@@ -41,8 +41,8 @@ public class MenuSearchController extends HttpServlet {
 			currentPage = Integer.parseInt(_currentPage);
 		}
 		
-		//定义每页的条数，默认为4
-		Integer currentCount = 4;
+		//定义每页的条数，默认为9
+		Integer currentCount = 9;
 		String _currentCount = req.getParameter("currentCount");
 		
 		if(_currentCount != null){
@@ -51,12 +51,9 @@ public class MenuSearchController extends HttpServlet {
 		
 		//获取前台jsp页面传过来的搜索字段信息
 		String searchfield = req.getParameter("textfield");
-		
 
-
-		if("What Are You Looking For".equals(searchfield) || searchfield == null){
+		if("What Are You Looking For".equals(searchfield)){
 			
-
 			//转发到显示商品信息页面的后台控制层
 			req.getRequestDispatcher("/showProductByPage").forward(req, resp);
 		}else{

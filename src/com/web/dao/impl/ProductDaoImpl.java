@@ -111,6 +111,9 @@ public class ProductDaoImpl implements ProductDao {
 				p.setIMAGE(rs.getString("image"));
 				p.setSALENUM(rs.getInt("salenum"));
 				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
 				
 				//把对象添加到集合中取
 				list.add(p);
@@ -203,6 +206,10 @@ public class ProductDaoImpl implements ProductDao {
 				p.setIMAGE(rs.getString("image"));
 				p.setSALENUM(rs.getInt("salenum"));
 				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
+				
 				
 				//把对象添加到集合中取
 				list.add(p);
@@ -249,6 +256,9 @@ public class ProductDaoImpl implements ProductDao {
 				p.setIMAGE(rs.getString("image"));
 				p.setSALENUM(rs.getInt("salenum"));
 				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
 				
 				//把商品对象添加到集合中
 				list.add(p);

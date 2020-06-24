@@ -42,10 +42,10 @@ public class addCartController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 1.得到商品id
+		// 1.得到商品id，商品数量
 		int id = Integer.parseInt(request.getParameter("id"));
-		System.out.println("id1="+id);
-		
+		int pnum = Integer.parseInt(request.getParameter("count"));
+
 		// 2.调用service层方法，根据id查找商品
 		ProductBiz pb = new ProductBizImpl();
 		try {
@@ -59,18 +59,20 @@ public class addCartController extends HttpServlet {
 			if (cart == null) {
 				cart = new HashMap<Product, Integer>();
 			}
-			//3.4向购物车中添加商品
-			Integer count = cart.put(p, 1);
+			//3.4向购物车中添加商品，将商品的数量增加count
+
+			// put()方法简单介绍：当在链表中已经存在相同的hash和key时，覆盖原值,并将原值返回
+			Integer count = cart.put(p, pnum);
+
 			//3.5如果商品数量不为空，则商品数量+1，否则添加新的商品信息
 			if (count != null) {
-				cart.put(p, count + 1);
-			}			
+				cart.put(p, count + pnum);
+			}
 			session.setAttribute("cart", cart);
-			response.sendRedirect(request.getContextPath() + "/client/product/cart.jsp");
+			response.sendRedirect(request.getContextPath() + "/client/cart.jsp");
 			return;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }

@@ -12,7 +12,30 @@ public class Product {
 	private String IMAGE;
 	private Integer SALENUM;
 	private Integer VIEWCOUNT;
+	// 新增属性
+	private String SIZE;
+	private BigDecimal WEIGHT;
+	private String COLOR;
 	
+	
+	public String getSIZE() {
+		return SIZE;
+	}
+	public void setSIZE(String sIZE) {
+		SIZE = sIZE;
+	}
+	public BigDecimal getWEIGHT() {
+		return WEIGHT;
+	}
+	public void setWEIGHT(BigDecimal wEIGHT) {
+		WEIGHT = wEIGHT;
+	}
+	public String getCOLOR() {
+		return COLOR;
+	}
+	public void setCOLOR(String cOLOR) {
+		COLOR = cOLOR;
+	}
 	public Integer getLID() {
 		return LID;
 	}
