@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype>
 <html class="no-js" lang="zxx">
 
@@ -20,6 +20,32 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+
+    <script>
+        //当商品数量发生变化时触发该方法
+        function addcart(pnum, id){
+            pnum = parseInt(pnum);
+            var element = document.getElementById("qty-1");
+            var count = parseInt(element.value);
+            if (count > pnum){
+                alert("已达到商品最大购买量");
+                count = pnum;
+            }
+            location.href = "${pageContext.request.contextPath}/addCartController?id="
+                    + id + "&count=" + count;
+        }
+        
+        function cart_del(){
+            var msg = "您确定要删除该商品吗？";
+            if(confirm(msg) == true){
+                return true;
+            }else{
+                return false;
+            }
+            
+        }
+        </script>
+
 </head>
 
 <body> 
@@ -47,7 +73,7 @@
                     <div class="col-12 text-center">
                         <h1 class="page-title">购物车</h1>
                         <ul class="breadcrumb">
-                            <li><a href="index.jsp">主页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">主页</a></li>
                             <li class="current"><span>购物车</span></li>
                         </ul>
                     </div>
@@ -78,84 +104,37 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                <c:set var="total" value="0" /> 
+                                                <c:forEach items="${cart}" var="entry" varStatus="vs">
                                                     <tr>
                                                         <td class="product-remove text-left"><a href=""><i class="flaticon-cross"></i></a></td>
                                                         <td class="product-thumbnail text-left">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-11-70x88.jpg" alt="Product Thumnail">
+                                                            <img src="${pageContext.request.contextPath}/${entry.key.IMAGE}" alt="Product Thumnail">
                                                         </td>
                                                         <td class="product-name text-left wide-column">
                                                             <h3>
-                                                                <a href="product-details.html">这是一个商品</a>
+                                                                <a href="${pageContext.request.contextPath}/findProductById?id=${entry.key.LID}">${entry.key.LNAME}</a>
                                                             </h3>
                                                         </td>
                                                         <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
+                                                                <span class="money">${entry.key.PRICE}</span>
                                                             </span>
                                                         </td>
                                                         <td class="product-quantity">
                                                             <div class="quantity">
-                                                                <input type="number" class="quantity-input" name="qty" id="qty-1" value="1" min="1">
+                                                                <input type="number" class="quantity-input" name="qty" id="qty-1" value="${entry.value}" min="1" 
+                                                                    onclick="addcart('${entry.key.RESTNUM}','${entry.key.LID}')"/>
                                                             </div>
                                                         </td>
                                                         <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
+                                                                <span class="money">${entry.key.PRICE*entry.value}</span>
                                                             </span>
                                                         </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-remove text-left"><a href=""><i class="flaticon-cross"></i></a></td>
-                                                        <td class="product-thumbnail text-left">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-12-70x88.jpg" alt="Product Thumnail">
-                                                        </td>
-                                                        <td class="product-name text-left wide-column">
-                                                            <h3>
-                                                                <a href="product-details.html">这也是一个商品</a>
-                                                            </h3>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                        <td class="product-quantity">
-                                                            <div class="quantity">
-                                                                <input type="number" class="quantity-input" name="qty" id="qty-2" value="1" min="1">
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-total-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">$49.00</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-remove text-left"><a href=""><i class="flaticon-cross"></i></a></td>
-                                                        <td class="product-thumbnail text-left">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-13-70x88.jpg" alt="Product Thumnail">
-                                                        </td>
-                                                        <td class="product-name text-left wide-column">
-                                                            <h3>
-                                                                <a href="product-details.html">这还是一个商品</a>
-                                                            </h3>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                        <td class="product-quantity">
-                                                            <div class="quantity">
-                                                                <input type="number" class="quantity-input" name="qty" id="qty-3" value="1" min="1">
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-total-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
+                                                    </tr>  
+                                                    <c:set value="${total+entry.key.PRICE*entry.value}" var="total" />
+                                                </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>  
@@ -179,7 +158,7 @@
                                                 <span>小计</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥196.00</span>
+                                                <span>￥${total}</span>
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item">
@@ -196,7 +175,7 @@
                                             </div>
                                             <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥226.00</span>
+                                                    <span class="money">￥${total+20}</span>
                                                 </span>
                                             </div>
                                         </div>

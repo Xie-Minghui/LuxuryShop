@@ -62,7 +62,7 @@
                     <div class="col-12 text-center">
                         <h1 class="page-title">商品详情</h1>
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Excellent</a></li>
+                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">Excellent</a></li>
                             <li class="current"><span>商品详情</span></li>
                         </ul>
                     </div>

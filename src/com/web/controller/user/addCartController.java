@@ -44,7 +44,7 @@ public class addCartController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1.得到商品id，商品数量
 		int id = Integer.parseInt(request.getParameter("id"));
-		int addnum = Integer.parseInt(request.getParameter("count"));
+		int pnum = Integer.parseInt(request.getParameter("count"));
 
 		// 2.调用service层方法，根据id查找商品
 		ProductBiz pb = new ProductBizImpl();
@@ -62,13 +62,12 @@ public class addCartController extends HttpServlet {
 			//3.4向购物车中添加商品，将商品的数量增加count
 
 			// put()方法简单介绍：当在链表中已经存在相同的hash和key时，覆盖原值,并将原值返回
-			Integer count = cart.put(p, addnum);
+			Integer count = cart.put(p, pnum);
 
-			//3.5如果商品数量不为空，则商品数量+addnum，否则添加新的商品信息
+			//3.5如果商品数量不为空，则商品数量+1，否则添加新的商品信息
 			if (count != null) {
-				cart.put(p, count + addnum);
+				cart.put(p, count + pnum);
 			}
-
 			session.setAttribute("cart", cart);
 			response.sendRedirect(request.getContextPath() + "/client/cart.jsp");
 			return;
