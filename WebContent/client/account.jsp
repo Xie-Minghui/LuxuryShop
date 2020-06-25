@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype>
 <html class="no-js" lang="zxx">
 
@@ -80,7 +81,7 @@
                                 </div>
                                 <div class="user-dashboard-tab__content tab-content">
                                     <div class="tab-pane fade show active" id="dashboard">
-                                        <p>您好 <strong>${consumer.CNAME}先生/女生</strong> (不是 <strong>本人</strong>? <a href="login-register.html">退出登录</a>)</p>
+                                        <p>您好 <strong>${consumer.CNAME}先生/女生</strong> (不是 <strong>本人</strong>? <a href="#" onclick="logoutsure('${consumer.CNAME}')">退出登录</a>)</p>
                                         <p>欢迎您的到来。 你可以查看 <a href="">最近的订单</a>，管理你的 <a href="">地址</a> 或 <a href="">编辑你的账户信息</a>.</p>
                                     </div>
                                     <div class="tab-pane fade" id="orders">
@@ -100,20 +101,15 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td class="wide-column">September 19, 2018</td>
-                                                        <td>某个状态</td>
-                                                        <td class="wide-column">Y49.00</td>
-                                                        <td><a href="product-details.html" class="btn">查看</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td class="wide-column">September 19, 2018</td>
-                                                        <td>某个状态</td>
-                                                        <td class="wide-column">￥49.00</td>
-                                                        <td><a href="product-details.html" class="btn">查看</a></td>
-                                                    </tr>
+                                                    <c:forEach items="${orderList}" var="entry" varStatus="vs">
+                                                        <tr>
+                                                            <td>${vs.count}</td>
+                                                            <td class="wide-column">${entry.DATE}</td>
+                                                            <td>${stateList[vs.count-1]}</td>
+                                                            <td class="wide-column">￥${entry.SUMPRICE}</td>
+                                                            <td><a href="product-details.html" class="btn">查看</a></td>
+                                                        </tr>
+                                                    </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>

@@ -56,12 +56,12 @@ public class SubmitOrderController extends HttpServlet {
 		order.setREMARK(remark);
 		order.setPAY(pay);
 
-		//实例化订单的业务逻辑层
-		OrderBiz orderBiz = new OrderBizImpl();
-		boolean flag = orderBiz.addOrder(order);
-		
 		// 订单已支付
 		order.setSTATE(1);
+		
+		//实例化订单的业务逻辑层
+		OrderBiz orderBiz = new OrderBizImpl();
+		boolean flag = orderBiz.changeState(order);
 
 		//如果添加成功，则跳转到添加订单成功页面
 		if(flag){
@@ -69,7 +69,7 @@ public class SubmitOrderController extends HttpServlet {
 			cart.clear();
 			session.setAttribute("order", order);
 			session.setAttribute("cart", cart);
-			response.sendRedirect(request.getContextPath()+"/client/orderdetail.jsp");
+			response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
 		}else{
 			response.sendRedirect(request.getContextPath()+"/client/checkout.jsp");
 		}

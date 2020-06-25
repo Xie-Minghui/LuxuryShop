@@ -1,6 +1,7 @@
 package com.web.controller.user;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -50,11 +51,30 @@ public class FindOrderByUserController extends HttpServlet {
 		
 		List<Order> list = orderBiz.findOrderByConsumer(consumer);
 		
+		// 订单状态
+		List<String> state_list = new ArrayList<String>();
+		for(Order order : list) {
+			switch(order.getSTATE()){
+				case 0:
+					state_list.add("未支付");
+					break;
+				case 1:
+					state_list.add("已支付");
+					break;
+				case 2:
+					state_list.add("已评论");
+					break;
+				default:
+					state_list.add("未支付");
+					break;
+			};
+		}
 		//把订单列表数据信息传递到前台
 		req.setAttribute("orderList", list);
-		
+		req.setAttribute("stateList", state_list);
+
 		//转发跳转页面
-		req.getRequestDispatcher("/client/order/orderlist.jsp").forward(req, resp);
+		req.getRequestDispatcher("/client/account.jsp").forward(req, resp);
 	}
 
 }

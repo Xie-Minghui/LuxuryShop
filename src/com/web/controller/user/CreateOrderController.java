@@ -1,6 +1,7 @@
 package com.web.controller.user;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -77,6 +78,7 @@ public class CreateOrderController extends HttpServlet {
 		// 设置订单备注
 		order.setREMARK("填写订单备注后提交订单");
 		
+		BigDecimal sumprice = new BigDecimal("0");
 		//设置订单条目信息
 		for (Product p : cart.keySet()) {
 			//实例化订单条目
@@ -88,10 +90,27 @@ public class CreateOrderController extends HttpServlet {
 			orderItem.setOID(order.getOID());
 			orderItem.setLuxury(p);
 			orderItem.setLID(p.getLID());
-	
+
 			//向订单中添加订单条目信息
 			order.getOrderItems().add(orderItem);
+			
+			// 订单总价
+			sumprice = sumprice.add(p.getPRICE().multiply(new BigDecimal(cart.get(p))));
 		}
+		// 增加运费
+		sumprice = sumprice.add((new BigDecimal("5")).multiply(new BigDecimal(cart.size())));
+		order.setSUMPRICE(sumprice);
+
+		order.setADDR(consumer.getADDR());
+		order.setNAME(consumer.getCNAME());
+		order.setPHONE(consumer.getPN());
+		order.setPROVINCE(consumer.getPROVINCE());
+		order.setCITY(consumer.getCITY());
+		order.setDISTRICT(consumer.getDISTRICT());
+
+		//实例化订单的业务逻辑层
+		OrderBiz orderBiz = new OrderBizImpl();
+		boolean flag = orderBiz.addOrder(order);
 		
 		//调用订单的业务逻辑层  添加订单、添加订单条目、商品库存数量的减少
 		

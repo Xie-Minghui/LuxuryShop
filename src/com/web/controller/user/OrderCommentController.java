@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.web.biz.OrderBiz;
 import com.web.biz.OrderItemBiz;
+import com.web.biz.impl.OrderBizImpl;
 import com.web.biz.impl.OrderItemBizImpl;
 import com.web.entity.Order;
 import com.web.entity.OrderItem;
@@ -51,15 +53,17 @@ public class OrderCommentController extends HttpServlet {
 		// 订单已收货
 		order.setSTATE(2);
 
+		//更新item 更新order 
+		OrderBiz orderBiz = new OrderBizImpl();
+		OrderItemBiz orderItemBiz = new OrderItemBizImpl();
+		orderBiz.changeState(order);
+		
 		// 将评论赋值给每一个orderitem
 		for (OrderItem item : order.getOrderItems()) {
 			item.setCOMMENT(comment);
+			orderItemBiz.addComment(item);
 		}
-
-		/* 
-		更新item 更新order 
-		*/
-
+		
 		// 撤销删除session中order对象
 		session.removeAttribute("order");
 

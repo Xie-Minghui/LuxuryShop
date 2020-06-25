@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="header__main">
                     <div class="header__col header__left">
-                        <a href="index.jsp" class="logo">
+                        <a href="${pageContext.request.contextPath}/client/index.jsp" class="logo">
                             <figure class="logo--normal">
                                 <img src="${pageContext.request.contextPath}/client/shop/img/logo/logo.png" alt="Logo">
                             </figure>
@@ -221,7 +221,7 @@
 	                        </div>
                         </div>
                         <div class="toolbar-item d-none d-lg-block">
-                            <a href="${pageContext.request.contextPath}/MyAccountController" class="toolbar-btn">
+                            <a href="${pageContext.request.contextPath}/FindOrderByUserController" class="toolbar-btn">
                            		<img src="${pageContext.request.contextPath}/client/shop/img/icons/user.png" alt="用户" width="24px" height="24px">
                             </a>
                         </div>
