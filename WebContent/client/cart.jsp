@@ -116,7 +116,7 @@
                                                         </td>
                                                         <td class="product-name text-left wide-column">
                                                             <h3>
-                                                                <a href="${pageContext.request.contextPath}/findProductById?id=${entry.key.LID}">${entry.key.LNAME}</a>
+                                                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.key.LID}">${entry.key.LNAME}</a>
                                                             </h3>
                                                         </td>
                                                         <td class="product-price">

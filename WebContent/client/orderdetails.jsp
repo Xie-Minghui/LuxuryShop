@@ -21,6 +21,12 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+    <script>
+        function confirm_receipt(){
+            alert("正在收货，点击确认跳转订单评论页面...");
+            location.href = "${pageContext.request.contextPath}/client/waitcommentorder.jsp";
+        }
+    </script>
 </head>
 
 <body> 
@@ -68,7 +74,7 @@
                         <span>收货地址</span>
                     </div>
                     <div class="cart-calculator__item--value">
-                        <span>${order.ADDR}</span>
+                        <span>${order.consumer.ADDR}</span>
                     </div>
                 </div>
                 <div class="cart-calculator__item">
@@ -92,7 +98,7 @@
                         <span>买家留言</span>
                     </div>
                     <div class="cart-calculator__item--value">
-                        <span>xxxxxxx</span>                
+                        <span>谢谢您的购买~记得好评哦！</span>                
                     </div>
                 </div>
                 <div class="cart-calculator__item order-total">
@@ -129,81 +135,35 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>                                           
-                                                        <td class="product-thumbnail text-left">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-11-70x88.jpg" alt="Product Thumnail">
-                                                        </td>
-                                                        <td class="product-name text-left wide-column">
-                                                            <h3>
-                                                                <a href="product-details.html">这是一个商品</a>
-                                                            </h3>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <div class="money">
-                                                                <span>1</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-total-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-thumbnail text-left">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-12-70x88.jpg" alt="Product Thumnail">
-                                                        </td>
-                                                        <td class="product-name text-left wide-column">
-                                                            <h3>
-                                                                <a href="product-details.html">商品2222</a>
-                                                            </h3>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">$49.00</span>
-                                                            </span>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <div class="money">
-                                                                <span>1</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-total-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-thumbnail text-left">
-                                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-13-70x88.jpg" alt="Product Thumnail">
-                                                        </td>
-                                                        <td class="product-name text-left wide-column">
-                                                            <h3>
-                                                                <a href="product-details.html">商品23333</a>
-                                                            </h3>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                        <td class="product-price">
-                                                            <div class="money">
-                                                                <span>1</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-total-price">
-                                                            <span class="product-price-wrapper">
-                                                                <span class="money">￥49.00</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
+                                                    <c:set var="total" value="0" /> 
+                                                    <c:forEach items="${order.orderItems}" var="entry" varStatus="vs">
+                                                        <tr>                                           
+                                                            <td class="product-thumbnail text-left">
+                                                                <img src="${pageContext.request.contextPath}/${entry.luxury.IMAGE}" alt="Product Thumnail">
+                                                            </td>
+                                                            <td class="product-name text-left wide-column">
+                                                                <h3>
+                                                                    <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.luxury.LID}">${entry.luxury.LNAME}</a>
+                                                                </h3>
+                                                            </td>
+                                                            <td class="product-price">
+                                                                <span class="product-price-wrapper">
+                                                                    <span class="money">￥${entry.luxury.PRICE}</span>
+                                                                </span>
+                                                            </td>
+                                                            <td class="product-price">
+                                                                <div class="money">
+                                                                    <span>${entry.NUM}</span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="product-total-price">
+                                                                <span class="product-price-wrapper">
+                                                                    <span class="money">￥${entry.luxury.PRICE*entry.NUM}</span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    <c:set value="${total+entry.luxury.PRICE*entry.NUM}" var="total" />
+                                                    </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>  
@@ -221,7 +181,7 @@
                                                 <span>小计</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥196.00</span>
+                                                <span>￥${total}</span>
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item">
@@ -229,7 +189,7 @@
                                                 <span>运费</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥20.00</span>                
+                                                <span>￥${order.orderItems.size()*5}</span>                
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item order-total">
@@ -238,13 +198,13 @@
                                             </div>
                                             <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥226.00</span>
+                                                    <span class="money">￥${total+order.orderItems.size()*5}</span>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="waitcommentorder.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                <a href="#" onclick="confirm_receipt()" class="btn btn-size-md btn-shape-square btn-fullwidth">
                                     确认收货
                                 </a>
                             </div>

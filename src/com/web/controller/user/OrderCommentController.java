@@ -6,6 +6,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.web.biz.OrderItemBiz;
+import com.web.biz.impl.OrderItemBizImpl;
+import com.web.entity.Order;
+import com.web.entity.OrderItem;
+import com.web.entity.Product;
 
 /**
  * Servlet implementation class OrderCommentController
@@ -34,7 +41,30 @@ public class OrderCommentController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// 获取评论
+		String comment = request.getParameter("comment");
+
+		//获取session对象
+		HttpSession session = request.getSession();
+		// 获取订单
+		Order order = (Order) session.getAttribute("order");
+		// 订单已收货
+		order.setSTATE(2);
+
+		// 将评论赋值给每一个orderitem
+		for (OrderItem item : order.getOrderItems()) {
+			item.setCOMMENT(comment);
+		}
+
+		/* 
+		更新item 更新order 
+		*/
+
+		// 撤销删除session中order对象
+		session.removeAttribute("order");
+
+		// 返回首页
+		response.sendRedirect(request.getContextPath()+"/client/index.jsp");
 	}
 
 }

@@ -27,7 +27,7 @@ public class OrderItemDaoImpl implements OrderItemDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "insert into orderitem (OID, LID, NUM) values (?,?,?)";
+			String sql = "insert into orders_item (OID, LID, NUM) values (?,?,?)";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -58,7 +58,7 @@ public class OrderItemDaoImpl implements OrderItemDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "select * from orderitem where  order_id='"+order.getOID()+"'";
+			String sql = "select * from orders_item where  OID ='"+order.getOID()+"'";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);

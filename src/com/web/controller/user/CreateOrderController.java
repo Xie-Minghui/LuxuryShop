@@ -73,6 +73,9 @@ public class CreateOrderController extends HttpServlet {
 
 		// 设置订单状态
 		order.setSTATE(0);
+
+		// 设置订单备注
+		order.setREMARK("填写订单备注后提交订单");
 		
 		//设置订单条目信息
 		for (Product p : cart.keySet()) {
@@ -92,19 +95,8 @@ public class CreateOrderController extends HttpServlet {
 		
 		//调用订单的业务逻辑层  添加订单、添加订单条目、商品库存数量的减少
 		
-		//实例化订单的业务逻辑层
-		OrderBiz orderBiz = new OrderBizImpl();
-		boolean flag = orderBiz.addOrder(order);
-		
-
-		//如果添加成功，则跳转到添加订单成功页面
-		if(flag){
-			// seesion中添加订单
-			session.setAttribute("order", order);
-			resp.sendRedirect(req.getContextPath()+"/client/checkout.jsp");
-		}else{
-			resp.sendRedirect(req.getContextPath()+"/client/cart.jsp");
-		}
+		// seesion中添加订单
+		session.setAttribute("order", order);
+		resp.sendRedirect(req.getContextPath()+"/client/checkout.jsp");
 	}
-
 }

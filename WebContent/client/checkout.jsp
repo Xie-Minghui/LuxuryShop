@@ -21,6 +21,13 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+    <script>
+        function checkout(){
+            alert("提交订单成功！")
+        }
+
+    </script>
+
 </head>
 
 <body> 
@@ -62,13 +69,14 @@
             <div class="page-content-inner pt--80 pt-md--60 pb--72 pb-md--60">
                 <div class="container">
                     <div class="row">
-                        <!-- Checkout Area Start -->  
+                        <!-- Checkout Area Start --> 
+                         
                         <div class="col-lg-6">
                             <div class="checkout-title mt--10">
                                 <h2>收件信息</h2>
                             </div>
                             <div class="checkout-form">
-                                <form action="#" class="form form--checkout">
+                                <form action="${pageContext.request.contextPath}/SubmitOrderController" class="form form--checkout">
                                     <div class="form-row mb--20">
                                         <div class="form__group col-md-6 mb-sm--30">
                                             <label for="billing_fname" class="form__label">姓氏  <span class="required">*</span></label>
@@ -110,10 +118,10 @@
                                     <div class="form-row">
                                         <div class="form__group col-12">
                                             <label for="orderNotes" class="form__label">订单备注</label>
-                                            <textarea class="form__input form__input--textarea" id="orderNotes" name="orderNotes" placeholder="备注信息"></textarea>
+                                            <input type="text" name="remark" class="form__input form__input--textarea" id="orderNotes" placeholder="${order.REMARK}"/>
                                         </div>
                                     </div>
-                                </form>
+
                             </div>
                         </div>
                         <div class="col-xl-5 offset-xl-1 col-lg-6 mt-md--40">
@@ -163,10 +171,10 @@
                                     <h2>支付方式</h2>
                                 </div>
                                 <div class="checkout-payment">
-                                    <form action="#" class="payment-form">
+                                    
                                         <div class="payment-group mb--10">
                                             <div class="payment-radio">
-                                                <input type="radio" value="bank" name="payment-method" id="bank" checked>
+                                                <input type="radio" value="中国银行" name="pay" id="bank" checked>
                                                 <label class="payment-label" for="bank">中国银行</label>
                                             </div>
                                             <div class="payment-info" data-method="bank">
@@ -175,7 +183,7 @@
                                         </div>
                                         <div class="payment-group mb--10">
                                             <div class="payment-radio">
-                                                <input type="radio" value="cheque" name="payment-method" id="cheque">
+                                                <input type="radio" value="支付宝" name="pay" id="cheque">
                                                 <label class="payment-label" for="cheque">支付宝</label>
                                             </div>
                                             <div class="payment-info cheque hide-in-default" data-method="cheque">
@@ -184,7 +192,7 @@
                                         </div>
                                         <div class="payment-group mb--10">
                                             <div class="payment-radio">
-                                                <input type="radio" value="cash" name="payment-method" id="cash">
+                                                <input type="radio" value="微信" name="pay" id="cash">
                                                 <label class="payment-label" for="cash">微信</label>
                                             </div>
                                             <div class="payment-info cash hide-in-default" data-method="cash">
@@ -193,7 +201,7 @@
                                         </div>
                                         <div class="payment-group mt--20">
                                             <p class="mb--15">您的个人数据将用于处理您的订单，支持您在整个网站上的体验以及用于我们的隐私政策中所述的其他目的。</p>
-                                            <button type="submit" class="btn btn-size-md btn-fullwidth">提交订单</button>
+                                            <button type="submit" class="btn btn-size-md btn-fullwidth" onclick="checkout()">提交订单</button>
                                         </div>
                                     </form>
                                 </div>
