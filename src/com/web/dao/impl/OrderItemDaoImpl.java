@@ -95,4 +95,34 @@ public class OrderItemDaoImpl implements OrderItemDao {
 
 	}
 
+	@Override
+	public boolean addComment(OrderItem orderItem) {
+		//定义影响的行数
+		int count = 0;
+
+        try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "update orders_item set comment = ? where oid = ? and lid = ?";
+		    //编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setString(1, orderItem.getCOMMENT());
+			ps.setString(2, orderItem.getOID());
+			ps.setInt(3, orderItem.getLID());
+			
+			//执行添加
+			count = ps.executeUpdate();
+			
+			//关闭
+			JDBCUtil.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return count > 0 ? true : false;
+	}
+
 }

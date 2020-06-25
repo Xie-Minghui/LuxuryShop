@@ -21,4 +21,7 @@ public interface OrderDao {
     //通过订单id查询订单
     public Order findOrderById(String id);
     
+    //改变订单状态
+    public boolean changeState(Order order);
+    
 }

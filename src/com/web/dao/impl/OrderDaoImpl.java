@@ -151,5 +151,34 @@ public class OrderDaoImpl implements OrderDao {
 		}
 		return list.size()> 0 ? list.get(0) : null;
 	}
+
+	@Override
+	public boolean changeState(Order order) {
+		//定义影响的行数
+		int count = 0;
+
+        try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "update orders set state = ? where oid = ?";
+		    //编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setInt(1, order.getSTATE());
+			ps.setString(2, order.getOID());
+			
+			//执行添加
+			count = ps.executeUpdate();
+			
+			//关闭
+			JDBCUtil.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return count > 0 ? true : false;
+	}
     
 }

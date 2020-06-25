@@ -73,4 +73,10 @@ public class OrderBizImpl implements OrderBiz {
 		return order;
 	}
 
+
+	@Override
+	public boolean changeState(Order order) {
+		return orderDao.changeState(order);
+	}
+
 }

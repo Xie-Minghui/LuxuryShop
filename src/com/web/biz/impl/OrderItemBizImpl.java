@@ -23,4 +23,9 @@ public class OrderItemBizImpl implements OrderItemBiz {
 		return orderItemDao.findOrderItemByOrder(order);
 	}
 
+	@Override
+	public boolean addComment(OrderItem orderItem) {
+		return orderItemDao.addComment(orderItem);
+	}
+
 }

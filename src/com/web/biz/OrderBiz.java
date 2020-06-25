@@ -14,4 +14,6 @@ public interface OrderBiz {
 	
 	//通过订单id查询订单
 	public Order findOrderById(String id);
+	
+	public boolean changeState(Order order);
 }
