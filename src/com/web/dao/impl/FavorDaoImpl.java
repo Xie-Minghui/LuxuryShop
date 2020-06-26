@@ -83,10 +83,13 @@ public class FavorDaoImpl implements FavorDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "select * from favor where cid="+consumer.getCID();
+			String sql = "select * from favor where cid= ?";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setInt(1, consumer.getCID());
 			
 			//执行查询
 			ResultSet rs = ps.executeQuery();

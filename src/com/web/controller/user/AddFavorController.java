@@ -11,9 +11,12 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.beanutils.BeanUtils;
 
 import com.web.biz.FavorBiz;
+import com.web.biz.ProductBiz;
 import com.web.biz.impl.FavorBizImpl;
+import com.web.biz.impl.ProductBizImpl;
 import com.web.entity.Consumer;
 import com.web.entity.Favor;
+import com.web.entity.Product;
 
 /**
  * Servlet implementation class AddFavorController
@@ -49,18 +52,17 @@ public class AddFavorController extends HttpServlet {
 		
 		//获取表单的信息，封装到愿望单对象中
 		Favor favor = new Favor();
-		try {
-			BeanUtils.populate(favor, req.getParameterMap());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//封装用户信息
+		
+		// 获取参数
 		favor.setCID(consumer.getCID());
+		favor.setConsumer(consumer);
+		int lid = Integer.parseInt(req.getParameter("lid"));
+		favor.setLID(lid);
 		
 		//实例化业务逻辑层，添加愿望
 		FavorBiz favorBiz = new FavorBizImpl();
 		favorBiz.addFavor(favor);
-		resp.sendRedirect(req.getContextPath()+"/client/index.jsp");
+		resp.sendRedirect(req.getContextPath()+"/FindFavorByConsumer");
 	}
 
 }

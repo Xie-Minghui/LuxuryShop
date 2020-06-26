@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype>
 <html class="no-js" lang="zxx">
 
@@ -20,6 +21,24 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+    <script>
+        function favor_delitem(id){
+            alert("取消收藏该商品成功");
+            location.href = "${pageContext.request.contextPath}/DeleFavorController?LID="
+                    + id;
+        }
+        function favor_add_cart(id, restnum){
+            restnum = parseInt(restnum);
+            if(restnum > 0) {
+                alert("加入购物车成功！正在进入商品详情页面~");
+                location.href = "${pageContext.request.contextPath}/addCartController?id="
+                    + id + "&count=" + 1;
+            }else{
+                alert("该商品无货！");
+                location.href = "${pageContext.request.contextPath}/FindFavorByConsumer";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -48,7 +67,7 @@
                         <h1 class="page-title">心愿单</h1>
                         <ul class="breadcrumb">
                             <li><a href="index.html">主页</a></li>
-                            <li class="current"><span>心愿单</span></li>
+                            <li class="current"><span>${consumer.CNAME}的心愿单</span></li>
                         </ul>
                     </div>
                 </div>
@@ -75,102 +94,32 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="product-remove text-left"><a href=""><i
+                                        <c:forEach items="${favorList}" var="entry" varStatus="vs">
+                                            <tr>
+                                            <td class="product-remove text-left"><a onclick="favor_delitem('${entry.luxury.LID}')" href="#"><i
                                                         class="flaticon-cross"></i></a></td>
                                             <td class="product-thumbnail text-left">
-                                                <img src="${pageContext.request.contextPath}/client/shop/img/products/product-11-70x88.jpg"
+                                                <img src="${pageContext.request.contextPath}/${entry.luxury.IMAGE}"
                                                     alt="Product Thumnail">
                                             </td>
                                             <td class="product-name text-left wide-column">
                                                 <h3>
-                                                    <a href="product-details.html">这是一件商品</a>
+                                                    <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.LID}">${entry.luxury.LNAME}</a>
                                                 </h3>
                                             </td>
                                             <td class="product-stock">
-                                                缺货
+                                                ${stateFavor[vs.count-1]}
                                             </td>
                                             <td class="product-price">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥49.00</span>
+                                                    <span class="money">￥${entry.luxury.PRICE}</span>
                                                 </span>
                                             </td>
                                             <td class="product-action-btn">
-                                                <a href="cart.html" class="btn">添加到购物车</a>
+                                                <a onclick="favor_add_cart('${entry.luxury.LID}','${entry.luxury.RESTNUM}')" href="#" class="btn">添加到购物车</a>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-remove text-left"><a href=""><i
-                                                        class="flaticon-cross"></i></a></td>
-                                            <td class="product-thumbnail text-left">
-                                                <img src="${pageContext.request.contextPath}/client/shop/img/products/product-12-70x88.jpg"
-                                                    alt="Product Thumnail">
-                                            </td>
-                                            <td class="product-name text-left wide-column">
-                                                <h3>
-                                                    <a href="product-details.html">这又是一件商品</a>
-                                                </h3>
-                                            </td>
-                                            <td class="product-stock">
-                                                有货
-                                            </td>
-                                            <td class="product-price">
-                                                <span class="product-price-wrapper">
-                                                    <span class="money">￥49.00</span>
-                                                </span>
-                                            </td>
-                                            <td class="product-action-btn">
-                                                <a href="cart.html" class="btn">添加到购物车</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-remove text-left"><a href=""><i
-                                                        class="flaticon-cross"></i></a></td>
-                                            <td class="product-thumbnail text-left">
-                                                <img src="${pageContext.request.contextPath}/client/shop/img/products/product-13-70x88.jpg"
-                                                    alt="Product Thumnail">
-                                            </td>
-                                            <td class="product-name text-left wide-column">
-                                                <h3>
-                                                    <a href="product-details.html">这也是一件商品</a>
-                                                </h3>
-                                            </td>
-                                            <td class="product-stock">
-                                                缺货
-                                            </td>
-                                            <td class="product-price">
-                                                <span class="product-price-wrapper">
-                                                    <span class="money">￥49.00</span>
-                                                </span>
-                                            </td>
-                                            <td class="product-action-btn">
-                                                <a href="cart.html" class="btn">添加到购物车</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-remove text-left"><a href=""><i
-                                                        class="flaticon-cross"></i></a></td>
-                                            <td class="product-thumbnail text-left">
-                                                <img src="${pageContext.request.contextPath}/client/shop/img/products/product-11-70x88.jpg"
-                                                    alt="Product Thumnail">
-                                            </td>
-                                            <td class="product-name text-left wide-column">
-                                                <h3>
-                                                    <a href="product-details.html">这还是一件商品</a>
-                                                </h3>
-                                            </td>
-                                            <td class="product-stock">
-                                                缺货
-                                            </td>
-                                            <td class="product-price">
-                                                <span class="product-price-wrapper">
-                                                    <span class="money">￥49.00</span>
-                                                </span>
-                                            </td>
-                                            <td class="product-action-btn">
-                                                <a href="cart.html" class="btn">添加到购物车</a>
-                                            </td>
-                                        </tr>
+                                            </tr>
+                                        </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

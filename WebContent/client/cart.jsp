@@ -47,7 +47,7 @@
             location.href = "${pageContext.request.contextPath}/ChangeCartController?id="
                     + 1000 + "&count=" + -1;
         }
-        </script>
+    </script>
 
 </head>
 

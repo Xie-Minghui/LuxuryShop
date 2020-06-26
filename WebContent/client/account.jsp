@@ -116,7 +116,7 @@
                                                         <tr>
                                                             <td>${vs.count}</td>
                                                             <td class="wide-column">${entry.DATE}</td>
-                                                            <td>${stateList[vs.count-1]}</td>
+                                                            <td>${stateOrder[vs.count-1]}</td>
                                                             <td class="wide-column">￥${entry.SUMPRICE}</td>
                                                             <!-- 查看订单，参数：订单号，订单状态 -->
                                                             <td><a href="#" onclick="viewOrder('${entry.OID}','${entry.STATE}')" class="btn" >查看</a></td>

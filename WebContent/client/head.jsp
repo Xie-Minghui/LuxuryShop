@@ -22,7 +22,7 @@
                             <ul class="mainmenu">
                                 <li class="mainmenu__item menu-item-has-children position-relative">
                                     <a href="${pageContext.request.contextPath}/showProductByPage?category=皮包" class="mainmenu__link">皮具系列</a>
-                                    <div class="inner-menu">
+                                    <!-- <div class="inner-menu">
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="index.html">Home One</a>
@@ -31,11 +31,11 @@
                                                 <a href="index-02.html">Home Two</a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-static">
-                                    <a href="#" class="mainmenu__link">香氛</a>
-                                    <div class="inner-menu megamenu-holder">
+                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=香氛" class="mainmenu__link">香氛</a>
+                                    <!-- <div class="inner-menu megamenu-holder">
                                         <ul class="megamenu">
                                             <li>
                                                 <a class="megamenu-title" href="#">Shop Grid</a>
@@ -127,11 +127,11 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-relative">
-                                    <a href="#" class="mainmenu__link">时尚首饰</a>
-                                    <div class="inner-menu">
+                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=时尚首饰" class="mainmenu__link">时尚首饰</a>
+                                    <!-- <div class="inner-menu">
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="my-account.html">My Account</a>
@@ -152,11 +152,11 @@
                                                 <a href="wishlist.html">Wishlist</a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-relative">
-                                    <a href="#" class="mainmenu__link">配饰系列</a>
-                                    <div class="inner-menu">
+                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=配饰系列" class="mainmenu__link">配饰系列</a>
+                                    <!-- <div class="inner-menu">
                                         <ul class="sub-menu">
                                             <li class="has-children">
                                                 <a href="#">Blog Grid</a>
@@ -196,10 +196,10 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item">
-                                    <a href="contact-us.html" class="mainmenu__link">公告</a>
+                                    <a href="#" class="mainmenu__link">公告</a>
                                 </li>
                             </ul>
                         </nav>
@@ -236,7 +236,7 @@
                             </a>
                         </div>
                         <div class="toolbar-item">
-                            <a href="wishlist.jsp" class="toolbar-btn">
+                            <a href="${pageContext.request.contextPath}/FindFavorByConsumer" class="toolbar-btn">
                                 <i class="flaticon-heart"></i>
                             </a>
                         </div>

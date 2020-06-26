@@ -104,15 +104,15 @@
                                                         </figure>
                                                         <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}" class="product-overlay"></a>
                                                         <div class="product__action">
-                                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
+                                                            <!-- <a data-toggle="modal" data-target="#productModal" class="action-btn">
                                                                 <i class="fa fa-eye"></i>
                                                                 <span class="sr-only">Quick View</span>
-                                                            </a>
-                                                            <a href="wishlist.html" class="action-btn">
+                                                            </a> -->
+                                                            <a href="${pageContext.request.contextPath}/AddFavorController?lid=${p.LID}" class="action-btn">
                                                                 <i class="fa fa-heart-o"></i>
                                                                 <span class="sr-only">Add to wishlist</span>
                                                             </a>
-                                                            <a href="cart.html" class="action-btn">
+                                                            <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}" class="action-btn">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                                 <span class="sr-only">Add To Cart</span>
                                                             </a>

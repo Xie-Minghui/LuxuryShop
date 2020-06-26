@@ -45,7 +45,7 @@ create table Luxury                                  #商品
    RESTNUM              int,                         #库存
    TYPE                 char(10),                    #商品类型
    INFOR                varchar(255),                #商品信息
-   IMAGE                longblob,                    #图片
+   IMAGE                varchar(100),                #图片
    SALENUM              int,                         #销量
    VIEWCOUNT            int,                         #浏览量
    SIZE                 varchar(40),                #最小尺寸

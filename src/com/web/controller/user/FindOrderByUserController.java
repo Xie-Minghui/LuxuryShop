@@ -87,7 +87,7 @@ public class FindOrderByUserController extends HttpServlet {
 		
 		//把订单列表数据信息传递到前台
 		req.setAttribute("orderList", list);
-		req.setAttribute("stateList", state_list);
+		req.setAttribute("stateOrder", state_list);
 
 		//转发跳转页面
 		req.getRequestDispatcher("/client/account.jsp").forward(req, resp);

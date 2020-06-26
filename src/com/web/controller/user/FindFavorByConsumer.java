@@ -1,6 +1,7 @@
 package com.web.controller.user;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import com.web.biz.FavorBiz;
 import com.web.biz.impl.FavorBizImpl;
 import com.web.entity.Consumer;
 import com.web.entity.Favor;
+import com.web.entity.Order;
 
 /**
  * Servlet implementation class FindFavorByConsumer
@@ -50,11 +52,22 @@ public class FindFavorByConsumer extends HttpServlet {
 		//实例化业务逻辑层，查找愿望
 		FavorBiz favorBiz = new FavorBizImpl();
 		List<Favor> list = favorBiz.findFavorByConsumer(consumer);
+		
+		// 订单状态
+		List<String> state_favor = new ArrayList<String>();
+		for(Favor favor : list) {
+			if(favor.getLuxury().getRESTNUM() > 0){
+				state_favor.add("有货");
+			}else{
+				state_favor.add("缺货");
+			}
+		}
+
 		//把订单列表数据信息传递到前台
-		req.setAttribute("favorList", list);
+		session.setAttribute("favorList", list);
+		session.setAttribute("stateFavor", state_favor);
 		
 		//转发跳转页面
-		req.getRequestDispatcher("/client/").forward(req, resp);
+		req.getRequestDispatcher("/client/wishlist.jsp").forward(req, resp);
 	}
-
 }

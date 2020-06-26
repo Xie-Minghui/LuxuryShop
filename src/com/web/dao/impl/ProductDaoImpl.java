@@ -259,6 +259,7 @@ public class ProductDaoImpl implements ProductDao {
 				p.setSIZE(rs.getString("size"));
 				p.setWEIGHT(rs.getBigDecimal("weight"));
 				p.setCOLOR(rs.getString("color"));
+				p.setRESTNUM(rs.getInt("restnum"));
 				
 				//把商品对象添加到集合中
 				list.add(p);

@@ -79,31 +79,34 @@
                     <div class="row no-gutters mb--75 mb-md--57">
                         <div class="col-lg-7 product-main-image">
                             <div class="product-image">
-                                <div class="product-gallery">
+                                <figure class="product__image--holder">
+                                    <img src="${pageContext.request.contextPath}/${p.IMAGE}" alt="Product">
+                                </figure>
+                                <!-- <div class="product-gallery">
                                     <div class="product-gallery__large-image">
                                         <div class="product-gallery__wrapper">
                                             <div class="row gutter-10">
                                                 <div class="col-12 mb--10">
                                                     <figure class="product-gallery__image">
-                                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-02-500x575.jpg"
+                                                        <img src="${pageContext.request.contextPath}/${p.IMAGE}"
                                                             alt="Product">
                                                     </figure>
                                                 </div>
                                                 <div class="col-6 mb--10">
                                                     <figure class="product-gallery__image">
-                                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-01-500x466.jpg"
+                                                        <img src="${pageContext.request.contextPath}/${p.IMAGE}"
                                                             alt="Product">
                                                     </figure>
                                                 </div>
                                                 <div class="col-6 mb--10">
                                                     <figure class="product-gallery__image">
-                                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-15-500x466.jpg"
+                                                        <img src="${pageContext.request.contextPath}/${p.IMAGE}"
                                                             alt="Product">
                                                     </figure>
                                                 </div>
                                                 <div class="col-12 mb--10">
                                                     <figure class="product-gallery__image">
-                                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-14-500x575.jpg"
+                                                        <img src="${pageContext.request.contextPath}/${p.IMAGE}"
                                                             alt="Product">
                                                     </figure>
                                                 </div>
@@ -114,8 +117,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <span class="product-badge sale">图片展示</span>
+                                </div> -->
+                                <!-- <span class="product-badge sale">图片展示</span> -->
                             </div>
                         </div>
                         <div class="col-xl-4 offset-xl-1 col-lg-5 product-main-details mt-md--40" id="sticky-sidebar">

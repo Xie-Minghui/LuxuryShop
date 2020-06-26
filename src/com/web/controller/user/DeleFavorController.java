@@ -53,7 +53,7 @@ public class DeleFavorController extends HttpServlet {
 		FavorBiz favorBiz = new FavorBizImpl();
 		favorBiz.deleFavorByCIDAndLID(CID, LID);
 		
-		resp.sendRedirect(req.getContextPath()+"/client/index.jsp");
+		resp.sendRedirect(req.getContextPath()+"/FindFavorByConsumer");
 	}
 
 }
