@@ -1,8 +1,6 @@
 package com.web.controller.user;
 
 import java.io.IOException;
-import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,19 +11,18 @@ import javax.servlet.http.HttpSession;
 import com.web.biz.OrderBiz;
 import com.web.biz.impl.OrderBizImpl;
 import com.web.entity.Order;
-import com.web.entity.Product;
 
 /**
- * Servlet implementation class SubmitOrderController
+ * Servlet implementation class ConfirmReceiptController
  */
-@WebServlet("/SubmitOrderController")
-public class SubmitOrderController extends HttpServlet {
+@WebServlet("/ConfirmReceiptController")
+public class ConfirmReceiptController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubmitOrderController() {
+    public ConfirmReceiptController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,34 +41,21 @@ public class SubmitOrderController extends HttpServlet {
 		// 获取session对象
 		HttpSession session = request.getSession();
 		// 获取订单实体，购物车实体
-		Order order = (Order) session.getAttribute("order");//获取购物车信息
-		Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart");
-		
-		// 获取订单备注，支付方式
-		String remark = request.getParameter("remark");
-		String pay = request.getParameter("pay");
+		Order order = (Order) session.getAttribute("order");
 
+		// 已收货未评价
+		order.setSTATE(3);
 
-		// 更改订单备注，支付方式
-		order.setREMARK(remark);
-		order.setPAY(pay);
-
-		// 订单已支付未发货
-		order.setSTATE(1);
-		
 		//实例化订单的业务逻辑层
 		OrderBiz orderBiz = new OrderBizImpl();
 		boolean flag = orderBiz.changeState(order);
 
 		//如果添加成功，则跳转到添加订单成功页面
 		if(flag){
-			// seesion中添加订单,同时清空购物车
-			cart.clear();
 			session.setAttribute("order", order);
-			session.setAttribute("cart", cart);
-			response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
+			response.sendRedirect(request.getContextPath()+"/client/waitcommentorder.jsp");
 		}else{
-			response.sendRedirect(request.getContextPath()+"/client/checkout.jsp");
+			response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
 		}
 	}
 

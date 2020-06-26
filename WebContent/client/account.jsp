@@ -27,8 +27,19 @@
             alert(name+"已经正常退出账户！");
             location.href = "${pageContext.request.contextPath}/LogOutController";
         }
-    </script>
 
+        function viewOrder(oid, state){
+            state = parseInt(state);
+            if(state == 4) {
+                alert("订单已完成，联系管理员可以查看详细消息！");
+                location.href = "${pageContext.request.contextPath}/FindOrderByUserController";
+            }
+            else{
+                location.href = "${pageContext.request.contextPath}/OrderViewController?oid="+
+                    oid + "&state=" + state;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -107,13 +118,14 @@
                                                             <td class="wide-column">${entry.DATE}</td>
                                                             <td>${stateList[vs.count-1]}</td>
                                                             <td class="wide-column">￥${entry.SUMPRICE}</td>
-                                                            <td><a href="product-details.html" class="btn">查看</a></td>
+                                                            <!-- 查看订单，参数：订单号，订单状态 -->
+                                                            <td><a href="#" onclick="viewOrder('${entry.OID}','${entry.STATE}')" class="btn" >查看</a></td>
                                                         </tr>
                                                     </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>                                 
+                                    </div>
                                     <div class="tab-pane fade" id="addresses">
                                         <p class="mb--20">默认情况下，结帐页面将使用以下地址。</p>
                                         <div class="row">

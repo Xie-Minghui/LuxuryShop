@@ -115,10 +115,13 @@ public class OrderDaoImpl implements OrderDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "select * from orders where OID="+id;
+			String sql = "select * from orders where OID=?";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setString(1, id);
 			
 			//执行查询
 			ResultSet rs = ps.executeQuery();

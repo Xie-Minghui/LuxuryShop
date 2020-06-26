@@ -24,7 +24,7 @@
     <script>
         function confirm_receipt(){
             alert("正在收货，点击确认跳转订单评论页面...");
-            location.href = "${pageContext.request.contextPath}/client/waitcommentorder.jsp";
+            location.href = "${pageContext.request.contextPath}/ConfirmReceiptController";
         }
     </script>
 </head>

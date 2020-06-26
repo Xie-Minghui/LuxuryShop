@@ -170,8 +170,7 @@
                                 <div class="checkout-title mt--10">
                                     <h2>支付方式</h2>
                                 </div>
-                                <div class="checkout-payment">
-                                    
+                                <div class="checkout-payment">s
                                         <div class="payment-group mb--10">
                                             <div class="payment-radio">
                                                 <input type="radio" value="中国银行" name="pay" id="bank" checked>

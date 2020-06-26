@@ -72,7 +72,7 @@ public class CreateOrderController extends HttpServlet {
 		order.setConsumer(consumer);
 		order.setCID(consumer.getCID());
 
-		// 设置订单状态
+		// 未支付
 		order.setSTATE(0);
 
 		// 设置订单备注

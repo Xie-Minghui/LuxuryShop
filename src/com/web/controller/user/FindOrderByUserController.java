@@ -59,10 +59,16 @@ public class FindOrderByUserController extends HttpServlet {
 					state_list.add("未支付");
 					break;
 				case 1:
-					state_list.add("已支付");
+					state_list.add("未发货");
 					break;
 				case 2:
-					state_list.add("已评论");
+					state_list.add("等待收货");
+					break;
+				case 3:
+					state_list.add("已收货未评价");
+					break;
+				case 4:
+					state_list.add("已完成");
 					break;
 				default:
 					state_list.add("未支付");

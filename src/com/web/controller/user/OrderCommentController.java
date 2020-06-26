@@ -50,8 +50,8 @@ public class OrderCommentController extends HttpServlet {
 		HttpSession session = request.getSession();
 		// 获取订单
 		Order order = (Order) session.getAttribute("order");
-		// 订单已收货
-		order.setSTATE(2);
+		// 已评价
+		order.setSTATE(4);
 
 		//更新item 更新order 
 		OrderBiz orderBiz = new OrderBizImpl();
