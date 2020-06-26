@@ -63,6 +63,7 @@ public class SubmitOrderController extends HttpServlet {
 		OrderBiz orderBiz = new OrderBizImpl();
 		boolean flag = orderBiz.changeState(order);
 
+		
 		//如果添加成功，则跳转到添加订单成功页面
 		if(flag){
 			// seesion中添加订单,同时清空购物车

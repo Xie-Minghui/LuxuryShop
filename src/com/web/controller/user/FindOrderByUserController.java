@@ -2,6 +2,8 @@ package com.web.controller.user;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -50,6 +52,13 @@ public class FindOrderByUserController extends HttpServlet {
 		OrderBiz orderBiz = new OrderBizImpl();
 		
 		List<Order> list = orderBiz.findOrderByConsumer(consumer);
+		// 按照时间顺序
+		Collections.sort(list,new Comparator<Order>(){
+			@Override
+			public int compare(Order o1, Order o2){
+				return o2.getDATE().compareTo(o1.getDATE());
+			}
+		});
 		
 		// 订单状态
 		List<String> state_list = new ArrayList<String>();
@@ -75,6 +84,7 @@ public class FindOrderByUserController extends HttpServlet {
 					break;
 			};
 		}
+		
 		//把订单列表数据信息传递到前台
 		req.setAttribute("orderList", list);
 		req.setAttribute("stateList", state_list);
