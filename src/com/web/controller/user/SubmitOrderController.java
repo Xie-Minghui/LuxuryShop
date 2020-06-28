@@ -45,7 +45,6 @@ public class SubmitOrderController extends HttpServlet {
 		HttpSession session = request.getSession();
 		// 获取订单实体，购物车实体
 		Order order = (Order) session.getAttribute("order");//获取购物车信息
-		Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart");
 		
 		// 获取订单备注，支付方式
 		String remark = request.getParameter("remark");
@@ -66,10 +65,7 @@ public class SubmitOrderController extends HttpServlet {
 		
 		//如果添加成功，则跳转到添加订单成功页面
 		if(flag){
-			// seesion中添加订单,同时清空购物车
-			cart.clear();
 			session.setAttribute("order", order);
-			session.setAttribute("cart", cart);
 			response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
 		}else{
 			response.sendRedirect(request.getContextPath()+"/client/checkout.jsp");

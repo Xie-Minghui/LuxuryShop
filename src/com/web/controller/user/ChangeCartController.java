@@ -57,6 +57,11 @@ public class ChangeCartController extends HttpServlet {
 		//获取购物车信息
 		Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart");
 
+		// 如果购物车没有物品
+		if(cart == null) {
+
+		}
+
 		// 判断是否为清空购物车
 		if(count < 0) {
 			cart.clear();

@@ -47,6 +47,15 @@
             location.href = "${pageContext.request.contextPath}/ChangeCartController?id="
                     + 1000 + "&count=" + -1;
         }
+
+        function settle_account(cart ){
+            if(!cart){
+                alert("快去逛逛商场吧，您的购物车是空的~");
+                location.href = "${pageContext.request.contextPath}/client/cart.jsp";
+            }else{
+                location.href = "${pageContext.request.contextPath}/CreateOrderController";
+            }
+        }
     </script>
 
 </head>
@@ -186,7 +195,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="${pageContext.request.contextPath}/CreateOrderController" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                <a onclick="settle_account('${cart}')" href="#" class="btn btn-size-md btn-shape-square btn-fullwidth">
                                     结算
                                 </a>
                             </div>
