@@ -1,5 +1,6 @@
 package com.web.util;
 
+import java.math.BigDecimal;
 import java.util.List;
 import com.web.entity.*;
 
@@ -19,6 +20,9 @@ public class PageBean {
 	
 	private String category;		// 类别
 	private String searchfild;		// 模糊搜索字段
+	private BigDecimal maxPrice;	//最大价格
+	private BigDecimal minPrice;	//最小价格
+	
 	public Integer getCurrentPage() {
 		return currentPage;
 	}
@@ -47,6 +51,18 @@ public class PageBean {
 	}
 	public List<Product> getluxuryList() {
 		return luxuryList;
+	}
+	public BigDecimal getMaxPrice() {
+		return maxPrice;
+	}
+	public void setMaxPrice(BigDecimal maxPrice) {
+		this.maxPrice = maxPrice;
+	}
+	public BigDecimal getMinPrice() {
+		return minPrice;
+	}
+	public void setMinPrice(BigDecimal minPrice) {
+		this.minPrice = minPrice;
 	}
 	public void setluxuryList(List<Product> LuxuryList) {
 		luxuryList = LuxuryList;

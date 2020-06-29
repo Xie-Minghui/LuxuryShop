@@ -1,5 +1,6 @@
 package com.web.biz.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.web.biz.ProductBiz;
@@ -102,6 +103,38 @@ public class ProductBizImpl implements ProductBiz {
 		 */
 		return productDao.getWeekHotLuxury();
 		
+	}
+
+	@Override
+	public PageBean findProductByPrice(int currentPage, int currentCount, BigDecimal max, BigDecimal min) {
+		
+		PageBean bean = new PageBean();
+		
+		//设置每页显示的条数
+		bean.setCurrentCount(currentCount);
+		
+		//设置当前页码
+		bean.setCurrentPage(currentPage);
+		
+		//设置搜索标记
+		bean.setCategory(null);
+
+		//设置数据信息
+		List<Product> list = productDao.findLuxuryByPrice(currentPage, currentCount, max, min);
+		bean.setluxuryList(list);
+		
+		//设置搜索的字段
+		bean.setSearchfild(null);
+		
+		//设置价格范围
+		bean.setMinPrice(min);
+		bean.setMaxPrice(max);
+		
+		//设置总条数
+		Integer totalCount = productDao.findLuxuryByPriceAllCount(max, min);
+		bean.setTotalCount(totalCount);
+		
+		return bean;
 	}
 
 }

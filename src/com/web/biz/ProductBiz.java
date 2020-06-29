@@ -1,5 +1,6 @@
 package com.web.biz;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.web.entity.OrderItem;
@@ -31,6 +32,16 @@ public interface ProductBiz {
 	 * @return
 	 */
     public PageBean findProductByName(int currentPage,int currentCount,String searchfield);
+    
+    /**
+     * 根据价格查询商品
+     * @param currentPage
+     * @param currentCount
+     * @param max
+     * @param min
+     * @return
+     */
+    public PageBean findProductByPrice(int currentPage,int currentCount,BigDecimal max, BigDecimal min);
     
     /**
      * 通过id找到产品

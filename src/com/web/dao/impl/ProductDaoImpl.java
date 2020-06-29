@@ -1,5 +1,6 @@
 package com.web.dao.impl;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -339,6 +340,93 @@ public class ProductDaoImpl implements ProductDao {
 		}
 		
 		return list;
+	}
+
+	@Override
+	public List<Product> findLuxuryByPrice(int currentPage, int currentCount, BigDecimal max, BigDecimal min) {
+		List<Product> list = new  ArrayList<>();
+				
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select * from luxury where price > ? and price < ? limit ?,?";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setBigDecimal(1, min);
+			ps.setBigDecimal(2, max);
+			ps.setInt(3, (currentPage-1)*currentCount);
+			ps.setInt(4, currentCount);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环结果集对象
+			while(rs.next()){
+				Product p = new Product();
+				p.setLID(rs.getInt("lid"));
+				p.setAID(rs.getInt("aid"));
+				p.setLNAME(rs.getString("lname"));
+				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
+				p.setSALENUM(rs.getInt("salenum"));
+				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
+				
+				
+				//把对象添加到集合中取
+				list.add(p);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
+	@Override
+	public Integer findLuxuryByPriceAllCount(BigDecimal max, BigDecimal min) {
+		//定义获取的总条数
+		Integer totalCount = 0;
+		
+		try {
+			//获取数据库的连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select count(*) from luxury where price > ? and price < ?";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setBigDecimal(1, min);
+			ps.setBigDecimal(2, max);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环结果集
+			while(rs.next()){
+				totalCount = rs.getInt(1);
+			}
+			
+			//关闭
+			JDBCUtil.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return totalCount;
 	}
 
 }
