@@ -314,7 +314,7 @@ public class ProductDaoImpl implements ProductDao {
 			//获取数据库连接
 			Connection conn = JDBCUtil.getConnectinon();
 			//编写sql
-			String sql = "select * from luxury ordered by salenum desc limit 0,4";
+			String sql = "select * from luxury order by salenum desc limit 0,4";
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
 			//执行查询

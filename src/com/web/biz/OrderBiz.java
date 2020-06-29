@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.web.entity.Consumer;
 import com.web.entity.Order;
+import com.web.util.OrderPageBean;
 
 public interface OrderBiz {
 	// 添加订单
@@ -16,4 +17,6 @@ public interface OrderBiz {
 	public Order findOrderById(String id);
 	
 	public boolean changeState(Order order);
+	
+	public OrderPageBean FindOrderByPage(Integer currentPage, int currentCount, String oid, String username, Integer state);
 }
