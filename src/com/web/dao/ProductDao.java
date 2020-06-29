@@ -79,6 +79,12 @@ public interface ProductDao {
 	public List<Product> findLuxuryByCategory(String category);
 	
 	/**
+	 * 查找最新商品
+	 * @return
+	 */
+	public List<Product> findTheNewLuxury();
+	
+	/**
 	 * 生成订单时，将商品库存数量减少
 	 * @param orderItem
 	 * @return

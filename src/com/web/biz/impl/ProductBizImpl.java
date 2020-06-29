@@ -142,4 +142,9 @@ public class ProductBizImpl implements ProductBiz {
 		return productDao.findLuxuryByCategory(category);
 	}
 
+	@Override
+	public List<Product> findTheNewLuxury() {
+		return productDao.findTheNewLuxury();
+	}
+
 }

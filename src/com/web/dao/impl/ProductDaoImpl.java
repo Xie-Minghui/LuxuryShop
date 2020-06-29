@@ -484,4 +484,48 @@ public class ProductDaoImpl implements ProductDao {
 		return list;
 	}
 
+	@Override
+	public List<Product> findTheNewLuxury() {
+		List<Product> list = new  ArrayList<>();
+		
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select * from luxury order by date desc limit 0,8";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环结果集对象
+			while(rs.next()){
+				Product p = new Product();
+				p.setLID(rs.getInt("lid"));
+				p.setAID(rs.getInt("aid"));
+				p.setLNAME(rs.getString("lname"));
+				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
+				p.setSALENUM(rs.getInt("salenum"));
+				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
+				
+				//把对象添加到集合中取
+				list.add(p);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
 }
