@@ -112,7 +112,7 @@
                                                                 <i class="fa fa-heart-o"></i>
                                                                 <span class="sr-only">Add to wishlist</span>
                                                             </a>
-                                                            <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}" class="action-btn">
+                                                            <a href="cart.html" class="action-btn">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                                 <span class="sr-only">Add To Cart</span>
                                                             </a>
@@ -170,7 +170,7 @@
                                     <%--上一页 --%>
                                     <c:if test="${bean.currentPage !=1 }">
                                         <li >
-                                        <a class="page-number" href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${bean.currentPage-1 }&textfield=${bean.searchfild}">《《</a>
+                                        <a class="page-number" href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=${bean.currentPage-1 }&minprice=${bean.minPrice}&maxprice=${bean.maxPrice}">《《</a>
                                         </li>
                                     </c:if>
                                     <c:if test="${bean.currentPage == 1 }">
@@ -184,7 +184,7 @@
                                             <li><span class="page-number current">${pageNum}</span></li>
                                         </c:if>
                                         <c:if test="${pageNum != bean.currentPage }">
-                                            <li><a class="page-number" href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${pageNum}&textfield=${bean.searchfild}">${pageNum}</a></li>
+                                            <li><a class="page-number" href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=${pageNum}&minprice=${bean.minPrice}&maxprice=${bean.maxPrice}">${pageNum}</a></li>
                                         </c:if>
                                     </c:forEach>
                                     <%--页码数 --%>
@@ -192,7 +192,7 @@
                                     <%--下一页 --%>
                                     <c:if test="${bean.currentPage != bean.totalPage && bean.totalPage!=0}">
                                         <li>
-                                        <a class="page-number"   href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${bean.currentPage+1 }&textfield=${bean.searchfild}">》》</a>
+                                        <a class="page-number"   href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=${bean.currentPage+1 }&minprice=${bean.minPrice}&maxprice=${bean.maxPrice}">》》</a>
                                         </li>
                                     </c:if>
                                     <c:if test="${bean.currentPage == bean.totalPage || bean.totalPage==0}">
@@ -304,6 +304,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                
                             </aside>
                         </div>
                     </div>
@@ -313,7 +314,7 @@
         <!-- Main Content Wrapper Start -->
 
         <!-- Footer -->
-        <jsp:include page = "foot.jsp"></jsp:include>
+
 
         <!-- OffCanvas Menu Start -->
 
@@ -324,7 +325,7 @@
         <!-- Mini Cart End -->
 
         <!-- Qicuk View Modal Start -->
-
+		<jsp:include page = "quickview.jsp"></jsp:include>
         <!-- Qicuk View Modal End -->
 
         <!-- Global Overlay Start -->

@@ -351,7 +351,7 @@ public class ProductDaoImpl implements ProductDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "select * from luxury where price > ? and price < ? limit ?,?";
+			String sql = "select * from luxury where price >= ? and price <= ? limit ?,?";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -403,7 +403,7 @@ public class ProductDaoImpl implements ProductDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "select count(*) from luxury where price > ? and price < ?";
+			String sql = "select count(*) from luxury where price >= ? and price <= ?";
 			
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);

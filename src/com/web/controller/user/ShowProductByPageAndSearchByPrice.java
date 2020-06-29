@@ -62,8 +62,8 @@ public class ShowProductByPageAndSearchByPrice extends HttpServlet {
 		}
 		
 		//获取前台jsp页面传过来的搜索字段信息
-		BigDecimal minPrice = new BigDecimal(req.getParameter("minPrice"));
-		BigDecimal maxPrice = new BigDecimal(req.getParameter("maxPrice"));
+		BigDecimal minPrice = new BigDecimal(req.getParameter("minprice"));
+		BigDecimal maxPrice = new BigDecimal(req.getParameter("maxprice"));
 			
 		//调用业务逻辑层根据搜索字段分页查询数据方法
 		PageBean bean = productBiz.findProductByPrice(currentPage, currentCount ,maxPrice ,minPrice);
@@ -74,7 +74,7 @@ public class ShowProductByPageAndSearchByPrice extends HttpServlet {
 		System.out.println(bean.getTotalCount());
 		
 		//转发跳转页面
-		req.getRequestDispatcher("/client/").forward(req, resp);
+		req.getRequestDispatcher("/client/price_shop.jsp").forward(req, resp);
 	}
 
 }
