@@ -90,5 +90,5 @@ public interface ProductDao {
 	 * @param order
 	 * @return
 	 */
-	public List<Object[]> getWeekHotLuxury();
+	public List<Product> getHotLuxury();
 }

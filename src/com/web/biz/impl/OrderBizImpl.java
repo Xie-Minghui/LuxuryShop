@@ -41,6 +41,9 @@ public class OrderBizImpl implements OrderBiz {
 				 
 				 //商品库存数量的减少
 				 productBiz.changeLuxuryNum(orderItem);
+				 
+				 // 增加商品销量
+				 
 			}
 			
 			 flag = true;

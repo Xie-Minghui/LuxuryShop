@@ -69,5 +69,5 @@ public interface ProductBiz {
 	 * @param orderItem
 	 * @return
 	 */
-	public List<Object[]> getWeekHotLuxury();
+	public List<Product> getHotLuxury();
 }

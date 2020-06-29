@@ -95,13 +95,13 @@ public class ProductBizImpl implements ProductBiz {
 	}
 
 	@Override
-	public List<Object[]> getWeekHotLuxury() {
+	public List<Product> getHotLuxury() {
 		/**
 		 * 得到每周热卖商品
 		 * @param order
 		 * @return
 		 */
-		return productDao.getWeekHotLuxury();
+		return productDao.getHotLuxury();
 		
 	}
 
