@@ -23,5 +23,10 @@ public interface OrderDao {
     
     //改变订单状态
     public boolean changeState(Order order);
+
+    // 分页查询订单
+	public List<Order> findOrderByPage(Integer currentPage, int currentCount, String id, String username, Integer state);
+
+	public Integer findOrderAllCount(String oid, String username, Integer state);
     
 }

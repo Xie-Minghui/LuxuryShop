@@ -1,5 +1,6 @@
 package com.web.dao;
 
+import java.math.BigDecimal;
 import java.util.List;
 import com.web.entity.*;
 
@@ -45,6 +46,23 @@ public interface ProductDao {
 	 */
 	public List<Product> findLuxuryByName(int currentPage,int currentCount,String searchfield);
 	
+	/**
+	 * 根据价格搜索总条数
+	 * @param max
+	 * @param min
+	 * @return
+	 */
+	public Integer findLuxuryByPriceAllCount(BigDecimal max, BigDecimal min);
+	
+	/**
+	 * 根据价格搜索数据
+	 * @param currentPage
+	 * @param currentCount
+	 * @param max
+	 * @param min
+	 * @return
+	 */
+	public List<Product> findLuxuryByPrice(int currentPage,int currentCount,BigDecimal max, BigDecimal min);
 
 	/**
 	 * 根据id查询商品的详情信息
@@ -52,6 +70,19 @@ public interface ProductDao {
 	 * @return
 	 */
 	public Product findLuxuryById(int id);
+	
+	/**
+	 * 根据类型查找商品
+	 * @param category
+	 * @return
+	 */
+	public List<Product> findLuxuryByCategory(String category);
+	
+	/**
+	 * 查找最新商品
+	 * @return
+	 */
+	public List<Product> findTheNewLuxury();
 	
 	/**
 	 * 生成订单时，将商品库存数量减少
@@ -65,5 +96,5 @@ public interface ProductDao {
 	 * @param order
 	 * @return
 	 */
-	public List<Object[]> getWeekHotLuxury();
+	public List<Product> getHotLuxury();
 }

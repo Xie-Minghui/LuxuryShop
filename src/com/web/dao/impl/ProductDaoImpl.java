@@ -1,5 +1,6 @@
 package com.web.dao.impl;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -282,13 +283,14 @@ public class ProductDaoImpl implements ProductDao {
 			//获取数据库连接
 			Connection conn = JDBCUtil.getConnectinon();
 			//编写sql
-			String sql = "update luxury set restnum = restnum - ? where lid = ?";
+			String sql = "update luxury set restnum = restnum - ? , salenum = salenum + ? where lid = ?";
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			//设置参数
 			ps.setInt(1,orderItem.getNUM());
-			ps.setInt(2,orderItem.getLID());
+			ps.setInt(2,orderItem.getNUM());
+			ps.setInt(3,orderItem.getLID());
 			//执行修改
 			count  = ps.executeUpdate();
 			
@@ -301,40 +303,225 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
-	public List<Object[]> getWeekHotLuxury() {
+	public List<Product> getHotLuxury() {
 		/**
 		 * 得到每周热卖商品
 		 * @param orderItem
 		 * @return
 		 */
-		List<Object[]> list = new ArrayList<>();
+		List<Product> list = new ArrayList<>();
 		try {
 			//获取数据库连接
 			Connection conn = JDBCUtil.getConnectinon();
 			//编写sql
-			String sql = "select LID,AID,LNAME,TYPE,IMAGE,sum(NUM) totalSaleNum\r\n" + 
-					"from luxury natrual join orders using(LID)\r\n" + 
-					"where order.date > DATE_SUB(NOW(),INTERVAL 7 DAY)\r\n" + 
-					"group by LID\r\n" + 
-					"order by totalSaleNum\r\n" + 
-					"limit 0,3";
+			String sql = "select * from luxury order by salenum desc limit 0,4";
 			//编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
 			//执行查询
 			ResultSet rs = ps.executeQuery();
 			
 			//循环
-			while(rs.next()) {
-				Object[] obj = new Object[]{};
-				obj[0] = rs.getString(1);
-				obj[1] = rs.getString(2);
-				obj[2] = rs.getString(3);
-				list.add(obj);	
+			while(rs.next()){
+				Product p = new Product();
+				p.setLID(rs.getInt("lid"));
+				p.setAID(rs.getInt("aid"));
+				p.setLNAME(rs.getString("lname"));
+				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
+				p.setSALENUM(rs.getInt("salenum"));
+				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
+				p.setRESTNUM(rs.getInt("restnum"));
+				
+				//把商品对象添加到集合中
+				list.add(p);
 			}
 			//关闭数据库
 			JDBCUtil.close();
 			
 		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<Product> findLuxuryByPrice(int currentPage, int currentCount, BigDecimal max, BigDecimal min) {
+		List<Product> list = new  ArrayList<>();
+				
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select * from luxury where price >= ? and price <= ? limit ?,?";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setBigDecimal(1, min);
+			ps.setBigDecimal(2, max);
+			ps.setInt(3, (currentPage-1)*currentCount);
+			ps.setInt(4, currentCount);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环结果集对象
+			while(rs.next()){
+				Product p = new Product();
+				p.setLID(rs.getInt("lid"));
+				p.setAID(rs.getInt("aid"));
+				p.setLNAME(rs.getString("lname"));
+				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
+				p.setSALENUM(rs.getInt("salenum"));
+				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
+				
+				
+				//把对象添加到集合中取
+				list.add(p);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
+	@Override
+	public Integer findLuxuryByPriceAllCount(BigDecimal max, BigDecimal min) {
+		//定义获取的总条数
+		Integer totalCount = 0;
+		
+		try {
+			//获取数据库的连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select count(*) from luxury where price >= ? and price <= ?";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setBigDecimal(1, min);
+			ps.setBigDecimal(2, max);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环结果集
+			while(rs.next()){
+				totalCount = rs.getInt(1);
+			}
+			
+			//关闭
+			JDBCUtil.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return totalCount;
+	}
+
+	@Override
+	public List<Product> findLuxuryByCategory(String category) {
+		List<Product> list = new  ArrayList<>();
+		
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select * from luxury where type = ?";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setString(1, category);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环结果集对象
+			while(rs.next()){
+				Product p = new Product();
+				p.setLID(rs.getInt("lid"));
+				p.setAID(rs.getInt("aid"));
+				p.setLNAME(rs.getString("lname"));
+				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
+				p.setSALENUM(rs.getInt("salenum"));
+				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
+				
+				//把对象添加到集合中取
+				list.add(p);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<Product> findTheNewLuxury() {
+		List<Product> list = new  ArrayList<>();
+		
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select * from luxury order by date desc limit 0,8";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环结果集对象
+			while(rs.next()){
+				Product p = new Product();
+				p.setLID(rs.getInt("lid"));
+				p.setAID(rs.getInt("aid"));
+				p.setLNAME(rs.getString("lname"));
+				p.setPRICE(rs.getBigDecimal("price"));
+				p.setINFOR(rs.getString("infor"));	
+				p.setTYPE(rs.getString("type"));
+				p.setIMAGE(rs.getString("image"));
+				p.setSALENUM(rs.getInt("salenum"));
+				p.setVIEWCOUNT(rs.getInt("viewcount"));
+				p.setSIZE(rs.getString("size"));
+				p.setWEIGHT(rs.getBigDecimal("weight"));
+				p.setCOLOR(rs.getString("color"));
+				
+				//把对象添加到集合中取
+				list.add(p);
+			}
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		

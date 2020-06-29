@@ -10,6 +10,9 @@ import com.web.dao.impl.OrderDaoImpl;
 import com.web.entity.Consumer;
 import com.web.entity.Order;
 import com.web.entity.OrderItem;
+import com.web.entity.Product;
+import com.web.util.OrderPageBean;
+import com.web.util.PageBean;
 
 public class OrderBizImpl implements OrderBiz {
 
@@ -41,6 +44,9 @@ public class OrderBizImpl implements OrderBiz {
 				 
 				 //商品库存数量的减少
 				 productBiz.changeLuxuryNum(orderItem);
+				 
+				 // 增加商品销量
+				 
 			}
 			
 			 flag = true;
@@ -77,6 +83,29 @@ public class OrderBizImpl implements OrderBiz {
 	@Override
 	public boolean changeState(Order order) {
 		return orderDao.changeState(order);
+	}
+
+
+	@Override
+	public OrderPageBean FindOrderByPage(Integer currentPage, int currentCount, String oid, String username,
+			Integer state) {
+
+		//获取分页查询的总条数
+		Integer totalCount =orderDao.findOrderAllCount(oid, username, state);
+		
+		//获取分页查询的数据信息
+		List<Order> orderList = orderDao.findOrderByPage(currentPage, currentCount, oid, username, state);
+		
+		OrderPageBean orderpageBean = new OrderPageBean();
+		orderpageBean.setOid(oid);
+		orderpageBean.setUsername(username);
+		orderpageBean.setState(state);
+		orderpageBean.setCurrentPage(currentPage);
+		orderpageBean.setCurrentCount(currentCount);
+		orderpageBean.setTotalCount(totalCount);
+		orderpageBean.setOrderList(orderList);
+		
+		return orderpageBean;
 	}
 
 }

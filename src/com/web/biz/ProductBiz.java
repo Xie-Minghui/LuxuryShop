@@ -1,5 +1,6 @@
 package com.web.biz;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.web.entity.OrderItem;
@@ -33,11 +34,34 @@ public interface ProductBiz {
     public PageBean findProductByName(int currentPage,int currentCount,String searchfield);
     
     /**
+     * 根据价格查询商品
+     * @param currentPage
+     * @param currentCount
+     * @param max
+     * @param min
+     * @return
+     */
+    public PageBean findProductByPrice(int currentPage,int currentCount,BigDecimal max, BigDecimal min);
+    
+    /**
      * 通过id找到产品
      * @param id
      * @return
      */
     public Product findProductById(int id);
+    
+    /**
+     * 通过类型找产品
+     * @param category
+     * @return
+     */
+    public List<Product> findLuxuryByCategory(String category);
+    
+    /**
+	 * 查找最新商品
+	 * @return
+	 */
+	public List<Product> findTheNewLuxury();
     
     /**
 	 * 生成订单时，将商品库存数量减少
@@ -51,5 +75,5 @@ public interface ProductBiz {
 	 * @param orderItem
 	 * @return
 	 */
-	public List<Object[]> getWeekHotLuxury();
+	public List<Product> getHotLuxury();
 }

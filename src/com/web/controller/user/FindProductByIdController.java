@@ -1,6 +1,10 @@
 package com.web.controller.user;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,8 +53,22 @@ public class FindProductByIdController extends HttpServlet {
 		Product product = productBiz.findProductById(id);
 		
 		System.out.println(product.getLNAME());
+		
+		//查找同类商品
+		List<Product> relatedProduct = new ArrayList<Product>();
+		relatedProduct = productBiz.findLuxuryByCategory(product.getTYPE());
+		
+		System.out.println(relatedProduct.size());
+		
+		//乱序
+		Collections.shuffle(relatedProduct);
+				
+		//截取
+		List<Product> subRelatedProduct = relatedProduct.subList(0,4); 
+		
 		//把数据传递到前台页面
 		request.setAttribute("p", product);
+		request.setAttribute("rpl", subRelatedProduct);
 		
 		request.getRequestDispatcher("/client/product_details.jsp").forward(request, response);
 	}

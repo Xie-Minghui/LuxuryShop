@@ -199,7 +199,7 @@
                                     </div> -->
                                 </li>
                                 <li class="mainmenu__item">
-                                    <a href="#" class="mainmenu__link">公告</a>
+                                    <a href="${pageContext.request.contextPath}/client/notice.jsp" class="mainmenu__link">公告</a>
                                 </li>
                             </ul>
                         </nav>

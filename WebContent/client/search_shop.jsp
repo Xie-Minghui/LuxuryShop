@@ -256,19 +256,19 @@
                                     <h3 class="widget-title mb--25">Price</h3>
                                     <ul class="widget-list price-list">
                                         <li>
-                                            <a href="shop.html">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=10.00&maxprice=45.00">
                                                 <span>Low - Medium</span>
                                                 <strong class="font-weight-medium">$10.00 - $45.00</strong>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=45.00&maxprice=60.00">
                                                 <span>Medium - High</span>
                                                 <strong class="font-weight-medium">$45.00 - $60.00</strong>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=60.00&maxprice=200.00">
                                                 <span>High - Avobe</span>
                                                 <strong class="font-weight-medium">$60.00 - $200</strong>
                                             </a>
