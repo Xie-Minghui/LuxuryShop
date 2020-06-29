@@ -16,7 +16,7 @@ import com.web.entity.Product;
 /**
  * Servlet implementation class HotAndNewProductController
  */
-@WebServlet("/HotAndNewProductController")
+@WebServlet("/index")
 public class HotAndNewProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,7 +33,7 @@ public class HotAndNewProductController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		doPost(request, response);
 	}
 
 	/**
@@ -44,9 +44,13 @@ public class HotAndNewProductController extends HttpServlet {
 		ProductBiz productbiz = new ProductBizImpl();
 		List<Product> hot_list = productbiz.getHotLuxury();
 		// 得到新品
+		List<Product> new_list = productbiz.findTheNewLuxury();
 		
 		// 定位向index.jsp主页面
+		request.setAttribute("hot_list", hot_list);
+		request.setAttribute("new_list", new_list);
 		
+		request.getRequestDispatcher("/client/index.jsp").forward(request, response);
 	}
 
 }
