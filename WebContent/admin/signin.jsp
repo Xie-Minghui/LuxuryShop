@@ -31,7 +31,7 @@
     <div class="page login-page">
       <div class="container d-flex align-items-center">
         <div class="form-holder has-shadow">
-          <div class="row">
+          <div class="row" style="height:400px">
             <!-- Logo & Information Panel-->
             <div class="col-lg-6">
               <div class="info d-flex align-items-center">
@@ -55,7 +55,7 @@
                     <div class="form-group">
                       <input id="login-password" type="password" name="loginPassword" required data-msg="Please enter your password" class="input-material">
                       <label for="login-password" class="label-material">密码</label>
-                    </div><a id="login" href="index.html" class="btn btn-primary">登录</a>
+                    </div><a id="login" href="index.jsp" class="btn btn-primary">登录</a>
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form>
                 </div>
