@@ -137,4 +137,9 @@ public class ProductBizImpl implements ProductBiz {
 		return bean;
 	}
 
+	@Override
+	public List<Product> findLuxuryByCategory(String category) {
+		return productDao.findLuxuryByCategory(category);
+	}
+
 }
