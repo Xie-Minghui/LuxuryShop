@@ -477,6 +477,12 @@ a, button, .item-overlay, .global-overlay, .scroll-to-top i:before, .slick-dots 
 .bl-widget.author .inner .info .autor-meta, .cart-calculator__item.order-total {
   border-top: 1px solid #5c5958; }
 
+.info-total {
+  border-bottom: 1px solid #c2c3c4;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
 .banner__btn, .btn-link, .btn-link:hover, .single-post__header {
   border-bottom: 1px solid #5c5958; }
 
@@ -3956,6 +3962,9 @@ a, button, .item-overlay, .global-overlay, .scroll-to-top i:before, .slick-dots 
 
 .cart-totals {
   padding: 30px 30px 0;
+  margin-bottom: 15px; }
+  
+.order-totals {
   margin-bottom: 15px; }
 
 .cart-calculator__item--head {
