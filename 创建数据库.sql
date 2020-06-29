@@ -2,6 +2,19 @@
 /* DBMS name:      MySQL 5.0                                    */
 /* Created on:     2020/6/17 17:42:33                           */
 /*==============================================================*/
+drop table if exists Orders_item; #订单条目
+
+drop table if exists Favor;#收藏夹
+
+drop table if exists Orders; # 订单
+
+drop table if exists Luxury; # 商品
+
+drop table if exists Admin; # 管理员
+
+drop table if exists Consumer; # 用户
+
+
 /*==============================================================*/
 /* Table: Admin                                                 */
 /*==============================================================*/
@@ -44,8 +57,9 @@ create table Luxury                                  #商品
    PRICE                numeric(10,2),               #商品价格
    RESTNUM              int,                         #库存
    TYPE                 char(10),                    #商品类型
+	DATE						date,								  #加入时间
    INFOR                varchar(255),                #商品信息
-   IMAGE                varchar(100),                #图片
+   IMAGE                varchar(1000),               #图片
    SALENUM              int,                         #销量
    VIEWCOUNT            int,                         #浏览量
    SIZE                 varchar(40),                #最小尺寸
@@ -59,7 +73,7 @@ create table Luxury                                  #商品
 /*==============================================================*/
 create table Orders																	 #订单
 (
-   OID                  varchar(20),                 #订单ID
+   OID                  varchar(100),                 #订单ID
    CID                  int not null,                #用户ID
    DATE                 datetime,                    #下单日期
    PAY                  varchar(20),                 #支付方式
@@ -78,7 +92,7 @@ create table Orders																	 #订单
 
 create table Orders_item														 #订单条目
 (  
-   OID                  varchar(20),                 #订单ID
+   OID                  varchar(100),                 #订单ID
    LID                  int not null,                #商品ID
    NUM                  int,                         #购买数量
    COMMENT              varchar(400),                #反馈信息,评价
