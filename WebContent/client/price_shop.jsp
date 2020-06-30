@@ -21,6 +21,15 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+    <script>
+        function addfavor(consumer, id) {
+            if(!consumer){
+                alert("您还未登录，请登陆后添加心愿单~");
+            }else{
+                location.href = "${pageContext.request.contextPath}/AddFavorController?lid="+id;
+            }
+        }
+    </script>
 </head>
 
 <body> 
@@ -108,7 +117,7 @@
                                                                 <i class="fa fa-eye"></i>
                                                                 <span class="sr-only">Quick View</span>
                                                             </a> -->
-                                                            <a href="${pageContext.request.contextPath}/AddFavorController?lid=${p.LID}" class="action-btn">
+                                                            <a href="#" class="action-btn" onclick="addfavor('${consumer}','${p.LID}')">
                                                                 <i class="fa fa-heart-o"></i>
                                                                 <span class="sr-only">Add to wishlist</span>
                                                             </a>

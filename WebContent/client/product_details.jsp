@@ -35,6 +35,14 @@
             location.href = "${pageContext.request.contextPath}/addCartController?id="
                     + id + "&count=" + count;
         }
+
+        function addfavor(consumer, id) {
+            if(!consumer){
+                alert("您还未登录，请登陆后添加心愿单~");
+            }else{
+                location.href = "${pageContext.request.contextPath}/AddFavorController?lid="+id;
+            }
+        }
     </script>
 
 </head>
@@ -316,7 +324,7 @@
                                                                 <span class="sr-only">Quick View</span>
                                                             </a>
                                                         -->
-                                                        <a href="${pageContext.request.contextPath}/AddFavorController?lid=${rp.LID}" class="action-btn">
+                                                        <a href="#" class="action-btn" onclick="addfavor('${consumer}','${p.LID}')">
                                                             <i class="fa fa-heart-o"></i>
                                                             <span class="sr-only">Add to wishlist</span>
                                                         </a>
