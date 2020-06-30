@@ -83,6 +83,9 @@ public class OrderViewController extends HttpServlet {
 			case 3:
 				response.sendRedirect(request.getContextPath()+"/client/waitcommentorder.jsp");
 				break;
+			case 4:
+				response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
+				break;
 			default:
 				response.sendRedirect(request.getContextPath()+"/client/waitcommentorder.jsp");
 				break;

@@ -130,7 +130,7 @@
                                     </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-relative">
-                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=时尚首饰" class="mainmenu__link">时尚首饰</a>
+                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=服饰" class="mainmenu__link">时尚服饰</a>
                                     <!-- <div class="inner-menu">
                                         <ul class="sub-menu">
                                             <li>
@@ -155,7 +155,7 @@
                                     </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-relative">
-                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=配饰系列" class="mainmenu__link">配饰系列</a>
+                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=配饰" class="mainmenu__link">配饰系列</a>
                                     <!-- <div class="inner-menu">
                                         <ul class="sub-menu">
                                             <li class="has-children">

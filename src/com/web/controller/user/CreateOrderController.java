@@ -115,9 +115,8 @@ public class CreateOrderController extends HttpServlet {
 		//调用订单的业务逻辑层  添加订单、添加订单条目、商品库存数量的减少
 		
 
-		// seesion中添加订单,同时清空购物车
-		cart.clear();
-		session.setAttribute("cart", cart);
+		// seesion中添加订单,同时删除购物车
+		session.removeAttribute("cart");
 
 		// seesion中添加订单
 		session.setAttribute("order", order);

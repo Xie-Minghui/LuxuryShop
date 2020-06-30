@@ -68,7 +68,7 @@ public class SubmitOrderController extends HttpServlet {
 		//如果添加成功，则跳转到添加订单成功页面
 		if(flag){
 			session.setAttribute("order", order);
-			response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
+			response.sendRedirect(request.getContextPath()+"/client/orderconfirm.jsp");
 		}else{
 			response.sendRedirect(request.getContextPath()+"/client/checkout.jsp");
 		}
