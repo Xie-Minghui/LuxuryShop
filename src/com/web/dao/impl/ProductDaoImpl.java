@@ -2,6 +2,7 @@ package com.web.dao.impl;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -526,6 +527,53 @@ public class ProductDaoImpl implements ProductDao {
 		}
 		
 		return list;
+	}
+
+	@Override
+	public boolean addLuxury(Product luxury) {
+		//定义影响行数的变量
+		int count = 0;
+		
+		try {
+			//获取数据库连接对象
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "insert into luxury (aid,lname,"
+					+ "price,restnum,type,date,infor,image,"
+					+ "salenum,viewcount,size,weight,color)  "
+					+ "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setInt(1, luxury.getAID());
+			ps.setString(2, luxury.getLNAME());
+			ps.setBigDecimal(3, luxury.getPRICE());
+			ps.setInt(4, luxury.getRESTNUM());
+			ps.setString(5, luxury.getTYPE());
+			ps.setDate(6, new Date(new java.util.Date().getTime()));
+			ps.setString(7, luxury.getINFOR());
+			ps.setString(8, luxury.getIMAGE());
+			ps.setInt(9, 0);
+			ps.setInt(10, 0);
+			ps.setString(11, luxury.getSIZE());
+			ps.setBigDecimal(12, luxury.getWEIGHT());
+			ps.setString(13, luxury.getCOLOR());
+			
+			//执行修改
+			count = ps.executeUpdate();
+			
+			//关闭
+			JDBCUtil.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();//如果有错误，则在控制台抛出错误信息
+		}
+		
+		//如果count>0,则返回true，否则返回false
+		return count > 0 ? true : false;
 	}
 
 }

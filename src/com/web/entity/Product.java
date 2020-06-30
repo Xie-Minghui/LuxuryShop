@@ -1,5 +1,6 @@
 package com.web.entity;
 import java.math.*;
+import java.util.Date;
 
 public class Product {
 	private Integer LID;
@@ -8,6 +9,13 @@ public class Product {
 	private BigDecimal PRICE;
 	private Integer RESTNUM;
 	private String TYPE;
+	private Date DATE;
+	public Date getDATE() {
+		return DATE;
+	}
+	public void setDATE(Date dATE) {
+		DATE = dATE;
+	}
 	private String INFOR;
 	private String IMAGE;
 	private Integer SALENUM;

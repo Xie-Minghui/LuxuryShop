@@ -97,4 +97,11 @@ public interface ProductDao {
 	 * @return
 	 */
 	public List<Product> getHotLuxury();
+	
+	/**
+	 * 增加商品
+	 * @param luxury
+	 * @return
+	 */
+	public boolean addLuxury(Product luxury);
 }

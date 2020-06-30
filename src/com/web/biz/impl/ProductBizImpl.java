@@ -147,4 +147,9 @@ public class ProductBizImpl implements ProductBiz {
 		return productDao.findTheNewLuxury();
 	}
 
+	@Override
+	public boolean addLuxury(Product luxury) {
+		return productDao.addLuxury(luxury);
+	}
+
 }
