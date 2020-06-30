@@ -83,4 +83,11 @@ public interface ProductBiz {
 	 * @return
 	 */
 	public boolean addLuxury(Product luxury);
+	
+	/**
+	 * 改变商品信息
+	 * @param luxury
+	 * @return
+	 */
+	public Boolean changeLuxuryInfo(Product luxury);
 }

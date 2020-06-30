@@ -152,4 +152,9 @@ public class ProductBizImpl implements ProductBiz {
 		return productDao.addLuxury(luxury);
 	}
 
+	@Override
+	public Boolean changeLuxuryInfo(Product luxury) {
+		return productDao.changeLuxuryInfo(luxury);
+	}
+
 }
