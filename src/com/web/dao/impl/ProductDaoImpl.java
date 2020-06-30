@@ -576,4 +576,45 @@ public class ProductDaoImpl implements ProductDao {
 		return count > 0 ? true : false;
 	}
 
+	@Override
+	public Boolean changeLuxuryInfo(Product luxury) {
+		int count = 1;
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			//编写sql
+			String sql = "update luxury set "
+					+ "lname = ? "
+					+ ", price = ? "
+					+ ", restnum = ? "
+					+ ", type = ? "
+					+ ", infor = ? "
+					+ ", size = ? "
+					+ ", weight = ? "
+					+ ", color = ?"
+					+ "where lid = ?";
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setString(1, luxury.getLNAME());
+			ps.setBigDecimal(2, luxury.getPRICE());
+			ps.setInt(3, luxury.getRESTNUM());
+			ps.setString(4, luxury.getTYPE());
+			ps.setString(5, luxury.getINFOR());
+			ps.setString(6, luxury.getSIZE());
+			ps.setBigDecimal(7, luxury.getWEIGHT());
+			ps.setString(8, luxury.getCOLOR());
+			ps.setInt(9, luxury.getLID());
+			//执行修改
+			count  = ps.executeUpdate();
+			
+			//关闭
+			JDBCUtil.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return count > 0 ? true : false;
+	}
+
 }

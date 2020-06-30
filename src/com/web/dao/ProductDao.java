@@ -104,4 +104,11 @@ public interface ProductDao {
 	 * @return
 	 */
 	public boolean addLuxury(Product luxury);
+	
+	/**
+	 * 修改商品信息
+	 * @param luxury
+	 * @return
+	 */
+	public Boolean changeLuxuryInfo(Product luxury);
 }
