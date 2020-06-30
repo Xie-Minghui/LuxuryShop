@@ -68,7 +68,7 @@ public class OrderCommentController extends HttpServlet {
 		session.removeAttribute("order");
 
 		// 返回首页
-		response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
+		response.sendRedirect(request.getContextPath()+"/client/FindOrderByUserController.jsp");
 	}
 
 }

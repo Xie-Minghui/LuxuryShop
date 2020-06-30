@@ -190,7 +190,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th>重量</th>
-                                                        <td>${p.WEIGHT} Kg</td>
+                                                        <td>${p.WEIGHT} （g）Kg</td>
                                                     </tr>
                                                     <tr>
                                                         <th>尺寸</th>
