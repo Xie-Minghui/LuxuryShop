@@ -47,15 +47,15 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <form method="post" class="form-validate">
+                  <form method="post" class="form-validate" action="${pageContext.request.contextPath}/AdminLoginController">
                     <div class="form-group">
-                      <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" class="input-material">
+                      <input id="login-username" type="text" name="ANAME" required data-msg="Please enter your username" class="input-material">
                       <label for="login-username" class="label-material">用户名</label>
                     </div>
                     <div class="form-group">
-                      <input id="login-password" type="password" name="loginPassword" required data-msg="Please enter your password" class="input-material">
+                      <input id="login-password" type="password" name="PSWD" required data-msg="Please enter your password" class="input-material">
                       <label for="login-password" class="label-material">密码</label>
-                    </div><a id="login" href="index.jsp" class="btn btn-primary">登录</a>
+                    </div><input type="submit" id="login" class="btn btn-primary" value="登录" />
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form>
                 </div>
