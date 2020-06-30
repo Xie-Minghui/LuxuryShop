@@ -133,8 +133,8 @@
                                                                 <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${p.LID}">${p.LNAME }</a>
                                                             </h3>
                                                             <div class="product__price">
+                                                                <span class="sign">￥</span>
                                                                 <span class="money">${p.PRICE }</span>
-                                                                <span class="sign">$</span>
                                                             </div>
                                                         </div>
                                                     </div>
