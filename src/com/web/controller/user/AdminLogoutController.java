@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LogOutController
+ * Servlet implementation class AdminLogoutController
  */
-@WebServlet("/LogOutController")
-public class LogOutController extends HttpServlet {
+@WebServlet("/AdminLogoutController")
+public class AdminLogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LogOutController() {
+    public AdminLogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
