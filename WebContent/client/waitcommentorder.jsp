@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>订单详情页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicons -->
@@ -58,10 +58,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="page-title">Track Order</h1>
+                        <h1 class="page-title">订单详情</h1>
                         <ul class="breadcrumb">
-                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">Home</a></li>
-                            <li class="current"><span>Track Order</span></li>
+                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">Excellent</a></li>
+                            <li class="current"><span>订单详情</span></li>
                         </ul>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
 		                    </div>
 		                    <div class="cart-calculator__item--value">
 		                        <span class="product-price-wrapper">
-		                            <span class="money">已发货</span>
+		                            <span class="money">等待评价</span>
 		                        </span>
 		                    </div>
 			            </div>

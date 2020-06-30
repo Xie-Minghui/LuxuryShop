@@ -21,6 +21,12 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+    <script>
+        function confirm_receipt(){
+            alert("正在收货，点击确认跳转订单评论页面...");
+            location.href = "${pageContext.request.contextPath}/ConfirmReceiptController";
+        }
+    </script>
 </head>
 
 <body> 
@@ -75,7 +81,7 @@
 		                    </div>
 		                    <div class="cart-calculator__item--value">
 		                        <span class="product-price-wrapper">
-		                            <span class="money">已完成</span>
+		                            <span class="money">已发货【等待发货/已发货】</span>
 		                        </span>
 		                    </div>
 			            </div>
@@ -273,7 +279,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="index.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">返回【链接】</a>
+                                <a href="#" onclick="confirm_receipt()" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                    确认收货
+                                </a>
                             </div>
                         </div>
                     </div>
