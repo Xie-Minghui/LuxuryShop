@@ -13,5 +13,11 @@
 		<tag-class>com.web.tag.PrivilegeTag</tag-class>
 		<body-content>empty</body-content>
 	</tag>
+	
+	<tag>
+		<name>admin</name>
+		<tag-class>com.web.tag.AdminPrivilegeTage</tag-class>
+		<body-content>empty</body-content>
+	</tag>
  
 </taglib>
