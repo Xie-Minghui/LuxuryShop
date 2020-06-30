@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>订单详情页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicons -->
@@ -21,12 +21,6 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
-    <script>
-        function confirm_receipt(){
-            alert("正在收货，点击确认跳转订单评论页面...");
-            location.href = "${pageContext.request.contextPath}/ConfirmReceiptController";
-        }
-    </script>
 </head>
 
 <body> 
@@ -56,68 +50,143 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="page-title">Track Order</h1>
+                        <h1 class="page-title">订单详情</h1>
                         <ul class="breadcrumb">
-                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">Home</a></li>
-                            <li class="current"><span>Track Order</span></li>
+                            <li><a href="${pageContext.request.contextPath}/client/index.jsp">Excellent</a></li>
+                            <li class="current"><span>订单详情</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Breadcrumb area End -->
-        <div class="cart-totals">
-            <h5 class="font-size-14 font-bold mb--15">订单信息</h5>
-            <div class="cart-calculator">
-                <div class="cart-calculator__item">
-                    <div class="cart-calculator__item--head">
-                        <span>收货地址</span>
-                    </div>
-                    <div class="cart-calculator__item--value">
-                        <span>${order.consumer.ADDR}</span>
-                    </div>
-                </div>
-                <div class="cart-calculator__item">
-                    <div class="cart-calculator__item--head">
-                        <span>订单编号</span>
-                    </div>
-                    <div class="cart-calculator__item--value">
-                        <span>${order.OID}</span>                
-                    </div>
-                </div>
-                <div class="cart-calculator__item">
-                    <div class="cart-calculator__item--head">
-                        <span>商家</span>
-                    </div>
-                    <div class="cart-calculator__item--value">
-                        <span>Excellent:023-65106523</span>
-                    </div>
-                </div>
-                <div class="cart-calculator__item">
-                    <div class="cart-calculator__item--head">
-                        <span>买家留言</span>
-                    </div>
-                    <div class="cart-calculator__item--value">
-                        <span>谢谢您的购买~记得好评哦！</span>                
-                    </div>
-                </div>
-                <div class="cart-calculator__item order-total">
-                    <div class="cart-calculator__item--head">
-                        <span>订单状态</span>
-                    </div>
-                    <div class="cart-calculator__item--value">
-                        <span class="product-price-wrapper">
-                            <span class="money">未发货</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <!-- Main Content Wrapper Start -->
         <div class="main-content-wrapper">
             <div class="page-content-inner ptb--80 pt-md--40 pb-md--60">
                 <div class="container">
+                	<div class="order-totals">
+                		<div class="info-total">
+			        		<h5 class="font-size-14 font-bold mb--15">订单状态</h5>
+			        	</div>
+		        		<div class="cart-calculator__item">
+		                    <div class="cart-calculator__item--head">
+		                        <span>订单状态</span>
+		                    </div>
+		                    <div class="cart-calculator__item--value">
+		                        <span class="product-price-wrapper">
+		                            <span class="money">已完成</span>
+		                        </span>
+		                    </div>
+			            </div>
+                	</div>
+                    <div class="row" style="border: 1px solid #93939347;">
+                        <div class="col-lg-4">
+                		<div class="order-totals">
+				        	<div class="info-total">
+				        		<h5 class="font-size-14 font-bold mb--15">订单信息</h5>
+				        	</div>
+				        	<div class="cart-calculator">
+					        	<div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>订单编号</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>${order.OID}</span>                
+				                    </div>
+				                </div>
+					        	<div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>订单创建时间</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>${order.DATE}</span>                
+				                    </div>
+				                </div>
+					        	<div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>付款方式</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>${order.PAY}</span>                
+				                    </div>
+				                </div>
+				                <div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>订单备注</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span class="product-price-wrapper">
+				                            <p>${order.REMARK}</p>
+				                        </span>
+				                    </div>
+				                </div>
+				            </div>
+                		</div>
+                        </div>
+                        <div class="col-lg-4">
+                		<div class="order-totals">
+				        	<div class="info-total">
+				        		<h5 class="font-size-14 font-bold mb--15">收货人信息</h5>
+				        	</div>
+				            <div class="cart-calculator">
+				                <div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>收货人</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>${order.NAME}</span>
+				                    </div>
+				                </div>
+				                <div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>地址</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>${order.ADDR}</span>                
+				                    </div>
+				                </div>
+				                <div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>手机号码</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>${order.PHONE}</span>                
+				                    </div>
+				                </div>
+				            </div>
+                		</div>
+                        </div>
+                        <div class="col-lg-4">
+                		<div class="order-totals">
+				            <div class="info-total">
+				        		<h5 class="font-size-14 font-bold mb--15">配送信息</h5>
+				        	</div>
+				            <div class="cart-calculator">
+				                <div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>配送方式</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>普通快递</span>
+				                    </div>
+				                </div>
+				                <div class="cart-calculator__item">
+				                    <div class="cart-calculator__item--head">
+				                        <span>运费</span>
+				                    </div>
+				                    <div class="cart-calculator__item--value">
+				                        <span>¥0.00</span>                
+				                    </div>
+				                </div>
+				            </div>
+                		</div>
+                        </div>
+                    </div>
+		        	
+		        	<div class="info-total">
+		        		<h5 class="font-size-14 font-bold mb--15">商品信息</h5>
+		        	</div>
                     <div class="row">
                         <div class="col-lg-8 mb-md--50">
                             <form class="cart-form" action="#">
@@ -189,7 +258,7 @@
                                                 <span>运费</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥0.00</span>                
+                                                <span>￥${order.orderItems.size()*5}</span>                
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item order-total">
@@ -198,15 +267,13 @@
                                             </div>
                                             <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥${total}</span>
+                                                    <span class="money">￥${total+order.orderItems.size()*5}</span>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" onclick="confirm_receipt()" class="btn btn-size-md btn-shape-square btn-fullwidth">
-                                    确认收货
-                                </a>
+                                <a href="index.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">返回</a>
                             </div>
                         </div>
                     </div>

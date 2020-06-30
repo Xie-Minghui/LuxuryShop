@@ -22,11 +22,9 @@
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
     <script>
-        function ordercomment(){
-            alert("确认评价成功，订单最终确认中...");
-            var comment = document.getElementById("commentid").value;
-            location.href = "${pageContext.request.contextPath}/OrderCommentController?comment="
-                + comment;
+        function confirm_receipt(){
+            alert("正在收货，点击确认跳转订单评论页面...");
+            location.href = "${pageContext.request.contextPath}/ConfirmReceiptController";
         }
     </script>
 </head>
@@ -83,7 +81,7 @@
 		                    </div>
 		                    <div class="cart-calculator__item--value">
 		                        <span class="product-price-wrapper">
-		                            <span class="money">等待评价</span>
+		                            <span class="money">等待发货/已发货</span>
 		                        </span>
 		                    </div>
 			            </div>
@@ -266,7 +264,7 @@
                                                 <span>运费</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥0.00</span>                
+                                                <span>￥${order.orderItems.size()*5}</span>                
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item order-total">
@@ -275,20 +273,15 @@
                                             </div>
                                             <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥${total}</span>
+                                                    <span class="money">￥${total+order.orderItems.size()*5}</span>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-row">
-		                            <div class="form__group col-12">
-		                                <label for="orderNotes" class="form__label">评价</label>
-		                                <textarea class="form__input form__input--textarea" id="commentid" name="comment" placeholder="评价信息"></textarea>
-		                            </div>
-		                        </div>
-                                <a href="#" onclick="ordercomment()" class="btn btn-size-md btn-shape-square btn-fullwidth">确认评价</a>                               
-                        </div>
+                                <a href="#" onclick="confirm_receipt()" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                    确认收货
+                                </a>
                             </div>
                         </div>
                     </div>
