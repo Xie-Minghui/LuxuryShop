@@ -141,9 +141,9 @@ public class OrderDaoImpl implements OrderDao {
 				order.setPHONE(rs.getString("PHONE"));
 				order.setPROVINCE(rs.getString("PROVINCE"));
 				order.setCITY(rs.getString("CITY"));
-				order.setDISTRICT("DISTRICT");
-				order.setADDR("ADDR");
-				order.setREMARK("REMARK");
+				order.setDISTRICT(rs.getString("DISTRICT"));
+				order.setADDR(rs.getString("ADDR"));
+				order.setREMARK(rs.getString("REMARK"));
 				
 				//把对象添加到集合中
 				list.add(order);
@@ -166,13 +166,15 @@ public class OrderDaoImpl implements OrderDao {
 			Connection conn = JDBCUtil.getConnectinon();
 			
 			//编写sql
-			String sql = "update orders set state = ? where oid = ?";
+			String sql = "update orders set state = ? , pay = ?, remark=? where oid = ?";
 		    //编译sql
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			//设置参数
 			ps.setInt(1, order.getSTATE());
-			ps.setString(2, order.getOID());
+			ps.setString(2, order.getPAY());
+			ps.setString(3, order.getREMARK());
+			ps.setString(4, order.getOID());
 			
 			//执行添加
 			count = ps.executeUpdate();
