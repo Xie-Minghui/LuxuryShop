@@ -36,7 +36,7 @@ public class LogOutController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect(request.getContextPath()+"/admin/signin.jsp");
+		response.sendRedirect(request.getContextPath()+"/client/login.jsp");
 	}
 
 }
