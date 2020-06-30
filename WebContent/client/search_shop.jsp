@@ -256,21 +256,21 @@
                                     <h3 class="widget-title mb--25">Price</h3>
                                     <ul class="widget-list price-list">
                                         <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=10.00&maxprice=45.00">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=300.00&maxprice=5000.00">
                                                 <span>Low - Medium</span>
-                                                <strong class="font-weight-medium">$10.00 - $45.00</strong>
+                                                <strong class="font-weight-medium">$300 - $5000</strong>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=45.00&maxprice=60.00">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=5000.00&maxprice=20000.00">
                                                 <span>Medium - High</span>
-                                                <strong class="font-weight-medium">$45.00 - $60.00</strong>
+                                                <strong class="font-weight-medium">$5000 - $20000</strong>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=60.00&maxprice=200.00">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=20000.00&maxprice=100000.00">
                                                 <span>High - Avobe</span>
-                                                <strong class="font-weight-medium">$60.00 - $200</strong>
+                                                <strong class="font-weight-medium">$20000</strong>
                                             </a>
                                         </li>
                                     </ul>

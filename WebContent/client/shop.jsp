@@ -170,7 +170,7 @@
                                     <%--上一页 --%>
                                     <c:if test="${bean.currentPage !=1 }">
                                         <li >
-                                        <a class="page-number" href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${bean.currentPage-1 }&textfield=${bean.searchfild}">《《</a>
+                                        <a class="page-number" href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage-1 }&category=${bean.category}">《《</a>
                                         </li>
                                     </c:if>
                                     <c:if test="${bean.currentPage == 1 }">
@@ -184,7 +184,7 @@
                                             <li><span class="page-number current">${pageNum}</span></li>
                                         </c:if>
                                         <c:if test="${pageNum != bean.currentPage }">
-                                            <li><a class="page-number" href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${pageNum}&textfield=${bean.searchfild}">${pageNum}</a></li>
+                                            <li><a class="page-number" href="${pageContext.request.contextPath}/showProductByPage?currentPage=${pageNum}&category=${bean.category}">${pageNum}</a></li>
                                         </c:if>
                                     </c:forEach>
                                     <%--页码数 --%>
@@ -192,7 +192,7 @@
                                     <%--下一页 --%>
                                     <c:if test="${bean.currentPage != bean.totalPage && bean.totalPage!=0}">
                                         <li>
-                                        <a class="page-number"   href="${pageContext.request.contextPath}/MenuSearchController?currentPage=${bean.currentPage+1 }&textfield=${bean.searchfild}">》》</a>
+                                        <a class="page-number"   href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage+1 }&category=${bean.category}">》》</a>
                                         </li>
                                     </c:if>
                                     <c:if test="${bean.currentPage == bean.totalPage || bean.totalPage==0}">
@@ -256,21 +256,21 @@
                                     <h3 class="widget-title mb--25">Price</h3>
                                     <ul class="widget-list price-list">
                                         <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=10.00&maxprice=45.00">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=300.00&maxprice=5000.00">
                                                 <span>Low - Medium</span>
-                                                <strong class="font-weight-medium">$10.00 - $45.00</strong>
+                                                <strong class="font-weight-medium">$300 - $5000</strong>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=45.00&maxprice=60.00">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=5000.00&maxprice=20000.00">
                                                 <span>Medium - High</span>
-                                                <strong class="font-weight-medium">$45.00 - $60.00</strong>
+                                                <strong class="font-weight-medium">$5000 - $20000</strong>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=60.00&maxprice=200.00">
+                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=20000.00&maxprice=100000.00">
                                                 <span>High - Avobe</span>
-                                                <strong class="font-weight-medium">$60.00 - $200</strong>
+                                                <strong class="font-weight-medium">$20000</strong>
                                             </a>
                                         </li>
                                     </ul>
