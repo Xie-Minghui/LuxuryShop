@@ -134,7 +134,7 @@
                                 <div class="product-price-wrapper mb--25">
                                     <span class="money">￥${p.PRICE}</span>
                                     <span class="price-separator">-</span>
-                                    <span class="money">￥${p.PRICE+50}</span>
+                                    <span class="money">￥${p.PRICE+200}</span>
                                 </div>
                                 <div
                                     class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">

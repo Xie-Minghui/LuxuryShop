@@ -30,14 +30,10 @@
 
         function viewOrder(oid, state){
             state = parseInt(state);
-            if(state == 4) {
-                alert("订单已完成，联系管理员可以查看详细消息！");
-                location.href = "${pageContext.request.contextPath}/FindOrderByUserController";
-            }
-            else{
-                location.href = "${pageContext.request.contextPath}/OrderViewController?oid="+
-                    oid + "&state=" + state;
-            }
+        
+            location.href = "${pageContext.request.contextPath}/OrderViewController?oid="+
+                oid + "&state=" + state;
+            
         }
     </script>
 </head>

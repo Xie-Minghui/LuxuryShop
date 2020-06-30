@@ -273,7 +273,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="index.jsp" class="btn btn-size-md btn-shape-square btn-fullwidth">返回</a>
+                                <a href="${pageContext.request.contextPath}/FindOrderByUserController" class="btn btn-size-md btn-shape-square btn-fullwidth">返回</a>
                             </div>
                         </div>
                     </div>
