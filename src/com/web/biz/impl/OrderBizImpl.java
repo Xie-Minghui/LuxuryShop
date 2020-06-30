@@ -10,9 +10,7 @@ import com.web.dao.impl.OrderDaoImpl;
 import com.web.entity.Consumer;
 import com.web.entity.Order;
 import com.web.entity.OrderItem;
-import com.web.entity.Product;
 import com.web.util.OrderPageBean;
-import com.web.util.PageBean;
 
 public class OrderBizImpl implements OrderBiz {
 
@@ -106,6 +104,12 @@ public class OrderBizImpl implements OrderBiz {
 		orderpageBean.setOrderList(orderList);
 		
 		return orderpageBean;
+	}
+
+
+	@Override
+	public boolean deliverById(String oid) {
+		return orderDao.deliverById(oid);
 	}
 
 }
