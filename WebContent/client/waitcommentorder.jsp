@@ -108,7 +108,7 @@
 				                        <span>订单创建时间</span>
 				                    </div>
 				                    <div class="cart-calculator__item--value">
-				                        <span>xxxxxxx</span>                
+				                        <span>${order.DATE}</span>                
 				                    </div>
 				                </div>
 					        	<div class="cart-calculator__item">
@@ -116,7 +116,7 @@
 				                        <span>付款方式</span>
 				                    </div>
 				                    <div class="cart-calculator__item--value">
-				                        <span>xxxxxxx</span>                
+				                        <span>${order.PAY}</span>                
 				                    </div>
 				                </div>
 				                <div class="cart-calculator__item">
@@ -125,7 +125,7 @@
 				                    </div>
 				                    <div class="cart-calculator__item--value">
 				                        <span class="product-price-wrapper">
-				                            <p>xxxxxxxxxxxx</p>
+				                            <p>${order.REMARK}</p>
 				                        </span>
 				                    </div>
 				                </div>
@@ -143,7 +143,7 @@
 				                        <span>收货人</span>
 				                    </div>
 				                    <div class="cart-calculator__item--value">
-				                        <span>xxxxxxx</span>
+				                        <span>${order.NAME}</span>
 				                    </div>
 				                </div>
 				                <div class="cart-calculator__item">
@@ -151,7 +151,7 @@
 				                        <span>地址</span>
 				                    </div>
 				                    <div class="cart-calculator__item--value">
-				                        <span>${order.consumer.ADDR}</span>                
+				                        <span>${order.ADDR}</span>                
 				                    </div>
 				                </div>
 				                <div class="cart-calculator__item">
@@ -159,7 +159,7 @@
 				                        <span>手机号码</span>
 				                    </div>
 				                    <div class="cart-calculator__item--value">
-				                        <span>xxxxxxx</span>                
+				                        <span>${order.PHONE}</span>                
 				                    </div>
 				                </div>
 				            </div>
@@ -184,7 +184,7 @@
 				                        <span>运费</span>
 				                    </div>
 				                    <div class="cart-calculator__item--value">
-				                        <span>¥0.00 （写成静态即可）</span>                
+				                        <span>¥0.00</span>                
 				                    </div>
 				                </div>
 				            </div>
@@ -266,7 +266,7 @@
                                                 <span>运费</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥${order.orderItems.size()*5}</span>                
+                                                <span>￥0.00</span>                
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item order-total">
@@ -275,7 +275,7 @@
                                             </div>
                                             <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥${total+order.orderItems.size()*5}</span>
+                                                    <span class="money">￥${total}</span>
                                                 </span>
                                             </div>
                                         </div>

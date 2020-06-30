@@ -180,7 +180,7 @@
                                                 <span>运费</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>￥${cart.size()*5}</span>
+                                                <span>￥0.00</span>
                                             </div>
                                         </div>
                                         <div class="cart-calculator__item order-total">
@@ -189,7 +189,7 @@
                                             </div>
                                             <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">￥${total+cart.size()*5}</span>
+                                                    <span class="money">￥${total}</span>
                                                 </span>
                                             </div>
                                         </div>

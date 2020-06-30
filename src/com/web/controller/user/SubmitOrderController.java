@@ -55,6 +55,7 @@ public class SubmitOrderController extends HttpServlet {
 		order.setREMARK(remark);
 		order.setPAY(pay);
 
+
 		// 订单已支付未发货
 		order.setSTATE(1);
 		
@@ -62,6 +63,7 @@ public class SubmitOrderController extends HttpServlet {
 		OrderBiz orderBiz = new OrderBizImpl();
 		boolean flag = orderBiz.changeState(order);
 
+		order = orderBiz.findOrderById(order.getOID());
 		
 		//如果添加成功，则跳转到添加订单成功页面
 		if(flag){

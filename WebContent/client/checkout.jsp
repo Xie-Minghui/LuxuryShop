@@ -157,12 +157,12 @@
                                             <tr class="shipping">
                                                 <th>运费</th>
                                                 <td class="text-right">
-                                                    <span>￥${order.orderItems.size()*5}</span>
+                                                    <span>￥0.00</span>
                                                 </td>
                                             </tr>
                                             <tr class="order-total">
                                                 <th>总计</th>
-                                                <td class="text-right"><span class="order-total-ammount">￥${total+order.orderItems.size()*5}</span></td>
+                                                <td class="text-right"><span class="order-total-ammount">￥${total}</span></td>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -182,7 +182,7 @@
                                         </div>
                                         <div class="payment-group mb--10">
                                             <div class="payment-radio">
-                                                <input type="radio" value="支付宝" name="pay" id="cheque">
+                                                <input type="radio" value="支付宝" name="pay" id="cheque" checked>
                                                 <label class="payment-label" for="cheque">支付宝</label>
                                             </div>
                                             <div class="payment-info cheque hide-in-default" data-method="cheque">
@@ -191,7 +191,7 @@
                                         </div>
                                         <div class="payment-group mb--10">
                                             <div class="payment-radio">
-                                                <input type="radio" value="微信" name="pay" id="cash">
+                                                <input type="radio" value="微信" name="pay" id="cash" checked>
                                                 <label class="payment-label" for="cash">微信</label>
                                             </div>
                                             <div class="payment-info cash hide-in-default" data-method="cash">
