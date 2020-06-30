@@ -287,9 +287,7 @@
 		                                <textarea class="form__input form__input--textarea" id="commentid" name="comment" placeholder="评价信息"></textarea>
 		                            </div>
 		                        </div>
-                                <a href="#" onclick="ordercomment()" class="btn btn-size-md btn-shape-square btn-fullwidth">
-                                    确认评价
-                                </a>                               
+                                <a href="#" onclick="ordercomment()" class="btn btn-size-md btn-shape-square btn-fullwidth">确认评价</a>                               
                         </div>
                             </div>
                         </div>
