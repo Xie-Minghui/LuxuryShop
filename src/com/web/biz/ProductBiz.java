@@ -90,4 +90,11 @@ public interface ProductBiz {
 	 * @return
 	 */
 	public Boolean changeLuxuryInfo(Product luxury);
+	
+	/**
+	 * 通过id删除商品，将商品的库存置零
+	 * @param lid
+	 * @return
+	 */
+	public boolean deleLuxuryById(Integer lid);
 }

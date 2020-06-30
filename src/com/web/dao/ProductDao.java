@@ -110,5 +110,12 @@ public interface ProductDao {
 	 * @param luxury
 	 * @return
 	 */
-	public Boolean changeLuxuryInfo(Product luxury);
+	public boolean changeLuxuryInfo(Product luxury);
+	
+	/**
+	 * 通过id删除商品，将商品的库存置零
+	 * @param lid
+	 * @return
+	 */
+	public boolean deleLuxuryById(Integer lid);
 }

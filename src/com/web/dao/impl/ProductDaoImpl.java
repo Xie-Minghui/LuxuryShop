@@ -577,7 +577,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
-	public Boolean changeLuxuryInfo(Product luxury) {
+	public boolean changeLuxuryInfo(Product luxury) {
 		int count = 1;
 		try {
 			//获取数据库连接
@@ -606,6 +606,30 @@ public class ProductDaoImpl implements ProductDao {
 			ps.setBigDecimal(7, luxury.getWEIGHT());
 			ps.setString(8, luxury.getCOLOR());
 			ps.setInt(9, luxury.getLID());
+			//执行修改
+			count  = ps.executeUpdate();
+			
+			//关闭
+			JDBCUtil.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return count > 0 ? true : false;
+	}
+
+	@Override
+	public boolean deleLuxuryById(Integer lid) {
+		int count = 1;
+		try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			//编写sql
+			String sql = "update luxury set restnum = 0 where lid = ?";
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setInt(1, lid);
 			//执行修改
 			count  = ps.executeUpdate();
 			

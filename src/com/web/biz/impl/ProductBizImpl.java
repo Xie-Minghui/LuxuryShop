@@ -157,4 +157,9 @@ public class ProductBizImpl implements ProductBiz {
 		return productDao.changeLuxuryInfo(luxury);
 	}
 
+	@Override
+	public boolean deleLuxuryById(Integer lid) {
+		return productDao.deleLuxuryById(lid);
+	}
+
 }
