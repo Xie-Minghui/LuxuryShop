@@ -19,4 +19,7 @@ public interface OrderBiz {
 	public boolean changeState(Order order);
 	
 	public OrderPageBean FindOrderByPage(Integer currentPage, int currentCount, String oid, String username, Integer state);
+	
+	//根据oid发货（改变订单状态）
+	public boolean deliverById(String oid);
 }

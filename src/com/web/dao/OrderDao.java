@@ -28,5 +28,8 @@ public interface OrderDao {
 	public List<Order> findOrderByPage(Integer currentPage, int currentCount, String id, String username, Integer state);
 
 	public Integer findOrderAllCount(String oid, String username, Integer state);
+	
+	//根据oid发货（改变订单状态）
+	public boolean deliverById(String oid);
     
 }

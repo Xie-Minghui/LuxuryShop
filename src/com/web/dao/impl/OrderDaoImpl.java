@@ -10,7 +10,6 @@ import java.util.List;
 import com.web.dao.OrderDao;
 import com.web.entity.Consumer;
 import com.web.entity.Order;
-import com.web.entity.Product;
 import com.web.util.JDBCUtil;
 
 public class OrderDaoImpl implements OrderDao {
@@ -318,5 +317,33 @@ public class OrderDaoImpl implements OrderDao {
 			e.printStackTrace();
 		}
 		return totalCount;
+	}
+
+	@Override
+	public boolean deliverById(String oid) {
+		//定义影响的行数
+		int count = 0;
+
+        try {
+			//获取数据库连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "update orders set state = 2 where oid = ?";
+		    //编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//设置参数
+			ps.setString(1, oid);
+			
+			//执行添加
+			count = ps.executeUpdate();
+			
+			//关闭
+			JDBCUtil.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return count > 0 ? true : false;
 	}
 }
