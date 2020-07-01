@@ -162,4 +162,9 @@ public class ProductBizImpl implements ProductBiz {
 		return productDao.deleLuxuryById(lid);
 	}
 
+	@Override
+	public List<Product> findAllProduct() {
+		return productDao.findAllProduct();
+	}
+
 }

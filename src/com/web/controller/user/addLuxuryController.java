@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.fileupload.FileItem;
@@ -20,6 +21,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.web.biz.ProductBiz;
 import com.web.biz.impl.ProductBizImpl;
+import com.web.entity.Admin;
 import com.web.entity.Product;
 
 /**
@@ -102,30 +104,31 @@ public class addLuxuryController extends HttpServlet {
 		//实例化用户对象
 		Product luxury = new Product();
 		
+		//获取session对象
+		HttpSession session = request.getSession();
+		//获取管理员的信息
+		Admin admin = (Admin) session.getAttribute("admin");
 	    try {
 	    	//把表单中的参数赋值给用户对象
 			BeanUtils.populate(luxury, request.getParameterMap());
-			luxury.setAID(Integer.parseInt(pList.get(0)));;
-			luxury.setLNAME(pList.get(1));
-			luxury.setPRICE(new BigDecimal(pList.get(2)));
-			luxury.setRESTNUM(Integer.parseInt(pList.get(3)));
-			luxury.setTYPE(pList.get(4));
-			luxury.setINFOR(pList.get(5));
-			luxury.setSIZE(pList.get(6));
-			luxury.setWEIGHT(new BigDecimal(pList.get(7)));
-			luxury.setCOLOR(pList.get(8));
+			luxury.setAID(admin.getAID());
+			luxury.setLNAME(pList.get(0));
+			luxury.setPRICE(new BigDecimal(pList.get(1)));
+			luxury.setRESTNUM(Integer.parseInt(pList.get(2)));
+			luxury.setTYPE(pList.get(3));
+			luxury.setINFOR(pList.get(4));
+			luxury.setSIZE(pList.get(5));
+			luxury.setWEIGHT(new BigDecimal(pList.get(6)));
+			luxury.setCOLOR(pList.get(7));
 			String iMAGE = "client/product/image/"+fileName;
 			luxury.setIMAGE(iMAGE);
 			//调用业务逻辑层的注册方法
 			boolean flag = productBiz.addLuxury(luxury);
 			
 			if(flag){//如果注册成功
-				
-				//req.getContextPath():获取绝对路径
-				//response.sendRedirect(request.getContextPath()+"/client/login.jsp");
+				response.sendRedirect(request.getContextPath()+"/AdminFindAllProduct");
 			}else{
-				//req.getContextPath():获取绝对路径
-				//response.sendRedirect(request.getContextPath()+"/client/register.jsp");
+				response.sendRedirect(request.getContextPath()+"/addLuxuryController");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

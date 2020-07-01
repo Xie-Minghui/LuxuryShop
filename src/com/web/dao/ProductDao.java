@@ -118,4 +118,10 @@ public interface ProductDao {
 	 * @return
 	 */
 	public boolean deleLuxuryById(Integer lid);
+	
+	/**
+	 * 查找所有商品
+	 * @return
+	 */
+	public List<Product> findAllProduct();
 }

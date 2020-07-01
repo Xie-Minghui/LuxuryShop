@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="p" uri="http://www.LuxutyShop.cn/tag" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype>
 <html class="fixed">
 	<head>
@@ -42,6 +44,7 @@
 
 	</head>
 	<body>
+		<p:admin/>
 		<section class="body">
 
 			<!-- start: header -->
@@ -95,69 +98,19 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="gradeX">
-											<td>Trident</td>
-											<td>Internet
-												Explorer 4.0
-											</td>
-											<td>Win 95+</td>
-											<td class="actions">
-												<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-												<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-												<a href="amend.jsp"><i class="fa fa-pencil"></i></a>
-												<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-											</td>
-										</tr>
-										<tr class="gradeC">
-											<td>Trident</td>
-											<td>Internet
-												Explorer 5.0
-											</td>
-											<td>Win 95+</td>
-											<td class="actions">
-												<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-												<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-												<a href="amend.jsp"><i class="fa fa-pencil"></i></a>
-												<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-											</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Trident</td>
-											<td>Internet
-												Explorer 5.5
-											</td>
-											<td>Win 95+</td>
-											<td class="actions">
-												<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-												<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-												<a href="amend.jsp"><i class="fa fa-pencil"></i></a>
-												<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-											</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Trident</td>
-											<td>Internet
-												Explorer 6
-											</td>
-											<td>Win 98+</td>
-											<td class="actions">
-												<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-												<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-												<a href="amend.jsp"><i class="fa fa-pencil"></i></a>
-												<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-											</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Trident</td>
-											<td>Internet Explorer 7</td>
-											<td>Win XP SP2+</td>
-											<td class="actions">
-												<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-												<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-												<a href="amend.jsp"><i class="fa fa-pencil"></i></a>
-												<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-											</td>
-										</tr>
+										<c:forEach items="${pList}" var="p">
+											<tr class="gradeA">
+												<td>${p.LID}</td>
+												<td>${p.LNAME}</td>
+												<td>${p.DATE}</td>
+												<td class="actions">
+													<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+													<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+													<a href="${pageContext.request.contextPath}/admin/amend.jsp"><i class="fa fa-pencil"></i></a>
+													<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+												</td>
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>

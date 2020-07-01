@@ -36,7 +36,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="find.jsp">
+												<a href="${pageContext.request.contextPath}/AdminFindAllProduct">
 													 查找/修改/删除
 												</a>
 											</li>

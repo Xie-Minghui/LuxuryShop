@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="p" uri="http://www.LuxutyShop.cn/tag" %>
 <!doctype>
 <html class="fixed">
 	<head>
@@ -41,6 +42,7 @@
 
 	</head>
 	<body>
+		<p:admin/>
 		<section class="body">
 
 			<!-- start: header -->
@@ -84,30 +86,30 @@
 										<h2 class="panel-title">商品</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
+										<form class="form-horizontal form-bordered" action="${pageContext.request.contextPath}/addLuxuryController" enctype="multipart/form-data" method="post">
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">商品名称</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputDefault" name="lname">
 												</div>
 											</div>						
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">商品单价</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputDefault" name="price">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">商品库存</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputDefault" name="restnum">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputSuccess">选择商品类型</label>
 												<div class="col-md-6">
-													<select class="form-control input-lg mb-md">
-														<option>Option 1</option>
+													<select class="form-control input-lg mb-md" name="type">
+														<option value="皮包">皮具</option>
 														<option>Option 2</option>
 														<option>Option 3</option>
 													</select>
@@ -116,7 +118,7 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="textareaDefault">商品信息</label>
 												<div class="col-md-6">
-													<textarea class="form-control" rows="3" id="textareaDefault"></textarea>
+													<textarea class="form-control" rows="3" id="textareaDefault" name="infor"></textarea>
 												</div>
 											</div>													
 											<div class="form-group">
@@ -131,7 +133,7 @@
 															<span class="btn btn-default btn-file">
 																<span class="fileupload-exists">改变</span>
 																<span class="fileupload-new">选择图片</span>
-																<input type="file" />
+																<input type="file" name="image" />
 															</span>
 															<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">移除</a>
 														</div>
@@ -141,27 +143,27 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">最小尺寸</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputDefault" name="size">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">重量</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputDefault" name="weight">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">颜色</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputDefault" name="color">
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="mb-md">
+												    <input type="submit" class="btn btn-primary">发布</a>
 												</div>
 											</div>
 										</form>
-									</div>
-									<div class="col-sm-6">
-										<div class="mb-md">
-										    <a href="publish.jsp" class="btn btn-primary">发布</a>
-										</div>
 									</div>
 								</div>
 								</section>								
