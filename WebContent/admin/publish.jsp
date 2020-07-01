@@ -109,9 +109,10 @@
 												<label class="col-md-3 control-label" for="inputSuccess">选择商品类型</label>
 												<div class="col-md-6">
 													<select class="form-control input-lg mb-md" name="type">
-														<option value="皮包">皮具</option>
-														<option>Option 2</option>
-														<option>Option 3</option>
+														<option value="皮具">皮具</option>
+														<option value="香氛">香氛</option>
+														<option value="服饰">服饰</option>
+														<option value="配饰">配饰</option>
 													</select>
 												</div>
 											</div>
