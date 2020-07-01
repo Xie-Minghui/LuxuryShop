@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="p" uri="http://www.LuxutyShop.cn/tag" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype>
 <html class="fixed">
 	<head>
@@ -42,6 +44,7 @@
 
 	</head>
 	<body>
+		<p:admin/>
 		<section class="body">
 
 			<!-- start: header -->
@@ -93,44 +96,14 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="gradeX">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 4.0
-											</td>
-											<td>Win 95+</td>
-											<td>已发货</td>
-										</tr>
-										<tr class="gradeC">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 5.0
-											</td>
-											<td>Win 95+</td>
-											<td>已发货</td>
-										</tr>
-										<tr class="gradeA">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 5.5
-											</td>
-											<td>Win 95+</td>
-											<td>已发货</td>
-										</tr>
-										<tr class="gradeA">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 6
-											</td>
-											<td>Win 98+</td>
-											<td>已发货</td>
-										</tr>
-										<tr class="gradeA">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet Explorer 7</td>
-											<td>Win XP SP2+</td>
-											<td>已发货</td>
-										</tr>
+										<c:forEach items="${oList}" var="o">
+											<tr class="gradeA">
+												<td><a href="orderdetails.jsp">${o.OID}</a></td>
+												<td>${o.DATE}</td>
+												<td>${o.NAME}</td>
+												<td>已发货</td>
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>

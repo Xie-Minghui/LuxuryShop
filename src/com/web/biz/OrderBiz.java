@@ -22,4 +22,10 @@ public interface OrderBiz {
 	
 	//根据oid发货（改变订单状态）
 	public boolean deliverById(String oid);
+	
+	//更具订单状态查找订单
+	public List<Order> findOrderByState(Integer state);
+	
+	//查找已发货订单
+	public List<Order> findDeliveredOrder();
 }

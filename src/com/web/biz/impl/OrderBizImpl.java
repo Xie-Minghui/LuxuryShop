@@ -112,4 +112,16 @@ public class OrderBizImpl implements OrderBiz {
 		return orderDao.deliverById(oid);
 	}
 
+
+	@Override
+	public List<Order> findOrderByState(Integer state) {
+		return orderDao.findOrderByState(state);
+	}
+
+
+	@Override
+	public List<Order> findDeliveredOrder() {
+		return orderDao.findDeliveredOrder();
+	}
+
 }

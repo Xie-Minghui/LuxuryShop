@@ -49,12 +49,12 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="process.jsp">
+												<a href="${pageContext.request.contextPath}/AdminFindOrderByState?state=1">
 													 处理
 												</a>
 											</li>
 											<li>
-												<a href="sentprocess.jsp">
+												<a href="${pageContext.request.contextPath}/AdminFindDeliveredOrder">
 													 查看
 												</a>
 											</li>
