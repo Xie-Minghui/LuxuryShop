@@ -57,7 +57,7 @@ public class LoginController extends HttpServlet {
 			//登录成功
 			
 			//跳转到前台的用户信息界面
-			response.sendRedirect(request.getContextPath()+"/client/index.jsp");
+			response.sendRedirect(request.getContextPath()+"/index");
 		}else{
 			//登录失败
 			response.sendRedirect(request.getContextPath()+"/client/login.jsp");
