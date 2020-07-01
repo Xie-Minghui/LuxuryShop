@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="header__main">
                     <div class="header__col header__left">
-                        <a href="${pageContext.request.contextPath}/client/index.jsp" class="logo">
+                        <a href="${pageContext.request.contextPath}/index" class="logo">
                             <figure class="logo--normal">
                                 <img src="${pageContext.request.contextPath}/client/shop/img/logo/logo.png" alt="Logo">
                             </figure>

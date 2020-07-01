@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype>
 <html class="no-js" lang="zxx">
 
@@ -20,6 +21,16 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/shop/css/main.css">
+    <script>
+        function addfavor(consumer, id) {
+            if(!consumer){
+                alert("您还未登录，请登陆后添加心愿单~");
+                location.href = "${pageContext.request.contextPath}/client/login.jsp";
+            }else{
+                location.href = "${pageContext.request.contextPath}/AddFavorController?lid="+id;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -122,13 +133,13 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-sm--50">
                             <div class="featured-product">
-                            	<a href="shop.jsp"><div class="featured-product__inner info-center">
+                            	<a href="${pageContext.request.contextPath}/FindProductByIdController?id=20"><div class="featured-product__inner info-center">
                                     <figure class="featured-product__image">
-                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-01-500x466.jpg" alt="Featured Product">
+                                        <img src="${pageContext.request.contextPath}/client/product/image/peishi/20/peishi-20.jpg" alt="Featured Product">
                                     </figure>
                                     <div class="featured-product__info wow pbounceInLeft" data-wow-delay="0.1s" data-wow-duration="0.9s">
                                         <div class="featured-product__info-inner">
-                                            <h2 class="featured-product__name">箱包</h2>
+                                            <h2 class="featured-product__name">耳环</h2>
                                         </div>
                                     </div>
                                 </div></a>
@@ -136,14 +147,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="featured-product">
-                                <a href="shop.jsp"><div class="featured-product__inner info-left-bottom">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=112"><div class="featured-product__inner info-left-bottom">
                                     <figure class="featured-product__image">
-                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-02-500x575.jpg" alt="Featured Product">
+                                        <img src="${pageContext.request.contextPath}/client/product/image/fushi/cloth-12.jpg" alt="Featured Product">
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-duration="1s">
                                         <div class="featured-product__info-inner rotated-info">
                                             <h4 class="featured-product__text">Special Offer <strong>39%</strong> Off</h4>
-                                            <h2 class="featured-product__name">香水</h2>
+                                            <h2 class="featured-product__name">时尚服饰</h2>
                                         </div>
                                     </div>
                                 </div></a>
@@ -164,16 +175,16 @@
                     <div class="row">
                         <div class="col-md-4 mb-sm--50">
                             <div class="featured-product text-md-left text-center p-0">
-                                <a href="shop.jsp"><div class="featured-product__inner info-left-center">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=101"><div class="featured-product__inner info-left-center">
                                     <figure class="featured-product__image">
-                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-17-349x388.png" alt="Featured Product">
+                                        <img src="${pageContext.request.contextPath}/client/product/image/fushi/cloth-1.jpg" alt="Featured Product">
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-delay=".3s"
                                         data-wow-duration=".8s">
                                         <div class="featured-product__info-inner rotated-info">
                                             <h4 class="featured-product__text font-size-14">Special Offer
                                                 <strong>39%</strong> Off</h4>
-                                            <h2 class="featured-product__name font-size-34">耳环</h2>
+                                            <h2 class="featured-product__name font-size-34">穿搭</h2>
                                         </div>
                                     </div>
                                 </div></a>
@@ -181,16 +192,16 @@
                         </div>
                         <div class="col-md-4 mb-sm--50">
                             <div class="featured-product text-md-left text-center p-0">
-                                <a href="shop.jsp"><div class="featured-product__inner info-left-center">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=318"><div class="featured-product__inner info-left-center">
                                     <figure class="featured-product__image">
-                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-18-349x388.png" alt="Featured Product">
+                                        <img src="${pageContext.request.contextPath}/client/product/image/piju/piju-18.jpg" alt="Featured Product">
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-delay=".6s"
                                         data-wow-duration=".8s">
                                         <div class="featured-product__info-inner rotated-info">
                                             <h4 class="featured-product__text font-size-14">Special Offer
                                                 <strong>39%</strong> Off</h4>
-                                            <h2 class="featured-product__name font-size-34">项链</h2>
+                                            <h2 class="featured-product__name font-size-34">皮具</h2>
                                         </div>
                                     </div>
                                 </div></a>
@@ -198,16 +209,16 @@
                         </div>
                         <div class="col-md-4">
                             <div class="featured-product text-md-left text-center p-0">
-                                <a href="shop.jsp"><div class="featured-product__inner info-left-center">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=305"><div class="featured-product__inner info-left-center">
                                     <figure class="featured-product__image">
-                                        <img src="${pageContext.request.contextPath}/client/shop/img/products/product-19-349x388.png" alt="Featured Product">
+                                        <img src="${pageContext.request.contextPath}/client/product/image/piju/piju-5.jpg" alt="Featured Product">
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-delay=".9s"
                                         data-wow-duration=".8s">
                                         <div class="featured-product__info-inner rotated-info">
                                             <h4 class="featured-product__text font-size-14">Special Offer
                                                 <strong>39%</strong> Off</h4>
-                                            <h2 class="featured-product__name font-size-34">戒指</h2>
+                                            <h2 class="featured-product__name font-size-34">手袋</h2>
                                         </div>
                                     </div>
                                 </div></a>
@@ -227,154 +238,45 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-20-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
+                        <c:forEach items="${new_list}" var="entry" varStatus="vs">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
+                                <div class="payne-product">
+                                    <div class="product__inner">
+                                        <div class="product__image">
+                                            <figure class="product__image--holder">
+                                                <img src="${pageContext.request.contextPath}/${entry.IMAGE}" alt="Product">
+                                            </figure>
+                                            <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.LID}" class="product-overlay"></a>
+                                            <div class="product__action">
+                                                <a data-toggle="modal" data-target="#productModal" class="action-btn">
+                                                    <i class="fa fa-eye"></i>
+                                                    <span class="sr-only">Quick View</span>
+                                                </a>
+                                                <a href="#" class="action-btn" onclick="addfavor('${consumer}','${entry.LID}')">
+                                                    <i class="fa fa-heart-o"></i>
+                                                    <span class="sr-only">Add to wishlist</span>
+                                                </a>
+                                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.LID}" class="action-btn">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span class="sr-only">Add To Cart</span>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品A</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
+                                        <div class="product__info">
+                                            <div class="product__info--left">
+                                                <h3 class="product__title">
+                                                    <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.LID}">${entry.LNAME}</a>
+                                                </h3>
+                                                <div class="product__price">
+                                                    <span class="money">${entry.PRICE}</span>
+                                                    <span class="sign">￥</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-04-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品B</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-05-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品C</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-06-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品D</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </section>
@@ -389,154 +291,45 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-20-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
+                        <c:forEach items="${hot_list}" var="entry" varStatus="vs">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
+                                <div class="payne-product">
+                                    <div class="product__inner">
+                                        <div class="product__image">
+                                            <figure class="product__image--holder">
+                                                <img src="${pageContext.request.contextPath}/${entry.IMAGE}" alt="Product">
+                                            </figure>
+                                            <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.LID}" class="product-overlay"></a>
+                                            <div class="product__action">
+                                                <a data-toggle="modal" data-target="#productModal" class="action-btn">
+                                                    <i class="fa fa-eye"></i>
+                                                    <span class="sr-only">Quick View</span>
+                                                </a>
+                                                <a href="#" class="action-btn" onclick="addfavor('${consumer}','${entry.LID}')">
+                                                    <i class="fa fa-heart-o"></i>
+                                                    <span class="sr-only">Add to wishlist</span>
+                                                </a>
+                                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.LID}" class="action-btn">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span class="sr-only">Add To Cart</span>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品A</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
+                                        <div class="product__info">
+                                            <div class="product__info--left">
+                                                <h3 class="product__title">
+                                                    <a href="${pageContext.request.contextPath}/FindProductByIdController?id=${entry.LID}">${entry.LNAME}</a>
+                                                </h3>
+                                                <div class="product__price">
+                                                    <span class="money">${entry.PRICE}</span>
+                                                    <span class="sign">￥</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-04-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品B</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-05-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品C</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb--65 mb-md--50">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/products/product-06-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">商品D</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">￥</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </section>
