@@ -58,7 +58,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>订单</h2>
+						<h2>商品</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -84,7 +84,7 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="mb-md">
-										    <a href="publish.jsp" class="btn btn-primary">发布</a>
+										    <a href="${pageContext.request.contextPath}/admin/publish.jsp" class="btn btn-primary">发布</a>
 										</div>
 									</div>
 								</div>

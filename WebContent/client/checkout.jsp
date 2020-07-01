@@ -79,12 +79,8 @@
                                 <form action="${pageContext.request.contextPath}/SubmitOrderController" class="form form--checkout">
                                     <div class="form-row mb--20">
                                         <div class="form__group col-md-6 mb-sm--30">
-                                            <label for="billing_fname" class="form__label">姓氏  <span class="required">*</span></label>
+                                            <label for="billing_fname" class="form__label">姓名  <span class="required">*</span></label>
                                             <input type="text" name="billing_fname" id="billing_fname" class="form__input" placeholder="${order.consumer.CNAME}">
-                                        </div>
-                                        <div class="form__group col-md-6">
-                                            <label for="billing_lname" class="form__label">名字  <span class="required">*</span></label>
-                                            <input type="text" name="billing_lname" id="billing_lname" class="form__input">
                                         </div>
                                     </div>
                                     <div class="form-row mb--20">

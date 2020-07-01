@@ -1,6 +1,7 @@
 package com.web.controller.user;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -44,8 +45,36 @@ public class AdminFindDeliveredOrder extends HttpServlet {
 		
 		List<Order> orderList = orderBiz.findDeliveredOrder();
 		
+		// 订单状态
+		List<String> state_list = new ArrayList<String>();
+		for(Order order : orderList) {
+			switch(order.getSTATE()){
+				case 0:
+					state_list.add("未支付");
+					break;
+				case 1:
+					state_list.add("未发货");
+					break;
+				case 2:
+					state_list.add("等待收货");
+					break;
+				case 3:
+					state_list.add("已收货未评价");
+					break;
+				case 4:
+					state_list.add("已完成");
+					break;
+				default:
+					state_list.add("未支付");
+					break;
+			};
+		}
+		
+		
+		
 		//把数据传到界面中
 		req.setAttribute("oList", orderList);
+		req.setAttribute("orderState", state_list);
 		
 		//转发
 		req.getRequestDispatcher("/admin/sentprocess.jsp").forward(req, resp);

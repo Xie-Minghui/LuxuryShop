@@ -31,7 +31,7 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="publish.jsp">
+												<a href="${pageContext.request.contextPath}/admin/publish.jsp">
 													 发布
 												</a>
 											</li>

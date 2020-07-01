@@ -38,11 +38,11 @@ public class OrderDaoImpl implements OrderDao {
 			ps.setString(4, order.getPAY());
 			ps.setBigDecimal(5, order.getSUMPRICE());
 			ps.setInt(6, 0);// 0  待支付，1已支付
-			ps.setString(7, order.getPHONE());
-			ps.setString(8, order.getPROVINCE());
-			ps.setString(9, order.getCITY());
-			ps.setString(10, order.getDISTRICT());
-			ps.setString(11, order.getADDR());
+			ps.setString(7, order.getNAME());
+			ps.setString(8, order.getPHONE());
+			ps.setString(9, order.getPROVINCE());
+			ps.setString(10, order.getCITY());
+			ps.setString(11, order.getDISTRICT());
 			ps.setString(12, order.getADDR());
 			ps.setString(13, order.getREMARK());
 			//执行添加

@@ -96,12 +96,12 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${oList}" var="o">
+										<c:forEach items="${oList}" var="o" varStatus="vs">
 											<tr class="gradeA">
 												<td><a href="orderdetails.jsp">${o.OID}</a></td>
 												<td>${o.DATE}</td>
 												<td>${o.NAME}</td>
-												<td>已发货</td>
+												<td>${orderState[vs.count-1]}</td>
 											</tr>
 										</c:forEach>
 									</tbody>
