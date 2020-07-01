@@ -25,6 +25,7 @@
         function addfavor(consumer, id) {
             if(!consumer){
                 alert("您还未登录，请登陆后添加心愿单~");
+                location.href = "${pageContext.request.contextPath}/client/login.jsp";
             }else{
                 location.href = "${pageContext.request.contextPath}/AddFavorController?lid="+id;
             }
