@@ -86,7 +86,7 @@
 										</div>
 										<div class="col-sm-6 text-right mt-md mb-md">
 											<div class="ib mr-xlg">
-												<h2>${admin_order.STATE}</h2>
+												<h2>${state}</h2>
 											</div>
 											<div class="ib">
 												<img src="${pageContext.request.contextPath}/admin/index/images/invoice-logo.png" alt="OKLER Themes" />
@@ -100,7 +100,7 @@
 											<div class="bill-to">
 												<p class="h5 mb-xs text-dark text-semibold">收件人信息</p>
 												<address>
-												           收件人姓名：
+												    收件人姓名：${admin_order.NAME}
 												    <br/>
 													收件人手机号: ${admin_order.PHONE}
 												    <br/>
@@ -144,7 +144,7 @@
 												<tr>
 													<td>${entry.LID}</td>
 													<td class="text-semibold text-dark">${entry.luxury.LNAME}</td>
-													<td>${entry.luxury.restnum}</td>
+													<td>${entry.luxury.RESTNUM}</td>
 													<td class="text-center">￥${entry.luxury.PRICE}</td>
 													<td class="text-center">${entry.NUM}</td>
 													<td class="text-center">￥${entry.luxury.PRICE*entry.NUM}</td>
@@ -179,7 +179,7 @@
 							</div>
 
 							<div class="text-right mr-lg">
-								<a href="index.jsp" class="btn btn-default">返回主页</a>
+								<a href="${pageContext.request.contextPath}/AdminIndexController" class="btn btn-default">返回主页</a>
 							</div>
 						</div>
 					</section>

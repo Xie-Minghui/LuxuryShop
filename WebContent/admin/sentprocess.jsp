@@ -90,15 +90,15 @@
 									<thead>
 										<tr>
 											<th>订单ID</th>
-											<th>商品ID</th>
-											<th>用户ID</th>
-											<th>状态</th>
+											<th>创建时间</th>
+											<th>收货人</th>
+											<th>订单状态</th>
 										</tr>
 									</thead>
 									<tbody>
 										<c:forEach items="${oList}" var="o" varStatus="vs">
 											<tr class="gradeA">
-												<td><a href="orderdetails.jsp">${o.OID}</a></td>
+												<td><a href="${pageContext.request.contextPath}/AdminViewOrderController?id=${o.OID}">${o.OID}</a></td>
 												<td>${o.DATE}</td>
 												<td>${o.NAME}</td>
 												<td>${orderState[vs.count-1]}</td>

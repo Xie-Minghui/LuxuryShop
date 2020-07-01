@@ -83,8 +83,8 @@
 									<thead>
 										<tr>
 											<th>订单ID</th>
-											<th>商品ID</th>
-											<th>用户ID</th>
+											<th>创建时间</th>
+											<th>收货人</th>
 											<th>操作</th>
 										</tr>
 									</thead>
