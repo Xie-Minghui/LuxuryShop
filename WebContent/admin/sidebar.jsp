@@ -36,18 +36,8 @@
 												</a>
 											</li>
 											<li>
-												<a href="amend.jsp">
-													 修改
-												</a>
-											</li>
-											<li>
-												<a href="delete.jsp">
-													 删除
-												</a>
-											</li>
-											<li>
 												<a href="find.jsp">
-													 查找
+													 查找/修改/删除
 												</a>
 											</li>
 										</ul>
@@ -61,6 +51,11 @@
 											<li>
 												<a href="process.jsp">
 													 处理
+												</a>
+											</li>
+											<li>
+												<a href="sentprocess.jsp">
+													 查看
 												</a>
 											</li>
 										</ul>

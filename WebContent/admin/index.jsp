@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="p" uri="http://www.LuxutyShop.cn/tag" %>
 <!doctype>
 <html class="fixed">
 	<head>
@@ -44,7 +43,6 @@
 
 	</head>
 	<body>
-		<p:admin/>
 		<section class="body">
 
 			<!-- start: header -->
@@ -87,10 +85,9 @@
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">Support Questions</h4>
+														<h4 class="title">商品种类</h4>
 														<div class="info">
 															<strong class="amount">1281</strong>
-															<span class="text-primary">(14 unread)</span>
 														</div>
 													</div>
 													<div class="summary-footer">
@@ -112,9 +109,9 @@
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">Total Profit</h4>
+														<h4 class="title">总流水</h4>
 														<div class="info">
-															<strong class="amount">$ 14,890.30</strong>
+															<strong class="amount">￥ 14,890.30</strong>
 														</div>
 													</div>
 													<div class="summary-footer">
@@ -136,7 +133,7 @@
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">Today's Orders</h4>
+														<h4 class="title">总订单量</h4>
 														<div class="info">
 															<strong class="amount">38</strong>
 														</div>
@@ -160,7 +157,7 @@
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">Today's Visitors</h4>
+														<h4 class="title">总浏览量</h4>
 														<div class="info">
 															<strong class="amount">3765</strong>
 														</div>
@@ -384,25 +381,7 @@ Copyright &copy; 2020.Excellent All rights reserved.
 					<!-- end: page -->
 				</section>
 			</div>
-
-			<aside id="sidebar-right" class="sidebar-right">
-				<div class="nano">
-					<div class="nano-content">
-						<a href="#" class="mobile-close visible-xs">
-							Collapse <i class="fa fa-chevron-right"></i>
-						</a>
-			
-						<div class="sidebar-right-wrapper">
-			
-							<div class="sidebar-widget widget-calendar">
-								<h6>Calendar</h6>
-								<div data-plugin-datepicker data-plugin-skin="dark" ></div>
-							</div>
-			
-						</div>
-					</div>
-				</div>
-			</aside>
+			<jsp:include page = "calendar.jsp"></jsp:include>
 		</section>
 
 		<!-- Vendor -->

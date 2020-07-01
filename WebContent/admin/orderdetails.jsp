@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!doctype>
+
+<!doctype html>
 <html class="fixed">
 	<head>
 
@@ -39,7 +40,6 @@
 
 		<!-- Head Libs -->
 		<script src="${pageContext.request.contextPath}/admin/index/vendor/modernizr/modernizr.js"></script>
-
 	</head>
 	<body>
 		<section class="body">
@@ -55,7 +55,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>订单</h2>
+						<h2>订单详情</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -65,7 +65,7 @@
 									</a>
 								</li>
 								<li><span>订单</span></li>
-								<li><span>处理</span></li>
+								<li><span>查看详情</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -73,75 +73,126 @@
 					</header>
 
 					<!-- start: page -->
-						<section class="panel">
-							<header class="panel-heading"><h2 class="panel-title">未发货商品</h2></header>
-							<div class="panel-body">
-								<table class="table table-bordered table-striped mb-none" id="datatable-editable">
-									<thead>
-										<tr>
-											<th>订单ID</th>
-											<th>商品ID</th>
-											<th>用户ID</th>
-											<th>操作</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="gradeX">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 4.0
-											</td>
-											<td>Win 95+</td>
-											<td class="actions">
-												<a href="process.jsp" class="btn btn-primary">确认收货</a>
-											</td>
-										</tr>
-										<tr class="gradeC">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 5.0
-											</td>
-											<td>Win 95+</td>
-											<td class="actions">
-												<a href="process.jsp" class="btn btn-primary">确认收货</a>
-											</td>
-										</tr>
-										<tr class="gradeA">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 5.5
-											</td>
-											<td>Win 95+</td>
-											<td class="actions">
-												<a href="process.jsp" class="btn btn-primary">确认收货</a>
-											</td>
-										</tr>
-										<tr class="gradeA">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet
-												Explorer 6
-											</td>
-											<td>Win 98+</td>
-											<td class="actions">
-												<a href="process.jsp" class="btn btn-primary">确认收货</a>
-											</td>
-										</tr>
-										<tr class="gradeA">
-											<td><a href="orderdetails.jsp">Trident</a></td>
-											<td>Internet Explorer 7</td>
-											<td>Win XP SP2+</td>
-											<td class="actions">
-												<a href="process.jsp" class="btn btn-primary">确认收货</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+
+					<section class="panel">
+						<div class="panel-body">
+							<div class="invoice">
+								<header class="clearfix">
+									<div class="row">
+										<div class="col-sm-6 mt-md">
+											<h2 class="h2 mt-none mb-sm text-dark text-bold">订单编号</h2>
+											<h4 class="h4 m-none text-dark text-bold">xxxxxxx具体编号</h4>
+										</div>
+										<div class="col-sm-6 text-right mt-md mb-md">
+											<div class="ib mr-xlg">
+												<h2>（未发货/已发货）</h2>
+											</div>
+											<div class="ib">
+												<img src="${pageContext.request.contextPath}/admin/index/images/invoice-logo.png" alt="OKLER Themes" />
+											</div>
+										</div>
+									</div>
+								</header>
+								<div class="bill-info">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="bill-to">
+												<p class="h5 mb-xs text-dark text-semibold">收件人信息</p>
+												<address>
+												           收件人姓名：
+												    <br/>
+													收件人手机号: +61 3 8376 6284
+												    <br/>
+													收件省份：
+													<br/>
+													收件城市：
+													<br/>
+													收件区县：
+													<br/>
+													详细地址：
+													<br/>
+													订单备注：
+												</address>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="bill-data text-right">
+												<p class="mb-none">
+													<span class="text-dark">下单日期:</span>
+													<span class="value">05/20/2014</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+								<div class="table-responsive">
+									<table class="table invoice-items">
+										<thead>
+											<tr class="h4 text-dark">
+												<th id="cell-id"     class="text-semibold">商品ID</th>
+												<th id="cell-item"   class="text-semibold">商品名称</th>
+												<th id="cell-desc"   class="text-semibold">商品库存</th>
+												<th id="cell-price"  class="text-center text-semibold">单价</th>
+												<th id="cell-qty"    class="text-center text-semibold">数量</th>
+												<th id="cell-total"  class="text-center text-semibold">总价</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>123456商品ID</td>
+												<td class="text-semibold text-dark">这是一件商品123141</td>
+												<td>88</td>
+												<td class="text-center">￥14.00</td>
+												<td class="text-center">2</td>
+												<td class="text-center">￥28.00</td>
+											</tr>
+											<tr>
+												<td>654321商品ID</td>
+												<td class="text-semibold text-dark">戒指xxx</td>
+												<td>0</td>
+												<td class="text-center">￥17.00</td>
+												<td class="text-center">1</td>
+												<td class="text-center">￥17.00</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							
+								<div class="invoice-summary">
+									<div class="row">
+										<div class="col-sm-4 col-sm-offset-8">
+											<table class="table h5 text-dark">
+												<tbody>
+													<tr class="b-top-none">
+														<td colspan="2">小计</td>
+														<td class="text-left">￥73.00</td>
+													</tr>
+													<tr>
+														<td colspan="2">邮费</td>
+														<td class="text-left">￥0.00</td>
+													</tr>
+													<tr class="h4">
+														<td colspan="2">总额</td>
+														<td class="text-left">￥73.00</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
 							</div>
-						</section>
+
+							<div class="text-right mr-lg">
+								<a href="index.jsp" class="btn btn-default">返回主页</a>
+							</div>
+						</div>
+					</section>
+
 					<!-- end: page -->
 				</section>
 			</div>
-			<jsp:include page = "calendar.jsp"></jsp:include>
+			<<jsp:include page = "calendar.jsp"></jsp:include>
 		</section>
 
 		<!-- Vendor -->
@@ -153,11 +204,6 @@
 		<script src="${pageContext.request.contextPath}/admin/index/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="${pageContext.request.contextPath}/admin/index/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
-		<!-- Specific Page Vendor -->
-		<script src="${pageContext.request.contextPath}/admin/index/vendor/select2/select2.js"></script>
-		<script src="${pageContext.request.contextPath}/admin/index/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
-		<script src="${pageContext.request.contextPath}/admin/index/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>	
-			
 		<!-- Theme Base, Components and Settings -->
 		<script src="${pageContext.request.contextPath}/admin/index/javascripts/theme.js"></script>
 		
@@ -167,8 +213,5 @@
 		<!-- Theme Initialization Files -->
 		<script src="${pageContext.request.contextPath}/admin/index/javascripts/theme.init.js"></script>
 
-
-		<!-- Examples -->
-		<script src="${pageContext.request.contextPath}/admin/index/javascripts/tables/examples.datatables.editable.js"></script>
 	</body>
 </html>

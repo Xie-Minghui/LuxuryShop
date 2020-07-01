@@ -7,7 +7,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Basic Forms | Okler Themes | Porto-Admin</title>
+		<title>Editable Tables | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -25,7 +25,8 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/admin/index/vendor/bootstrap-datepicker/css/datepicker3.css" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/admin/index/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/admin/index/vendor/select2/select2.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/admin/index/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/admin/index/stylesheets/theme.css" />
@@ -54,7 +55,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>商品</h2>
+						<h2>订单</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -63,8 +64,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>商品</span></li>
-								<li><span>修改</span></li>
+								<li><span>订单</span></li>
+								<li><span>处理</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -72,83 +73,68 @@
 					</header>
 
 					<!-- start: page -->
-						<div class="row">
-							<div class="col-lg-12">
-								<section class="panel">
-									<header class="panel-heading"><h2 class="panel-title">商品</h2></header>
-									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
-										    <div class="form-group">
-												<label class="col-md-3 control-label" for="inputDisabled">商品ID（自动获取，不可修改）</label>
-												<div class="col-md-6">
-													<input class="form-control" id="inputDisabled" type="text" placeholder="123242353" disabled="">
-												</div>
-											</div>
-											
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputFocus">商品名称</label>
-												<div class="col-md-6">
-													<input class="form-control" id="inputFocus" type="text" value="自动获取">
-												</div>
-											</div>
+						<section class="panel">
+							<header class="panel-heading">
+								<div class="panel-actions">
+									<a href="#" class="fa fa-caret-down"></a>
+									<a href="#" class="fa fa-times"></a>
+								</div>
 						
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputFocus">商品单价</label>
-												<div class="col-md-6">
-													<input class="form-control" id="inputFocus" type="text" value="自动获取">
-												</div>
-											</div>
-						
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputFocus">商品库存</label>
-												<div class="col-md-6">
-													<input class="form-control" id="inputFocus" type="text" value="自动获取">
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputSuccess">选择商品类型</label>
-												<div class="col-md-6">
-													<select class="form-control input-lg mb-md">
-														<option>Option 1</option>
-														<option>Option 2</option>
-														<option>Option 3</option>
-													</select>
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="textareaDefault">商品信息</label>
-												<div class="col-md-6">
-													<textarea class="form-control" rows="3" id="textareaDefault">自动获取</textarea>
-												</div>
-											</div>													
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">最小尺寸</label>
-												<div class="col-md-6">
-												    <input class="form-control" id="inputFocus" type="text" value="自动获取">
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">重量</label>
-												<div class="col-md-6">
-												    <input class="form-control" id="inputFocus" type="text" value="自动获取">
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">颜色</label>
-												<div class="col-md-6">
-												    <input class="form-control" id="inputFocus" type="text" value="自动获取">
-												</div>
-											</div>
-										</form>
-									</div>
-									<div class="col-sm-6">
-										<div class="mb-md">
-										    <a href="publish.jsp" class="btn btn-primary">修改</a>
-										</div>
-									</div>
-								</section>								
+								<h2 class="panel-title">已发货商品</h2>
+							</header>
+							<div class="panel-body">
+								<table class="table table-bordered table-striped mb-none" id="datatable-editable">
+									<thead>
+										<tr>
+											<th>订单ID</th>
+											<th>商品ID</th>
+											<th>用户ID</th>
+											<th>状态</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="gradeX">
+											<td><a href="orderdetails.jsp">Trident</a></td>
+											<td>Internet
+												Explorer 4.0
+											</td>
+											<td>Win 95+</td>
+											<td>已发货</td>
+										</tr>
+										<tr class="gradeC">
+											<td><a href="orderdetails.jsp">Trident</a></td>
+											<td>Internet
+												Explorer 5.0
+											</td>
+											<td>Win 95+</td>
+											<td>已发货</td>
+										</tr>
+										<tr class="gradeA">
+											<td><a href="orderdetails.jsp">Trident</a></td>
+											<td>Internet
+												Explorer 5.5
+											</td>
+											<td>Win 95+</td>
+											<td>已发货</td>
+										</tr>
+										<tr class="gradeA">
+											<td><a href="orderdetails.jsp">Trident</a></td>
+											<td>Internet
+												Explorer 6
+											</td>
+											<td>Win 98+</td>
+											<td>已发货</td>
+										</tr>
+										<tr class="gradeA">
+											<td><a href="orderdetails.jsp">Trident</a></td>
+											<td>Internet Explorer 7</td>
+											<td>Win XP SP2+</td>
+											<td>已发货</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
-						</div>
+						</section>
 					<!-- end: page -->
 				</section>
 			</div>
@@ -165,9 +151,10 @@
 		<script src="${pageContext.request.contextPath}/admin/index/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
 		<!-- Specific Page Vendor -->
-		<script src="${pageContext.request.contextPath}/admin/index/vendor/jquery-autosize/jquery.autosize.js"></script>
-		<script src="${pageContext.request.contextPath}/admin/index/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
-		
+		<script src="${pageContext.request.contextPath}/admin/index/vendor/select2/select2.js"></script>
+		<script src="${pageContext.request.contextPath}/admin/index/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+		<script src="${pageContext.request.contextPath}/admin/index/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>	
+			
 		<!-- Theme Base, Components and Settings -->
 		<script src="${pageContext.request.contextPath}/admin/index/javascripts/theme.js"></script>
 		
@@ -177,5 +164,8 @@
 		<!-- Theme Initialization Files -->
 		<script src="${pageContext.request.contextPath}/admin/index/javascripts/theme.init.js"></script>
 
+
+		<!-- Examples -->
+		<script src="${pageContext.request.contextPath}/admin/index/javascripts/tables/examples.datatables.editable.js"></script>
 	</body>
 </html>
