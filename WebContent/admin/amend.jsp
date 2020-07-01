@@ -113,8 +113,9 @@
 													<select name="TYPE" class="form-control input-lg mb-md">
 														<option value="${p.TYPE}" selected hidden>${p.TYPE}</option> 
 														<option value="皮具">皮具</option>
-														<option value="首饰">首饰</option>
-														<option>Option 33</option>
+														<option value="香氛">香氛</option>
+														<option value="服饰">服饰</option>
+														<option value="配饰">配饰</option>
 													</select>
 												</div>
 											</div>
