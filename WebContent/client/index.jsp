@@ -69,19 +69,20 @@
                                                 <h3 class="text-uppercase font-weight-light" data-animation="fadeInUp"
                                                     data-duration=".3s" data-delay=".3s">2020早秋</h3>
                                                 <h1 class="heading__primary mb--40 mb-md--20" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">商品名字1</h1>
+                                                    data-duration=".3s" data-delay=".3s">马衔扣1955系列肩背包</h1>
                                                 <p class="font-weight-light" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述</p>
+                                                    data-duration=".3s" data-delay=".3s">马衔扣1955系列手袋在2020早春系列中惊艳亮相，以全新视角演绎经典设计。这一手袋延用了六十余年前经典单品的线条与造型，将经典细节与现代精神巧妙融合，强调了马衔扣这一品牌标志性设计元素。</p>
                                             </div>
                                             <div class="slider-content__btn">
-                                                <a href="shop.html" class="btn-link" data-animation="fadeInUp"
+                                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=321" class="btn-link" data-animation="fadeInUp"
                                                     data-duration=".3s" data-delay=".6s">立即购买</a>
+                                                    
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 offset-lg-1 col-md-4">
                                         <figure class="slider-image d-none d-md-block">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/slider/slider-image-02.png" alt="Slider Image">
+                                            <img src="${pageContext.request.contextPath}/client/product/image/cover/fengmian-1.jpg" alt="Slider Image">
                                         </figure>
                                     </div>
                                 </div>
