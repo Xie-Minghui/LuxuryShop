@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="p" uri="http://www.LuxutyShop.cn/tag" %>
 <!doctype>
 <html class="fixed">
 	<head>
@@ -41,6 +42,7 @@
 
 	</head>
 	<body>
+		<p:admin/>
 		<section class="body">
 
 			<!-- start: header -->
@@ -77,74 +79,75 @@
 								<section class="panel">
 									<header class="panel-heading"><h2 class="panel-title">商品</h2></header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
+										<form class="form-horizontal form-bordered" action="${pageContext.request.contextPath}/AdminChangeLuxuryInfo?id=${p.LID}" method="post">
 										    <div class="form-group">
 												<label class="col-md-3 control-label" for="inputDisabled">商品ID（自动获取，不可修改）</label>
 												<div class="col-md-6">
-													<input class="form-control" id="inputDisabled" type="text" placeholder="123242353" disabled="">
+													<input name="LID" class="form-control" id="inputDisabled" type="text" value="${p.LID}" placeholder="${p.LID}" disabled="">
 												</div>
 											</div>
 											
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputFocus">商品名称</label>
 												<div class="col-md-6">
-													<input class="form-control" id="inputFocus" type="text" value="自动获取">
+													<input name="LNAME" class="form-control" id="inputFocus" type="text" value="${p.LNAME}">
 												</div>
 											</div>
 						
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputFocus">商品单价</label>
 												<div class="col-md-6">
-													<input class="form-control" id="inputFocus" type="text" value="自动获取">
+													<input name="PRICE" class="form-control" id="inputFocus" type="text" value="${p.PRICE}">
 												</div>
 											</div>
 						
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputFocus">商品库存</label>
 												<div class="col-md-6">
-													<input class="form-control" id="inputFocus" type="text" value="自动获取">
+													<input name="RESTNUM" class="form-control" id="inputFocus" type="text" value="${p.RESTNUM}">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputSuccess">选择商品类型</label>
 												<div class="col-md-6">
-													<select class="form-control input-lg mb-md">
-														<option>Option 1</option>
-														<option>Option 2</option>
-														<option>Option 3</option>
+													<select name="TYPE" class="form-control input-lg mb-md">
+														<option value="${p.TYPE}" selected hidden>${p.TYPE}</option> 
+														<option value="皮具">皮具</option>
+														<option value="首饰">首饰</option>
+														<option>Option 33</option>
 													</select>
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="textareaDefault">商品信息</label>
 												<div class="col-md-6">
-													<textarea class="form-control" rows="3" id="textareaDefault">自动获取</textarea>
+													<textarea name="INFOR" class="form-control" rows="3" id="textareaDefault">${p.INFOR}</textarea>
 												</div>
 											</div>													
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">最小尺寸</label>
 												<div class="col-md-6">
-												    <input class="form-control" id="inputFocus" type="text" value="自动获取">
+												    <input name="SIZE" class="form-control" id="inputFocus" type="text" value="${p.SIZE}">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">重量</label>
 												<div class="col-md-6">
-												    <input class="form-control" id="inputFocus" type="text" value="自动获取">
+												    <input name="WEIGHT" class="form-control" id="inputFocus" type="text" value="${p.WEIGHT}">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">颜色</label>
 												<div class="col-md-6">
-												    <input class="form-control" id="inputFocus" type="text" value="自动获取">
+												    <input name="COLOR" class="form-control" id="inputFocus" type="text" value="${p.COLOR}">
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="mb-md">
+												    <input type="submit" class="btn btn-primary">修改</a>
 												</div>
 											</div>
 										</form>
-									</div>
-									<div class="col-sm-6">
-										<div class="mb-md">
-										    <a href="publish.jsp" class="btn btn-primary">修改</a>
-										</div>
 									</div>
 								</section>								
 							</div>
