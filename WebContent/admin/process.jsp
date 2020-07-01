@@ -95,7 +95,7 @@
 												<td>${o.DATE}</td>
 												<td>${o.NAME}</td>
 												<td class="actions">
-													<a href="${pageContext.request.contextPath}/AdminDelive?oid=${o.OID}" class="btn btn-primary">确认收货</a>
+													<a href="${pageContext.request.contextPath}/AdminDelive?oid=${o.OID}" class="btn btn-primary">确认发货</a>
 												</td>
 											</tr>
 										</c:forEach>
