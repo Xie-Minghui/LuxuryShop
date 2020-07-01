@@ -21,7 +21,7 @@
                         <nav class="main-navigation d-none d-lg-block">
                             <ul class="mainmenu">
                                 <li class="mainmenu__item menu-item-has-children position-relative">
-                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=皮包" class="mainmenu__link">皮具系列</a>
+                                    <a href="${pageContext.request.contextPath}/showProductByPage?category=皮具" class="mainmenu__link">皮具系列</a>
                                     <!-- <div class="inner-menu">
                                         <ul class="sub-menu">
                                             <li>
