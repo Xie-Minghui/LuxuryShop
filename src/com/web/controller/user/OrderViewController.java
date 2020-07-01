@@ -75,10 +75,10 @@ public class OrderViewController extends HttpServlet {
 				response.sendRedirect(request.getContextPath()+"/client/checkout.jsp");
 				break;
 			case 1:
-				response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
+				response.sendRedirect(request.getContextPath()+"/client/orderconfirm.jsp");
 				break;
 			case 2:
-				response.sendRedirect(request.getContextPath()+"/client/orderdetails.jsp");
+				response.sendRedirect(request.getContextPath()+"/client/orderconfirm.jsp");
 				break;
 			case 3:
 				response.sendRedirect(request.getContextPath()+"/client/waitcommentorder.jsp");

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
 <html class="fixed">
@@ -81,11 +82,11 @@
 									<div class="row">
 										<div class="col-sm-6 mt-md">
 											<h2 class="h2 mt-none mb-sm text-dark text-bold">订单编号</h2>
-											<h4 class="h4 m-none text-dark text-bold">xxxxxxx具体编号</h4>
+											<h4 class="h4 m-none text-dark text-bold">${admin_order.OID}</h4>
 										</div>
 										<div class="col-sm-6 text-right mt-md mb-md">
 											<div class="ib mr-xlg">
-												<h2>（未发货/已发货）</h2>
+												<h2>${admin_order.STATE}</h2>
 											</div>
 											<div class="ib">
 												<img src="${pageContext.request.contextPath}/admin/index/images/invoice-logo.png" alt="OKLER Themes" />
@@ -101,17 +102,17 @@
 												<address>
 												           收件人姓名：
 												    <br/>
-													收件人手机号: +61 3 8376 6284
+													收件人手机号: ${admin_order.PHONE}
 												    <br/>
-													收件省份：
+													收件省份：${admin_order.PROVINCE}
 													<br/>
-													收件城市：
+													收件城市：${admin_order.CITY}
 													<br/>
-													收件区县：
+													收件区县：${admin_order.DISTRICT}
 													<br/>
-													详细地址：
+													详细地址：${admin_order.ADDR}
 													<br/>
-													订单备注：
+													订单备注：${admin_order.REMARK}
 												</address>
 											</div>
 										</div>
@@ -119,7 +120,7 @@
 											<div class="bill-data text-right">
 												<p class="mb-none">
 													<span class="text-dark">下单日期:</span>
-													<span class="value">05/20/2014</span>
+													<span class="value">${admin_order.DATE}</span>
 												</p>
 											</div>
 										</div>
@@ -139,22 +140,16 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>123456商品ID</td>
-												<td class="text-semibold text-dark">这是一件商品123141</td>
-												<td>88</td>
-												<td class="text-center">￥14.00</td>
-												<td class="text-center">2</td>
-												<td class="text-center">￥28.00</td>
-											</tr>
-											<tr>
-												<td>654321商品ID</td>
-												<td class="text-semibold text-dark">戒指xxx</td>
-												<td>0</td>
-												<td class="text-center">￥17.00</td>
-												<td class="text-center">1</td>
-												<td class="text-center">￥17.00</td>
-											</tr>
+											<c:forEach items="${admin_order.orderItems}" var="entry" varStatus="vs">
+												<tr>
+													<td>${entry.LID}</td>
+													<td class="text-semibold text-dark">${entry.luxury.LNAME}</td>
+													<td>${entry.luxury.restnum}</td>
+													<td class="text-center">￥${entry.luxury.PRICE}</td>
+													<td class="text-center">${entry.NUM}</td>
+													<td class="text-center">￥${entry.luxury.PRICE*entry.NUM}</td>
+												</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -166,7 +161,7 @@
 												<tbody>
 													<tr class="b-top-none">
 														<td colspan="2">小计</td>
-														<td class="text-left">￥73.00</td>
+														<td class="text-left">￥${order.SUMPRICE}</td>
 													</tr>
 													<tr>
 														<td colspan="2">邮费</td>
@@ -174,7 +169,7 @@
 													</tr>
 													<tr class="h4">
 														<td colspan="2">总额</td>
-														<td class="text-left">￥73.00</td>
+														<td class="text-left">￥${order.SUMPRICE}</td>
 													</tr>
 												</tbody>
 											</table>
