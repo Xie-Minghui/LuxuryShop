@@ -1,5 +1,6 @@
 package com.web.biz.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.web.biz.OrderBiz;
@@ -122,6 +123,18 @@ public class OrderBizImpl implements OrderBiz {
 	@Override
 	public List<Order> findDeliveredOrder() {
 		return orderDao.findDeliveredOrder();
+	}
+
+
+	@Override
+	public Integer countAllOrder() {
+		return orderDao.countAllOrder();
+	}
+
+
+	@Override
+	public BigDecimal totalSales() {
+		return orderDao.totalSales();
 	}
 
 }

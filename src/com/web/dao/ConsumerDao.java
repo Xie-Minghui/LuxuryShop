@@ -23,4 +23,6 @@ public interface ConsumerDao {
 	 */
 	public Consumer login(String email,String pswd);
 		
+	//查询用户总量
+	public Integer countAllConsumer();
 }

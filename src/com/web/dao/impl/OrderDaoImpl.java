@@ -1,5 +1,6 @@
 package com.web.dao.impl;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -442,5 +443,65 @@ public class OrderDaoImpl implements OrderDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public Integer countAllOrder() {
+		//定义总条数
+		Integer totalCount = 0;
+		
+		try {
+			//获取数据库的连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select count(*) from orders";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环
+			while(rs.next()){
+				
+				//取结果集中的第一个值赋值给totalCount
+				totalCount = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalCount;
+	}
+
+	@Override
+	public BigDecimal totalSales() {
+		//定义总条数
+		BigDecimal totalSales = new BigDecimal("0");
+		
+		try {
+			//获取数据库的连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select sum(SUMPRICE) from orders";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环
+			while(rs.next()){
+				
+				//取结果集中的第一个值赋值给totalCount
+				totalSales = rs.getBigDecimal(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalSales;
 	}
 }

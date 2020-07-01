@@ -54,7 +54,7 @@ public class AdminLoginController extends HttpServlet {
 			//登录成功
 			
 			//跳转到前台的用户信息界面
-			response.sendRedirect(request.getContextPath()+"/admin/index.jsp");
+			response.sendRedirect(request.getContextPath()+"/AdminIndexController");
 		}else{
 			//登录失败
 			response.sendRedirect(request.getContextPath()+"/admin/signin.jsp");

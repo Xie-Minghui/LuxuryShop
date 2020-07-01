@@ -686,4 +686,34 @@ public class ProductDaoImpl implements ProductDao {
 		return list;
 	}
 
+	@Override
+	public Integer countAllProduct() {
+		//定义总条数
+		Integer totalCount = 0;
+		
+		try {
+			//获取数据库的连接
+			Connection conn = JDBCUtil.getConnectinon();
+			
+			//编写sql
+			String sql = "select count(*) from luxury";
+			
+			//编译sql
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			//执行查询
+			ResultSet rs = ps.executeQuery();
+			
+			//循环
+			while(rs.next()){
+				
+				//取结果集中的第一个值赋值给totalCount
+				totalCount = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalCount;
+	}
+
 }

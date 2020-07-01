@@ -1,5 +1,6 @@
 package com.web.biz;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.web.entity.Consumer;
@@ -28,4 +29,10 @@ public interface OrderBiz {
 	
 	//查找已发货订单
 	public List<Order> findDeliveredOrder();
+	
+	//查询订单总量
+	public Integer countAllOrder();
+	
+	//查询总流水
+	public BigDecimal totalSales();
 }

@@ -167,4 +167,9 @@ public class ProductBizImpl implements ProductBiz {
 		return productDao.findAllProduct();
 	}
 
+	@Override
+	public Integer countAllProduct() {
+		return productDao.countAllProduct();
+	}
+
 }

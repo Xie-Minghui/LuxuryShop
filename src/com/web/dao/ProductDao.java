@@ -124,4 +124,10 @@ public interface ProductDao {
 	 * @return
 	 */
 	public List<Product> findAllProduct();
+	
+	/**
+	 * 查询所有商品种数
+	 * @return
+	 */
+	public Integer countAllProduct();
 }

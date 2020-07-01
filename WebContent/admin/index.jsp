@@ -89,7 +89,7 @@
 													<div class="summary">
 														<h4 class="title">商品种类</h4>
 														<div class="info">
-															<strong class="amount">1281</strong>
+															<strong class="amount">${cp}</strong>
 														</div>
 													</div>
 													<div class="summary-footer">
@@ -113,7 +113,7 @@
 													<div class="summary">
 														<h4 class="title">总流水</h4>
 														<div class="info">
-															<strong class="amount">￥ 14,890.30</strong>
+															<strong class="amount">￥ ${ts}</strong>
 														</div>
 													</div>
 													<div class="summary-footer">
@@ -137,7 +137,7 @@
 													<div class="summary">
 														<h4 class="title">总订单量</h4>
 														<div class="info">
-															<strong class="amount">38</strong>
+															<strong class="amount">${co}</strong>
 														</div>
 													</div>
 													<div class="summary-footer">
@@ -159,9 +159,9 @@
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">总浏用户量</h4>
+														<h4 class="title">总用户量</h4>
 														<div class="info">
-															<strong class="amount">3765</strong>
+															<strong class="amount">${cc}</strong>
 														</div>
 													</div>
 													<div class="summary-footer">

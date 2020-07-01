@@ -25,5 +25,9 @@ public class ConsumerBizImpl implements ConsumerBiz {
 		//调用数据访问层的登录方法
 		return cd.login(email, pswd);
 	}
+	@Override
+	public Integer countAllConsumer() {
+		return cd.countAllConsumer();
+	}
 
 }

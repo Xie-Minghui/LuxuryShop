@@ -18,7 +18,7 @@
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
 									<li class="nav-active">
-										<a href="${pageContext.request.contextPath}/admin/index.jsp">
+										<a href="${pageContext.request.contextPath}/AdminIndexController">
 											<i class="fa fa-home" aria-hidden="true"></i>
 											<span>主面板</span>
 										</a>
