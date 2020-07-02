@@ -22,181 +22,15 @@
                             <ul class="mainmenu">
                                 <li class="mainmenu__item menu-item-has-children position-relative">
                                     <a href="${pageContext.request.contextPath}/showProductByPage?category=皮具" class="mainmenu__link">皮具系列</a>
-                                    <!-- <div class="inner-menu">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="index.html">Home One</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-02.html">Home Two</a>
-                                            </li>
-                                        </ul>
-                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-static">
                                     <a href="${pageContext.request.contextPath}/showProductByPage?category=香氛" class="mainmenu__link">香氛</a>
-                                    <!-- <div class="inner-menu megamenu-holder">
-                                        <ul class="megamenu">
-                                            <li>
-                                                <a class="megamenu-title" href="#">Shop Grid</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="shop-fullwidth.html">Full Width</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop.html">Left Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-right-sidebar.html">Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-three-columns.html">Three Columns</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-four-columns.html">Four Columns</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a class="megamenu-title" href="#">Shop List</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="shop-list.html">Full Width</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-list-sidebar.html">Left Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-list-right-sidebar.html">Right Sidebar</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a class="megamenu-title" href="#">Product Details</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="product-details.html">Tab Style 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-tab-style-2.html">Tab Style
-                                                            2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-tab-style-3.html">Tab Style
-                                                            3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-gallery-left.html">Gallery
-                                                            Left</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-gallery-right.html">Gallery
-                                                            Right</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-sticky-left.html">Sticky
-                                                            Left</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a class="megamenu-title" href="#">Product Details</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="product-details-sticky-right.html">Sticky
-                                                            Right</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-slider-box.html">Slider Box</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-slider-full-width.html">Slider
-                                                            Box Full Width</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-affiliate.html">Affiliate
-                                                            Proudct</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-variable.html">Variable
-                                                            Proudct</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-group.html">Group Product</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-relative">
                                     <a href="${pageContext.request.contextPath}/showProductByPage?category=服饰" class="mainmenu__link">时尚服饰</a>
-                                    <!-- <div class="inner-menu">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="my-account.html">My Account</a>
-                                            </li>
-                                            <li>
-                                                <a href="checkout.html">Checkout</a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html">Cart</a>
-                                            </li>
-                                            <li>
-                                                <a href="compare.html">Compare</a>
-                                            </li>
-                                            <li>
-                                                <a href="order-tracking.html">Track Order</a>
-                                            </li>
-                                            <li>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </li>
-                                        </ul>
-                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children position-relative">
                                     <a href="${pageContext.request.contextPath}/showProductByPage?category=配饰" class="mainmenu__link">配饰系列</a>
-                                    <!-- <div class="inner-menu">
-                                        <ul class="sub-menu">
-                                            <li class="has-children">
-                                                <a href="#">Blog Grid</a>
-                                                <ul class="sub-menu">
-                                                    <li>
-                                                        <a href="blog-left-sidebar.html">Left Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog.html">Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-01-column.html">One Column</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-02-columns.html">Two Columns</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-03-columns.html">Three Columns</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-children">
-                                                <a href="#">Blog Details</a>
-                                                <ul class="sub-menu">
-                                                    <li>
-                                                        <a href="blog-details-image.html">Image Post</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-details-audio.html">Audio Post</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-details-video.html">Video Post</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-details-gallery.html">Gallery Post</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div> -->
                                 </li>
                                 <li class="mainmenu__item">
                                     <a href="${pageContext.request.contextPath}/client/notice.jsp" class="mainmenu__link">公告</a>
@@ -259,9 +93,6 @@
 </header>
 <!-- Header End -->
 
-<!-- OffCanvas Menu Start -->
-
-<!-- OffCanvas Menu End -->
 
 <!-- Mini Cart Start -->
 <aside class="mini-cart" id="miniCart">

@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>公告信息</title>
+    <title>公告</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicons -->
@@ -90,40 +90,25 @@
                                     </article>                                        
                                 </div>
                                 <div class="col-lg-6 mb--50">
-                                    <article class="post">
-                                        <div class="post__inner format-gallery">
+                                    <article class="post format-standard">
+                                        <div class="post__inner">
                                             <div class="post__media">
-                                                <div class="element-carousel" data-slick-options='{
-                                                    "slidesToShow": 1,
-                                                    "slidesToScroll": 1,
-                                                    "autoplay": true,
-                                                    "autoplaySpeed": 1500
-                                                }'>
-                                                    <div class="item">
-                                                        <img src="${pageContext.request.contextPath}/client/shop/img/blog/blog-07.jpg" alt="post Image" class="w-100">
-                                                        <a href="noticedetails.jsp" class="item-overlay"></a>
-                                                    </div> 
-                                                    <div class="item">
-                                                        <img src="${pageContext.request.contextPath}/client/shop/img/blog/blog-08.jpg" alt="post Image" class="w-100">
-                                                        <a href="noticedetails.jsp" class="item-overlay"></a>
-                                                    </div> 
-                                                    <div class="item">
-                                                        <img src="${pageContext.request.contextPath}/client/shop/img/blog/blog-09.jpg" alt="post Image" class="w-100">
-                                                        <a href="noticedetails.jsp" class="item-overlay"></a>
-                                                    </div>                 
-                                                </div>
+                                                <figure class="image">
+	                                                <img src="${pageContext.request.contextPath}/client/shop/img/blog/ad-02.jpg" alt="post Image" class="w-100">
+	                                                <a href="noticedetails.jsp" class="item-overlay"></a>
+                                                </figure>
                                             </div>
                                             <div class="post__info">
-                                                <h2 class="post__title"><a href="noticedetails.jsp">公告B</a></h2>
+                                                <h2 class="post__title"><a href="noticedetails.jsp">倪妮及金钟仁演绎全新广告形象大片</a></h2>
                                                 <div class="post__meta">
                                                     <span class="posted-on">2020-06-12</span>
-                                                    <span class="posted-by"><span>By: </span>Dior</span>
+                                                    <span class="posted-by"><span>By: </span>Gucci</span>
                                                 </div>
                                                 <div class="post__desc">
-                                                    <p>Dior品牌宣布入驻Excellent，将迎来开业折扣。</p>
+                                                    <p>在全球眼镜广告形象大片中，女星倪妮及歌手、演员及舞者金钟仁（EXO组合成员）现身洛杉矶的一家唱片和录像带租赁商店。</p>
                                                 </div>
                                                 <div class="post__footer-meta">
-                                                    <a href="noticedetails.jsp" class="read-more-btn">Read More</a>
+                                                    <a href="noticedetails.jsp" class="read-more-btn">查看详情</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,21 +119,21 @@
                                         <div class="post__inner">
                                             <div class="post__media">
                                                 <figure class="image">
-                                                    <img src="${pageContext.request.contextPath}/client/shop/img/blog/blog-02.jpg" alt="post" class="w-100">
+                                                    <img src="${pageContext.request.contextPath}/client/shop/img/blog/ad-03.jpg" alt="post" class="w-100">
                                                     <a href="noticedetails.jsp" class="item-overlay"></a>
                                                 </figure>
                                             </div>
                                             <div class="post__info">
-                                                <h2 class="post__title"><a href="noticedetails.jsp">公告C</a></h2>
+                                                <h2 class="post__title"><a href="noticedetails.jsp">2020春夏眼镜系列广告大片</a></h2>
                                                 <div class="post__meta">
                                                     <span class="posted-on">2020-06-02</span>
                                                     <span class="posted-by"><span>By: </span>Chanel</span>
                                                 </div>
                                                 <div class="post__desc">
-                                                    <p>Chanel品牌宣布入驻Excellent，将迎来开业折扣。</p>
+                                                    <p>香奈儿2020春夏眼镜系列广告大片精彩幕后。广告大片由香奈儿品牌形象大使Margaret Qualley、Angèle、Isabelle Adjani、 Pharrell Williams 与Sébastien Tellier演绎。</p>
                                                 </div>
                                                 <div class="post__footer-meta">
-                                                    <a href="noticedetails.jsp" class="read-more-btn">Read More</a>
+                                                    <a href="noticedetails.jsp" class="read-more-btn">查看详情</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,21 +144,21 @@
                                         <div class="post__inner">
                                             <div class="post__media">
                                                 <figure class="image">
-                                                    <img src="${pageContext.request.contextPath}/client/shop/img/blog/blog-03.jpg" alt="post" class="w-100">
+                                                    <img src="${pageContext.request.contextPath}/client/shop/img/blog/ad-04.jpg" alt="post" class="w-100">
                                                     <a href="noticedetails.jsp" class="item-overlay"></a>
                                                 </figure>
                                             </div>
                                             <div class="post__info">
-                                                <h2 class="post__title"><a href="noticedetails.jsp">公告D</a></h2>
+                                                <h2 class="post__title"><a href="noticedetails.jsp">迪奥二零二零秋季女装系列广告</a></h2>
                                                 <div class="post__meta">
                                                     <span class="posted-on">2020-06-01</span>
-                                                    <span class="posted-by"><span>By: </span>Excellent</span>
+                                                    <span class="posted-by"><span>By: </span>Dior</span>
                                                 </div>
                                                 <div class="post__desc">
-                                                    <p>Excellent于6.1儿童节正式开业！全场奢侈品买即送小礼品，送完即止！</p>
+                                                    <p>迪奥正式发布二零二零秋季女装系列广告大片，倾心演绎出自创意总监玛丽亚·嘉茜娅·蔻丽 (Maria Grazia Chiuri) 之手的设计作品，在摄影师 Brigitte Niedermair 精妙的镜头中定格曼妙风情。</p>
                                                 </div>
                                                 <div class="post__footer-meta">
-                                                    <a href="noticedetails.jsp" class="read-more-btn">Read More</a>
+                                                    <a href="noticedetails.jsp" class="read-more-btn">查看详情</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -112,6 +112,14 @@
             </div>
         </div>
 		<!---//End-wrap---->
+		<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+
+		<script type="text/javascript">
+			function changeImage(){
+				//改变验证码图片中的文字
+				document.getElementById("imgCode").src = "${pageContext.request.contextPath}/imageCode?time=" + new Date().getTime();
+			}
+		</script>
 		
 		<!-- Footer -->
 		<jsp:include page = "foot.jsp"></jsp:include>
