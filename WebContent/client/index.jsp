@@ -148,7 +148,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-sm--50">
                             <div class="featured-product">
-                            	<a href="${pageContext.request.contextPath}/FindProductByIdController?id=20"><div class="featured-product__inner info-center">
+                            	<a href="${pageContext.request.contextPath}/FindProductByIdController?id=20"><div class="featured-product__inner">
                                     <figure class="featured-product__image">
                                         <img src="${pageContext.request.contextPath}/client/product/image/peishi/20/peishi-20.jpg" alt="Featured Product">
                                     </figure>
@@ -162,12 +162,12 @@
                         </div>
                         <div class="col-md-6">
                             <div class="featured-product">
-                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=112"><div class="featured-product__inner info-left-bottom">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=112"><div class="featured-product__inner">
                                     <figure class="featured-product__image">
                                         <img src="${pageContext.request.contextPath}/client/product/image/fushi/cloth-12.jpg" alt="Featured Product">
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-duration="1s">
-                                        <div class="featured-product__info-inner rotated-info">
+                                        <div class="featured-product__info-inner">
                                             <h2 class="featured-product__name">时尚服饰</h2>
                                         </div>
                                     </div>
@@ -189,13 +189,13 @@
                     <div class="row">
                         <div class="col-md-4 mb-sm--50">
                             <div class="featured-product text-md-left text-center p-0">
-                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=101"><div class="featured-product__inner info-left-center">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=101"><div class="featured-product__inner">
                                     <figure class="featured-product__image">
                                         <img src="${pageContext.request.contextPath}/client/product/image/fushi/cloth-1.jpg" alt="Featured Product">
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-delay=".3s"
                                         data-wow-duration=".8s">
-                                        <div class="featured-product__info-inner">
+                                        <div class="featured-product__info-inner  rotated-info">
                                             <h2 class="featured-product__name font-size-34">穿搭</h2>
                                         </div>
                                     </div>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="col-md-4 mb-sm--50">
                             <div class="featured-product text-md-left text-center p-0">
-                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=318"><div class="featured-product__inner info-left-center">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=318"><div class="featured-product__inner">
                                     <figure class="featured-product__image">
                                         <img src="${pageContext.request.contextPath}/client/product/image/piju/piju-18.jpg" alt="Featured Product">
                                     </figure>
@@ -219,7 +219,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="featured-product text-md-left text-center p-0">
-                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=305"><div class="featured-product__inner info-left-center">
+                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=305"><div class="featured-product__inner">
                                     <figure class="featured-product__image">
                                         <img src="${pageContext.request.contextPath}/client/product/image/piju/piju-5.jpg" alt="Featured Product">
                                     </figure>
