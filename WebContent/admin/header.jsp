@@ -14,27 +14,14 @@
 				</div>
 			
 				<!-- start: search & user box -->
-				<div class="header-right">
-			
-					<form action="pages-search-results.html" class="search nav-form">
-						<div class="input-group input-search">
-							<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-							</span>
-						</div>
-					</form>
-			
-					<span class="separator"></span>
-			
-			
+				<div class="header-right">			
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
 								<img src="${pageContext.request.contextPath}/admin/index/images/!logged-user.png" alt="Joseph Doe" class="img-circle" data-lock-picture="${pageContext.request.contextPath}/admin/index/images/!logged-user.png" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
-								<span class="name">管理员名显示在这</span>
+								<span class="name">何鑫</span>
 								<span class="role">administrator</span>
 							</div>
 			
