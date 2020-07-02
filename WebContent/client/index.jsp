@@ -30,6 +30,9 @@
                 location.href = "${pageContext.request.contextPath}/AddFavorController?lid="+id;
             }
         }
+        function viewshop(id) {
+            location.href = "${pageContext.request.contextPath}/FindProductByIdController?id="+id;
+        }
     </script>
 </head>
 
@@ -74,8 +77,8 @@
                                                     data-duration=".3s" data-delay=".3s" style="color:#fff">马衔扣1955系列手袋在2020早春系列中惊艳亮相，以全新视角演绎经典设计。这一手袋延用了六十余年前经典单品的线条与造型，将经典细节与现代精神巧妙融合，强调了马衔扣这一品牌标志性设计元素。</p>
                                             </div>
                                             <div class="slider-content__btn">
-                                                <a href="${pageContext.request.contextPath}/FindProductByIdController?id=321" class="btn-link" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".6s" style="color:#fff">立即购买</a>
+                                                <a href="#" class="btn-link" data-animation="fadeInUp"
+                                                    data-duration=".3s" data-delay=".6s" style="color:#fff" onclick="viewshop('321')">立即购买</a>
                                             </div>
                                         </div>
                                     </div>
@@ -99,8 +102,8 @@
                                                     data-duration=".3s" data-delay=".3s"  style="color:#fff">设计灵感源自延龄草，独特的三叶形态分别代表了纯洁、美丽及健康的美好祝愿。启发自印度奥里萨（Orissa）的镂空工艺，应用于铂金 Lace 戒指之上，以蕾丝图案代替叶纹，呈现优雅的女性美。</p>
                                             </div>
                                             <div class="slider-content__btn">
-                                                <a href="shop.html" class="btn-link" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".6s"  style="color:#fff">立即购买</a>
+                                                <a href="#" class="btn-link" data-animation="fadeInUp"
+                                                    data-duration=".3s" data-delay=".6s"  style="color:#fff" onclick="viewshop('21')">立即购买</a>
                                             </div>
                                         </div>
                                     </div>
@@ -124,8 +127,8 @@
                                                     data-duration=".3s" data-delay=".3s"  style="color:#fff">倾世之金香氛高贵感性，是真我系列精髓之作。相互交织的茉莉纯香和五月玫瑰，来自于格拉斯Dior迪奥专属合作庄园，唤出香草晚香玉迷人的东方气息。</p>
                                             </div>
                                             <div class="slider-content__btn">
-                                                <a href="shop.html" class="btn-link" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".6s"  style="color:#fff">立即购买</a>
+                                                <a href="#" class="btn-link" data-animation="fadeInUp"
+                                                    data-duration=".3s" data-delay=".6s"  style="color:#fff" onclick="viewshop('205')">立即购买</a>
                                             </div>
                                         </div>
                                     </div>
