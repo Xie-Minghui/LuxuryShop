@@ -163,7 +163,7 @@
 												<tbody>
 													<tr class="b-top-none">
 														<td colspan="2">小计</td>
-														<td class="text-left">￥${order.SUMPRICE}</td>
+														<td class="text-left">￥${admin_order.SUMPRICE}</td>
 													</tr>
 													<tr>
 														<td colspan="2">邮费</td>
@@ -171,7 +171,7 @@
 													</tr>
 													<tr class="h4">
 														<td colspan="2">总额</td>
-														<td class="text-left">￥${order.SUMPRICE}</td>
+														<td class="text-left">￥${admin_order.SUMPRICE}</td>
 													</tr>
 												</tbody>
 											</table>
