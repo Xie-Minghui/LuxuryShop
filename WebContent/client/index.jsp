@@ -60,30 +60,24 @@
                 }'>
                     <div class="item">
                         <div class="single-slide height-2 d-flex align-items-center bg-image"
-                            data-bg-image="${pageContext.request.contextPath}/client/shop/img/slider/slider-bg-02.jpg">
+                            data-bg-image="${pageContext.request.contextPath}/client/product/image/cover/cover-gucci.jpg">
                             <div class="container">
                                 <div class="row align-items-center no-gutters w-100">
                                     <div class="col-lg-6 col-md-8">
                                         <div class="slider-content py-0">
                                             <div class="slider-content__text mb--95 md-lg--80 mb-md--40 mb-sm--15">
                                                 <h3 class="text-uppercase font-weight-light" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">2020早秋</h3>
+                                                    data-duration=".3s" data-delay=".3s" style="color:#fff">Gucci肩背包</h3>
                                                 <h1 class="heading__primary mb--40 mb-md--20" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">马衔扣1955系列肩背包</h1>
+                                                    data-duration=".3s" data-delay=".3s" style="color:#fff">马衔扣1955系列</h1>
                                                 <p class="font-weight-light" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">马衔扣1955系列手袋在2020早春系列中惊艳亮相，以全新视角演绎经典设计。这一手袋延用了六十余年前经典单品的线条与造型，将经典细节与现代精神巧妙融合，强调了马衔扣这一品牌标志性设计元素。</p>
+                                                    data-duration=".3s" data-delay=".3s" style="color:#fff">马衔扣1955系列手袋在2020早春系列中惊艳亮相，以全新视角演绎经典设计。这一手袋延用了六十余年前经典单品的线条与造型，将经典细节与现代精神巧妙融合，强调了马衔扣这一品牌标志性设计元素。</p>
                                             </div>
                                             <div class="slider-content__btn">
                                                 <a href="${pageContext.request.contextPath}/FindProductByIdController?id=321" class="btn-link" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".6s">立即购买</a>
-                                                    
+                                                    data-duration=".3s" data-delay=".6s" style="color:#fff">立即购买</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-5 offset-lg-1 col-md-4">
-                                        <figure class="slider-image d-none d-md-block">
-                                            <img src="${pageContext.request.contextPath}/client/product/image/cover/fengmian-1.jpg" alt="Slider Image">
-                                        </figure>
                                     </div>
                                 </div>
                             </div>
@@ -91,29 +85,49 @@
                     </div>
                     <div class="item">
                         <div class="single-slide height-2 d-flex align-items-center bg-image"
-                            data-bg-image="${pageContext.request.contextPath}/client/shop/img/slider/slider-bg-02.jpg">
+                            data-bg-image="${pageContext.request.contextPath}/client/product/image/cover/cover-ring.jpg">
                             <div class="container">
                                 <div class="row align-items-center no-gutters w-100">
                                     <div class="col-lg-6 col-md-8">
                                         <div class="slider-content py-0">
                                             <div class="slider-content__text mb--95 md-lg--80 mb-md--40 mb-sm--15">
                                                 <h3 class="text-uppercase font-weight-light" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">环球之旅系列</h3>
+                                                    data-duration=".3s" data-delay=".3s"  style="color:#fff">950铂金戒指</h3>
                                                 <h1 class="heading__primary mb--40 mb-md--20" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">商品名称2</h1>
+                                                    data-duration=".3s" data-delay=".3s"  style="color:#fff">Lace 「蕾丝」</h1>
                                                 <p class="font-weight-light" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述</p>
+                                                    data-duration=".3s" data-delay=".3s"  style="color:#fff">设计灵感源自延龄草，独特的三叶形态分别代表了纯洁、美丽及健康的美好祝愿。启发自印度奥里萨（Orissa）的镂空工艺，应用于铂金 Lace 戒指之上，以蕾丝图案代替叶纹，呈现优雅的女性美。</p>
                                             </div>
                                             <div class="slider-content__btn">
                                                 <a href="shop.html" class="btn-link" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".6s">立即购买</a>
+                                                    data-duration=".3s" data-delay=".6s"  style="color:#fff">立即购买</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 offset-lg-2 col-md-4">
-                                        <figure class="slider-image d-none d-md-block">
-                                            <img src="${pageContext.request.contextPath}/client/shop/img/slider/slider-image-01.png" alt="Slider Image">
-                                        </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="single-slide height-2 d-flex align-items-center bg-image"
+                            data-bg-image="${pageContext.request.contextPath}/client/product/image/cover/cover-dior.jpg">
+                            <div class="container">
+                                <div class="row align-items-center no-gutters w-100">
+                                    <div class="col-lg-6 col-md-8">
+                                        <div class="slider-content py-0">
+                                            <div class="slider-content__text mb--95 md-lg--80 mb-md--40 mb-sm--15">
+                                                <h3 class="text-uppercase font-weight-light" data-animation="fadeInUp"
+                                                    data-duration=".3s" data-delay=".3s"  style="color:#fff">Dior真我</h3>
+                                                <h1 class="heading__primary mb--40 mb-md--20" data-animation="fadeInUp"
+                                                    data-duration=".3s" data-delay=".3s"  style="color:#fff">倾世之金香氛</h1>
+                                                <p class="font-weight-light" data-animation="fadeInUp"
+                                                    data-duration=".3s" data-delay=".3s"  style="color:#fff">倾世之金香氛高贵感性，是真我系列精髓之作。相互交织的茉莉纯香和五月玫瑰，来自于格拉斯Dior迪奥专属合作庄园，唤出香草晚香玉迷人的东方气息。</p>
+                                            </div>
+                                            <div class="slider-content__btn">
+                                                <a href="shop.html" class="btn-link" data-animation="fadeInUp"
+                                                    data-duration=".3s" data-delay=".6s"  style="color:#fff">立即购买</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +168,6 @@
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-duration="1s">
                                         <div class="featured-product__info-inner rotated-info">
-                                            <h4 class="featured-product__text">Special Offer <strong>39%</strong> Off</h4>
                                             <h2 class="featured-product__name">时尚服饰</h2>
                                         </div>
                                     </div>
@@ -182,9 +195,7 @@
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-delay=".3s"
                                         data-wow-duration=".8s">
-                                        <div class="featured-product__info-inner rotated-info">
-                                            <h4 class="featured-product__text font-size-14">Special Offer
-                                                <strong>39%</strong> Off</h4>
+                                        <div class="featured-product__info-inner">
                                             <h2 class="featured-product__name font-size-34">穿搭</h2>
                                         </div>
                                     </div>
@@ -199,9 +210,7 @@
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-delay=".6s"
                                         data-wow-duration=".8s">
-                                        <div class="featured-product__info-inner rotated-info">
-                                            <h4 class="featured-product__text font-size-14">Special Offer
-                                                <strong>39%</strong> Off</h4>
+                                        <div class="featured-product__info-inner">
                                             <h2 class="featured-product__name font-size-34">皮具</h2>
                                         </div>
                                     </div>
@@ -216,9 +225,7 @@
                                     </figure>
                                     <div class="featured-product__info wow pbounceInDown" data-wow-delay=".9s"
                                         data-wow-duration=".8s">
-                                        <div class="featured-product__info-inner rotated-info">
-                                            <h4 class="featured-product__text font-size-14">Special Offer
-                                                <strong>39%</strong> Off</h4>
+                                        <div class="featured-product__info-inner">
                                             <h2 class="featured-product__name font-size-34">手袋</h2>
                                         </div>
                                     </div>
@@ -348,19 +355,19 @@
                         <div class="col-md-4 mb-sm--50">
                             <div class="method-box shipment-method" style="height:190px">
                                 <i class="flaticon-truck"></i>
-                                <h3>Free Home Delivery</h3>
+                                <h3>免费顺丰速递</h3>
                             </div>
                         </div>
                         <div class="col-md-4 mb-sm--50">
                             <div class="method-box money-back-method" style="height:190px">
                                 <i class="flaticon-money"></i>
-                                <h3>MONEY BACK GUARANTEE</h3>
+                                <h3>7天无理由退货</h3>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="method-box support-method" style="height:190px">
                                 <i class="flaticon-support"></i>
-                                <h3>SUPORT 24/7</h3>
+                                <h3>24时售后服务</h3>
                             </div>
                         </div>
                     </div>

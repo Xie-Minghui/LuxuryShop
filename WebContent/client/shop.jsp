@@ -55,10 +55,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="page-title">分类/搜索结果</h1>
+                        <h1 class="page-title">分类搜索</h1>
                         <ul class="breadcrumb">
                             <li><a href="${pageContext.request.contextPath}/client/index.jsp">Excellent</a></li>
-                            <li class="current"><span>分类</span></li>
+                            <li class="current"><span>分类搜索</span></li>
                         </ul>
                     </div>
                 </div>
@@ -78,19 +78,17 @@
                                         <div class="shop-toolbar__left">
                                             <div class="product-ordering">
                                                 <select class="product-ordering__select nice-select">
-                                                    <option value="0">Default Sorting</option>
-                                                    <option value="1">Relevance</option>
-                                                    <option value="2">Name, A to Z</option>
-                                                    <option value="3">Name, Z to A</option>
-                                                    <option value="4">Price, low to high</option>
-                                                    <option value="5">Price, high to low</option>
+                                                    <option value="0">综合排序</option>
+                                                    <option value="1">时间排序</option>
+                                                    <option value="2">销量排序</option>
+                                                    <option value="3">价格从低到高</option>
+                                                    <option value="4">价格从高到低</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="shop-toolbar__right">
-                                            <p class="product-pages">Showing Result  08 Among  72</p>
                                             <div class="product-view-mode ml--50 ml-xs--0">
                                                 <a class="active" href="#" data-target="grid">
                                                     <img src="${pageContext.request.contextPath}/client/shop/img/icons/grid.png" alt="Grid">
@@ -136,7 +134,7 @@
                                                             </h3>
                                                             <div class="product__price">
                                                                 <span class="sign">￥</span>
-                                                                <span class="money">${p.PRICE }</span>
+                                                                <span class="money">${p.PRICE}</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -216,47 +214,29 @@
                         <div class="col-xl-3 col-lg-4 order-lg-1">
                             <aside class="shop-sidebar">
                                 <div class="shop-widget mb--40">
-                                    <h3 class="widget-title mb--25">Category</h3>
+                                    <h3 class="widget-title mb--25">分类</h3>
                                     <ul class="widget-list category-list">
                                         <li>
-                                            <a href="shop.html">
-                                                <span class="category-title">Winter Collection</span>
+                                            <a href="${pageContext.request.contextPath}/showProductByPage?category=皮具">
+                                                <span class="category-title">皮具系列</span>
                                                 <i class="fa fa-angle-double-right"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
-                                                <span class="category-title">Women’s Clothes</span>
+                                            <a href="${pageContext.request.contextPath}/showProductByPage?category=香氛">
+                                                <span class="category-title">香水/香氛</span>
                                                 <i class="fa fa-angle-double-right"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
-                                                <span class="category-title">Men’s Clothes</span>
+                                            <a href="${pageContext.request.contextPath}/showProductByPage?category=服饰">
+                                                <span class="category-title">时尚服饰</span>
                                                 <i class="fa fa-angle-double-right"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
-                                                <span class="category-title">Kid’s Clothes</span>
-                                                <i class="fa fa-angle-double-right"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span class="category-title">Uncategorized</span>
-                                                <i class="fa fa-angle-double-right"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span class="category-title">Accessories</span>
-                                                <i class="fa fa-angle-double-right"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span class="category-title">New Arrival</span>
+                                            <a href="${pageContext.request.contextPath}/showProductByPage?category=配饰">
+                                                <span class="category-title">珠宝/配饰系列</span>
                                                 <i class="fa fa-angle-double-right"></i>
                                             </a>
                                         </li>
@@ -264,53 +244,26 @@
                                 </div>
                                 
                                 <div class="shop-widget mb--40">
-                                    <h3 class="widget-title mb--25">Price</h3>
-                                    <ul class="widget-list price-list">
-                                        <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=300.00&maxprice=5000.00">
-                                                <span>Low - Medium</span>
-                                                <strong class="font-weight-medium">$300 - $5000</strong>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=5000.00&maxprice=20000.00">
-                                                <span>Medium - High</span>
-                                                <strong class="font-weight-medium">$5000 - $20000</strong>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="${pageContext.request.contextPath}/ShowProductByPageAndSearchByPrice?currentPage=1&minprice=20000.00&maxprice=100000.00">
-                                                <span>High - Avobe</span>
-                                                <strong class="font-weight-medium">$20000</strong>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="shop-widget mb--40">
-                                    <h3 class="widget-title mb--25">Brand</h3>
+                                    <h3 class="widget-title mb--25">品牌</h3>
                                     <ul class="widget-list brand-list">
                                         <li>
-                                            <a href="shop.html">
-                                                <span>Walmart</span>
-                                                <strong class="color--red font-weight-medium">10</strong>
+                                            <a href="shop.jsp">
+                                                <span>Dior</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
-                                                <span>Yellow</span>
-                                                <strong class="color--red font-weight-medium">50</strong>
+                                            <a href="shop.jsp">
+                                                <span>Chanel</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
-                                                <span>H &amp; M</span>
-                                                <strong class="color--red font-weight-medium">46</strong>
+                                            <a href="shop.jsp">
+                                                <span>Gucci</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="shop.html">
-                                                <span>Black &amp; White</span>
-                                                <strong class="color--red font-weight-medium">46</strong>
+                                            <a href="shop.jsp">
+                                                <span>周生生</span>
                                             </a>
                                         </li>
                                     </ul>

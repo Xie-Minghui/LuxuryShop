@@ -19,145 +19,88 @@
                     </div>
                 </div>
             </div>
-            <div class="col footer-column-2 mb-md--33">
+            <div class="col footer-column-4 mb-md--33">
                 <div class="footer-widget">
-                    <h3 class="widget-title mb--35 mb-sm--15">Store Menu</h3>
+                    <h3 class="widget-title mb--35 mb-sm--15">关于商品</h3>
                     <ul class="footer-menu">
                         <li>
-                            <a href="shop.html">
+                            <a href="${pageContext.request.contextPath}/showProductByPage?category=皮具">
                                 <i class="fa fa-angle-right"></i>
-                                <span>Best Seller</span>
+                                <span>皮具系列</span>
                             </a>
                         </li>
                         <li>
-                            <a href="shop.html">
+                            <a href="${pageContext.request.contextPath}/showProductByPage?category=香氛">
                                 <i class="fa fa-angle-right"></i>
-                                <span>New Arrivals</span>
+                                <span>香氛</span>
                             </a>
                         </li>
                         <li>
-                            <a href="shop.html">
+                            <a href="${pageContext.request.contextPath}/showProductByPage?category=服饰">
                                 <i class="fa fa-angle-right"></i>
-                                <span>Men</span>
+                                <span>时尚服饰</span>
                             </a>
                         </li>
                         <li>
-                            <a href="shop.html">
+                            <a href="${pageContext.request.contextPath}/showProductByPage?category=配饰">
                                 <i class="fa fa-angle-right"></i>
-                                <span>Women</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="shop.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Accessories</span>
+                                <span>配饰系列</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col footer-column-3 mb-sm--33">
+            <div class="col footer-column-4">
                 <div class="footer-widget">
-                    <h3 class="widget-title mb--35 mb-sm--15">Information</h3>
+                    <h3 class="widget-title mb--35 mb-sm--15">关于账户</h3>
                     <ul class="footer-menu">
                         <li>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/client/account.jsp">
                                 <i class="fa fa-angle-right"></i>
-                                <span>About Us</span>
+                                <span>我的账户</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/client/wishlist.jsp">
                                 <i class="fa fa-angle-right"></i>
-                                <span>Delivery Information</span>
+                                <span>心愿单</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/client/cart.jsp">
                                 <i class="fa fa-angle-right"></i>
-                                <span>Privacy Policy</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Terms &amp; Conditions</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Look Books</span>
+                                <span>购物车</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col footer-column-4 mb-xs--33">
+            <div class="col footer-column-4 mb-sm--33">
                 <div class="footer-widget">
-                    <h3 class="widget-title mb--35 mb-sm--15">Question</h3>
-                    <div class="footer-widget">
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-right"></i>
-                                    <span>Help</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="order-tracking.html">
-                                    <i class="fa fa-angle-right"></i>
-                                    <span>Track Order</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-right"></i>
-                                    <span>Support</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="shop.html">
-                                    <i class="fa fa-angle-right"></i>
-                                    <span>Shopping &amp; Delivery</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-angle-right"></i>
-                                    <span>FAQs</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col footer-column-5">
-                <div class="footer-widget">
-                    <h3 class="widget-title mb--35 mb-sm--15">My Account</h3>
+                    <h3 class="widget-title mb--35 mb-sm--15">关于我们</h3>
                     <ul class="footer-menu">
                         <li>
-                            <a href="my-account.html">
+                            <a href="${pageContext.request.contextPath}/client/notice.jsp">
                                 <i class="fa fa-angle-right"></i>
-                                <span>My Account</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="order-tracking.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Order Delivery</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="wishlist.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Wishlist</span>
+                                <span>公告</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fa fa-angle-right"></i>
-                                <span>Newsletter</span>
+                                <span>联系我们</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-angle-right"></i>
+                                <span>常见问题</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-angle-right"></i>
+                                <span>使用条款</span>
                             </a>
                         </li>
                     </ul>
